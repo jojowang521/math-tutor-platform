@@ -191,9 +191,13 @@ button { cursor: pointer; }
   display: grid;
   grid-template-columns: minmax(0, 1fr) 330px;
   gap: 28px;
-  align-items: end;
+  align-items: center;
   box-shadow: var(--shadow);
   overflow: hidden;
+}
+
+.hero-copy {
+  align-self: center;
 }
 
 .eyebrow {
@@ -527,7 +531,7 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
     <section class="page active" id="dashboard">
       <div class="container">
         <div class="hero">
-          <div>
+          <div class="hero-copy">
             <span class="eyebrow">4到6个月系统补习</span>
             <h1>小学数学基础知识学习平台</h1>
             <p>按“先补地基，再追进度”的方式组织：每天固定节奏，先通关三年级核心知识，再进入四年级和五年级上册。平台保留完整原文，同时把计划拆成可勾选、可复盘、可讲题的学习流程。</p>
