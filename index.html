@@ -49,6 +49,7 @@ button { cursor: pointer; }
   display: flex;
   flex-direction: column;
   gap: 18px;
+  overflow-y: auto;
 }
 
 .brand {
@@ -78,6 +79,14 @@ button { cursor: pointer; }
   gap: 7px;
 }
 
+.nav-label {
+  margin: 10px 10px 2px;
+  color: rgba(255,255,255,.42);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
 .nav button {
   border: 0;
   border-radius: 8px;
@@ -93,6 +102,28 @@ button { cursor: pointer; }
 .nav button:hover { background: rgba(255,255,255,.07); color: #fff; }
 .nav button.active { background: #fff; color: #172033; font-weight: 800; }
 .nav svg { width: 18px; height: 18px; flex: 0 0 18px; }
+
+.nav .book-link {
+  padding-left: 14px;
+}
+
+.book-code {
+  width: 30px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-grid;
+  place-items: center;
+  background: rgba(255,255,255,.10);
+  color: rgba(255,255,255,.74);
+  font-size: 12px;
+  font-weight: 900;
+  flex: 0 0 30px;
+}
+
+.nav button.active .book-code {
+  background: #172033;
+  color: #fff;
+}
 
 .sidebar-card {
   margin-top: auto;
@@ -373,21 +404,6 @@ h1 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
 }
-.plan-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-bottom: 16px;
-}
-.plan-card {
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: #fff;
-  padding: 16px;
-}
-.plan-card h3 { margin: 8px 0 8px; font-size: 18px; }
-.plan-card p { margin: 0; color: var(--muted); line-height: 1.7; min-height: 48px; }
-.plan-card .lesson-actions { margin-top: 12px; }
 .practice-card h3 { margin: 0 0 8px; }
 .practice-card p { color: var(--muted); line-height: 1.7; min-height: 50px; }
 .answer {
@@ -454,13 +470,13 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
   .mobile-menu { display: inline-grid; place-items: center; }
   .hero, .grid-2, .unit-layout, .record-grid { grid-template-columns: 1fr; }
   .unit-summary { position: static; }
-  .stats, .practice-grid, .plan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats, .practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 620px) {
   .page, .topbar { padding-left: 16px; padding-right: 16px; }
   .hero { padding: 24px; border-radius: 14px; min-height: 0; }
-  .stats, .practice-grid, .plan-grid { grid-template-columns: 1fr; }
+  .stats, .practice-grid { grid-template-columns: 1fr; }
   .check-row { grid-template-columns: 24px minmax(0, 1fr); }
   .time-chip { grid-column: 2; justify-self: start; }
 }
@@ -477,18 +493,18 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
       </div>
     </div>
     <nav class="nav" aria-label="主导航">
+      <div class="nav-label">学习管理</div>
       <button class="active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>学习总览</button>
       <button data-page="route"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v18"/><path d="M18 3v18"/><path d="M6 7h12"/><path d="M6 12h12"/><path d="M6 17h12"/></svg>补习路线</button>
-      <button data-page="units"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三上单元课</button>
-      <button data-page="library" data-src="grade3_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三年级上册</button>
-      <button data-page="library" data-src="grade3_vol2_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三年级下册</button>
-      <button data-page="library" data-src="grade4_vol1_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>四年级上册</button>
-      <button data-page="library" data-src="grade4_vol2_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>四年级下册</button>
-      <button data-page="library" data-src="grade5_vol1_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>五年级上册</button>
-      <button data-page="library" data-src="grade5_vol2_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>五年级下册</button>
       <button data-page="practice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>练习与检测</button>
       <button data-page="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>错题记录</button>
-      <button data-page="library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 7h8"/></svg>资料库</button>
+      <div class="nav-label">全册计划</div>
+      <button class="book-link" data-page="library" data-src="grade3_math_plan.html" data-title="三年级上册完整计划"><span class="book-code">3上</span>三年级上册</button>
+      <button class="book-link" data-page="library" data-src="grade3_vol2_math_plan.html" data-title="三年级下册完整计划"><span class="book-code">3下</span>三年级下册</button>
+      <button class="book-link" data-page="library" data-src="grade4_vol1_math_plan.html" data-title="四年级上册完整计划"><span class="book-code">4上</span>四年级上册</button>
+      <button class="book-link" data-page="library" data-src="grade4_vol2_math_plan.html" data-title="四年级下册完整计划"><span class="book-code">4下</span>四年级下册</button>
+      <button class="book-link" data-page="library" data-src="grade5_vol1_math_plan.html" data-title="五年级上册完整计划"><span class="book-code">5上</span>五年级上册</button>
+      <button class="book-link" data-page="library" data-src="grade5_vol2_math_plan.html" data-title="五年级下册完整计划"><span class="book-code">5下</span>五年级下册</button>
     </nav>
     <div class="sidebar-card">
       <div class="mini-label">当前完成度</div>
@@ -627,16 +643,11 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
       <div class="container">
         <div class="section-head">
           <div>
-            <h2>完整资料库</h2>
-            <p>这里保留总览和三到五年级上下册详细计划，方便查看完整排版和详细题目。</p>
+            <h2 id="libraryTitle">三年级上册完整计划</h2>
+            <p id="libraryDesc">左侧按册次切换，直接查看对应年级上下册的完整补习计划。</p>
           </div>
         </div>
-        <div class="plan-grid" id="planGrid"></div>
-        <div class="library-actions">
-          <button class="primary" data-src="math_plan_pep.html">查看总览计划</button>
-          <button class="secondary" data-src="grade3_math_plan.html">查看三年级上册详细计划</button>
-        </div>
-        <iframe class="library-frame" id="libraryFrame" src="math_plan_pep.html" title="学习计划原文"></iframe>
+        <iframe class="library-frame" id="libraryFrame" src="grade3_math_plan.html" title="年级补习计划原文"></iframe>
       </div>
     </section>
   </main>
@@ -655,15 +666,6 @@ const dailyTasks = [
   {title:"知识点讲解", desc:"只讲一个核心点，配2到3道例题", time:"20分钟"},
   {title:"独立练习", desc:"10到15题，错题当场讲透", time:"25分钟"},
   {title:"复述与记录", desc:"让孩子讲思路，老师记录错因", time:"10分钟"}
-];
-
-const planBooks = [
-  {title:"三年级上册", file:"grade3_math_plan.html", stage:"第一阶段", desc:"时间、万以内加减、测量、乘法、倍、周长、分数初步。"},
-  {title:"三年级下册", file:"grade3_vol2_math_plan.html", stage:"第一阶段", desc:"除法竖式、两位数乘两位数、面积、年月日、小数初步。"},
-  {title:"四年级上册", file:"grade4_vol1_math_plan.html", stage:"第二阶段", desc:"大数认识、角、三位数乘两位数、平行与垂直、两位数除法。"},
-  {title:"四年级下册", file:"grade4_vol2_math_plan.html", stage:"第二阶段", desc:"四则运算、运算定律、小数意义、三角形、小数加减。"},
-  {title:"五年级上册", file:"grade5_vol1_math_plan.html", stage:"第三阶段", desc:"小数乘除、简易方程、多边形面积、可能性与植树问题。"},
-  {title:"五年级下册", file:"grade5_vol2_math_plan.html", stage:"第四阶段", desc:"因数倍数、长方体正方体、分数意义和分数加减。"}
 ];
 
 const units = [
@@ -781,28 +783,6 @@ function renderPractice() {
   });
 }
 
-function renderPlans() {
-  const grid = document.getElementById("planGrid");
-  if (!grid) return;
-  grid.innerHTML = planBooks.map(book => `
-    <article class="plan-card">
-      <span class="tag">${book.stage}</span>
-      <h3>${book.title}</h3>
-      <p>${book.desc}</p>
-      <div class="lesson-actions">
-        <button class="primary" data-plan="${book.file}">预览</button>
-        <a class="secondary" href="${book.file}" target="_blank" rel="noreferrer" style="text-decoration:none">新窗口</a>
-      </div>
-    </article>
-  `).join("");
-  grid.querySelectorAll("button[data-plan]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      document.getElementById("libraryFrame").src = btn.dataset.plan;
-      document.querySelectorAll(".library-actions button").forEach(b => b.className = "secondary");
-    });
-  });
-}
-
 function renderNotes() {
   document.getElementById("noteUnit").innerHTML = units.map(u => `<option>${u.title}</option>`).join("");
   const list = document.getElementById("noteList");
@@ -813,17 +793,19 @@ function renderNotes() {
 
 function showPage(id, src = "") {
   document.querySelectorAll(".page").forEach(page => page.classList.toggle("active", page.id === id));
+  const activeBtn = src
+    ? document.querySelector(`.nav button[data-page="${id}"][data-src="${src}"]`)
+    : document.querySelector(`.nav button[data-page="${id}"]:not([data-src])`);
   if (id === "library" && src) {
     document.getElementById("libraryFrame").src = src;
+    document.getElementById("libraryTitle").textContent = activeBtn?.dataset.title || activeBtn?.textContent.trim() || "完整计划";
+    document.getElementById("libraryDesc").textContent = "当前展示的是完整原始计划，包含知识点、练习题和讲解建议。";
   }
   document.querySelectorAll(".nav button").forEach(btn => {
     const samePage = btn.dataset.page === id;
     const sameSrc = src ? btn.dataset.src === src : !btn.dataset.src;
     btn.classList.toggle("active", samePage && sameSrc);
   });
-  const activeBtn = src
-    ? document.querySelector(`.nav button[data-page="${id}"][data-src="${src}"]`)
-    : document.querySelector(`.nav button[data-page="${id}"]:not([data-src])`);
   document.getElementById("pageTitle").textContent = activeBtn ? activeBtn.textContent.trim() : "学习平台";
   document.body.classList.remove("menu-open");
   window.scrollTo({top: 0, behavior: "smooth"});
@@ -858,7 +840,6 @@ renderDaily();
 renderPhases();
 renderUnits();
 renderPractice();
-renderPlans();
 renderNotes();
 renderProgress();
 </script>
