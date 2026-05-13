@@ -480,6 +480,12 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
       <button class="active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>学习总览</button>
       <button data-page="route"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v18"/><path d="M18 3v18"/><path d="M6 7h12"/><path d="M6 12h12"/><path d="M6 17h12"/></svg>补习路线</button>
       <button data-page="units"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三上单元课</button>
+      <button data-page="library" data-src="grade3_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三年级上册</button>
+      <button data-page="library" data-src="grade3_vol2_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三年级下册</button>
+      <button data-page="library" data-src="grade4_vol1_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>四年级上册</button>
+      <button data-page="library" data-src="grade4_vol2_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>四年级下册</button>
+      <button data-page="library" data-src="grade5_vol1_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>五年级上册</button>
+      <button data-page="library" data-src="grade5_vol2_math_plan.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>五年级下册</button>
       <button data-page="practice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>练习与检测</button>
       <button data-page="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>错题记录</button>
       <button data-page="library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 7h8"/></svg>资料库</button>
@@ -805,17 +811,26 @@ function renderNotes() {
   `).join("") : "<p style='color:var(--muted);line-height:1.8'>还没有记录。第一次保存后，这里会显示孩子的错题和复盘点。</p>";
 }
 
-function showPage(id) {
+function showPage(id, src = "") {
   document.querySelectorAll(".page").forEach(page => page.classList.toggle("active", page.id === id));
-  document.querySelectorAll(".nav button").forEach(btn => btn.classList.toggle("active", btn.dataset.page === id));
-  const activeBtn = document.querySelector(`.nav button[data-page="${id}"]`);
+  if (id === "library" && src) {
+    document.getElementById("libraryFrame").src = src;
+  }
+  document.querySelectorAll(".nav button").forEach(btn => {
+    const samePage = btn.dataset.page === id;
+    const sameSrc = src ? btn.dataset.src === src : !btn.dataset.src;
+    btn.classList.toggle("active", samePage && sameSrc);
+  });
+  const activeBtn = src
+    ? document.querySelector(`.nav button[data-page="${id}"][data-src="${src}"]`)
+    : document.querySelector(`.nav button[data-page="${id}"]:not([data-src])`);
   document.getElementById("pageTitle").textContent = activeBtn ? activeBtn.textContent.trim() : "学习平台";
   document.body.classList.remove("menu-open");
   window.scrollTo({top: 0, behavior: "smooth"});
 }
 
 document.querySelectorAll(".nav button").forEach(btn => {
-  btn.addEventListener("click", () => showPage(btn.dataset.page));
+  btn.addEventListener("click", () => showPage(btn.dataset.page, btn.dataset.src || ""));
 });
 
 document.getElementById("menuBtn").addEventListener("click", () => {
