@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学数学补习学习平台</title>
+<style>
+:root {
+  --bg: #f7f2ea;
+  --panel: #fffdf8;
+  --ink: #1f2933;
+  --muted: #6b7280;
+  --line: #ded4c5;
+  --brand: #2563eb;
+  --brand-dark: #1e40af;
+  --red: #c2410c;
+  --green: #15803d;
+  --gold: #b7791f;
+  --purple: #6d28d9;
+  --shadow: 0 16px 42px rgba(31, 41, 51, .10);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(37,99,235,.08), transparent 320px),
+    var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+button, input, textarea, select { font: inherit; }
+button { cursor: pointer; }
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 250px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 22px 18px;
+  background: #172033;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: #facc15;
+  color: #172033;
+  font-weight: 900;
+}
+
+.brand-title { font-weight: 800; line-height: 1.25; }
+.brand-sub { font-size: 12px; color: rgba(255,255,255,.56); margin-top: 2px; }
+
+.nav {
+  display: grid;
+  gap: 7px;
+}
+
+.nav button {
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 12px;
+  color: rgba(255,255,255,.70);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+.nav button:hover { background: rgba(255,255,255,.07); color: #fff; }
+.nav button.active { background: #fff; color: #172033; font-weight: 800; }
+.nav svg { width: 18px; height: 18px; flex: 0 0 18px; }
+
+.sidebar-card {
+  margin-top: auto;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 10px;
+  padding: 14px;
+  background: rgba(255,255,255,.06);
+}
+
+.mini-label { font-size: 12px; color: rgba(255,255,255,.58); }
+.mini-num { font-size: 30px; font-weight: 900; margin-top: 4px; }
+.mini-text { font-size: 12px; line-height: 1.7; color: rgba(255,255,255,.62); }
+
+.content { min-width: 0; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 26px;
+  background: rgba(247,242,234,.88);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(222,212,197,.72);
+}
+
+.mobile-menu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.top-title { font-size: 14px; color: var(--muted); }
+.student-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 12px;
+  background: var(--panel);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.page { display: none; padding: 26px; }
+.page.active { display: block; }
+.container { max-width: 1180px; margin: 0 auto; }
+
+.hero {
+  min-height: 320px;
+  border-radius: 18px;
+  color: #fff;
+  background:
+    linear-gradient(105deg, rgba(23,32,51,.96), rgba(23,32,51,.78) 52%, rgba(37,99,235,.68)),
+    radial-gradient(circle at 78% 28%, rgba(250,204,21,.36), transparent 34%),
+    linear-gradient(135deg, #172033, #2563eb);
+  padding: 34px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 28px;
+  align-items: end;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(250,204,21,.16);
+  color: #fde68a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(30px, 5vw, 58px);
+  line-height: 1.06;
+  letter-spacing: 0;
+  margin: 18px 0 16px;
+}
+
+.hero p {
+  color: rgba(255,255,255,.76);
+  line-height: 1.9;
+  max-width: 680px;
+  margin: 0;
+}
+
+.hero-panel {
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.hero-panel h2 { margin: 0 0 12px; font-size: 16px; }
+.lesson-now { display: grid; gap: 10px; }
+.lesson-now div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+.lesson-now div:last-child { border-bottom: 0; }
+.lesson-now span { color: rgba(255,255,255,.58); font-size: 12px; }
+.lesson-now b { text-align: right; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 26px;
+}
+
+.stat {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(31,41,51,.06);
+}
+.stat b { display: block; font-size: 28px; }
+.stat span { color: var(--muted); font-size: 13px; }
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 16px;
+  margin: 30px 0 14px;
+}
+.section-head h2 { margin: 0; font-size: 22px; }
+.section-head p { margin: 6px 0 0; color: var(--muted); line-height: 1.7; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+  gap: 16px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(31,41,51,.06);
+}
+
+.daily-list { display: grid; gap: 10px; }
+.check-row {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid #e8dfd1;
+  border-radius: 9px;
+  background: #fff;
+}
+.check-row input { width: 18px; height: 18px; accent-color: var(--brand); }
+.check-row b { display: block; }
+.check-row span { color: var(--muted); font-size: 12px; }
+.time-chip {
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--brand-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.phase-list { display: grid; gap: 12px; }
+.phase-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+.phase-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.phase-kicker { font-size: 12px; font-weight: 900; color: var(--brand); }
+.phase-card h3 { margin: 3px 0 0; font-size: 18px; }
+.phase-card p { color: var(--muted); line-height: 1.7; margin: 10px 0 0; }
+.progress-bar {
+  height: 8px;
+  background: #eee6da;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+.progress-bar i { display: block; height: 100%; background: var(--brand); width: var(--w); }
+.phase-meta { color: var(--muted); font-size: 12px; margin-top: 8px; }
+
+.unit-toolbar {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+.unit-btn {
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+.unit-btn.active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  font-weight: 800;
+}
+
+.unit-layout {
+  display: grid;
+  grid-template-columns: 340px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.unit-summary { position: sticky; top: 82px; align-self: start; }
+.unit-summary h2 { margin: 8px 0 8px; font-size: 26px; }
+.unit-summary p { color: var(--muted); line-height: 1.8; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.tag {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 6px 9px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.lesson-stack { display: grid; gap: 12px; }
+.lesson {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  padding: 16px;
+}
+.lesson header {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 10px;
+}
+.lesson h3 { margin: 0; font-size: 18px; }
+.lesson p { margin: 0; color: var(--muted); line-height: 1.7; }
+.lesson ul { padding-left: 20px; margin: 12px 0 0; line-height: 1.9; }
+.lesson-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.primary, .secondary {
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-weight: 800;
+}
+.primary { border: 1px solid var(--brand); background: var(--brand); color: #fff; }
+.secondary { border: 1px solid var(--line); background: #fff; color: var(--ink); }
+
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.practice-card h3 { margin: 0 0 8px; }
+.practice-card p { color: var(--muted); line-height: 1.7; min-height: 50px; }
+.answer {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: var(--green);
+  font-weight: 800;
+}
+.practice-card.revealed .answer { display: block; }
+
+.record-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 16px;
+}
+textarea, input[type="text"], select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  color: var(--ink);
+}
+textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
+.note-list { display: grid; gap: 10px; }
+.note {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  background: #fff;
+}
+.note b { display: block; margin-bottom: 6px; }
+.note p { margin: 0; color: var(--muted); line-height: 1.7; white-space: pre-wrap; }
+
+.library-frame {
+  width: 100%;
+  height: 72vh;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.library-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 940px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .sidebar {
+    position: fixed;
+    z-index: 50;
+    inset: 0 auto 0 0;
+    width: 280px;
+    transform: translateX(-102%);
+    transition: transform .2s;
+  }
+  body.menu-open .sidebar { transform: translateX(0); }
+  .mobile-menu { display: inline-grid; place-items: center; }
+  .hero, .grid-2, .unit-layout, .record-grid { grid-template-columns: 1fr; }
+  .unit-summary { position: static; }
+  .stats, .practice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 620px) {
+  .page, .topbar { padding-left: 16px; padding-right: 16px; }
+  .hero { padding: 24px; border-radius: 14px; min-height: 0; }
+  .stats, .practice-grid { grid-template-columns: 1fr; }
+  .check-row { grid-template-columns: 24px minmax(0, 1fr); }
+  .time-chip { grid-column: 2; justify-self: start; }
+}
+</style>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">数</div>
+      <div>
+        <div class="brand-title">数学补习平台</div>
+        <div class="brand-sub">人教版追赶计划</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="主导航">
+      <button class="active" data-page="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l9-9 9 9"/><path d="M5 10v10h14V10"/></svg>学习总览</button>
+      <button data-page="route"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v18"/><path d="M18 3v18"/><path d="M6 7h12"/><path d="M6 12h12"/><path d="M6 17h12"/></svg>补习路线</button>
+      <button data-page="units"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/></svg>三上单元课</button>
+      <button data-page="practice"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>练习与检测</button>
+      <button data-page="records"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>错题记录</button>
+      <button data-page="library"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H21"/><path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H21v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M8 7h8"/></svg>资料库</button>
+    </nav>
+    <div class="sidebar-card">
+      <div class="mini-label">当前完成度</div>
+      <div class="mini-num" id="sideProgress">0%</div>
+      <div class="mini-text">完成每日任务后会自动累计，适合家长和辅导老师快速看状态。</div>
+    </div>
+  </aside>
+
+  <main class="content">
+    <header class="topbar">
+      <button class="mobile-menu" id="menuBtn" aria-label="打开菜单"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <div class="top-title" id="pageTitle">学习总览</div>
+      <div class="student-pill">学生：五年级基础追赶 · 从三年级起步</div>
+    </header>
+
+    <section class="page active" id="dashboard">
+      <div class="container">
+        <div class="hero">
+          <div>
+            <span class="eyebrow">4到6个月系统补习</span>
+            <h1>把两份学习计划变成每天能执行的平台</h1>
+            <p>按“先补地基，再追进度”的方式组织：每天固定节奏，先通关三年级核心知识，再进入四年级和五年级上册。平台保留完整原文，同时把计划拆成可勾选、可复盘、可讲题的学习流程。</p>
+          </div>
+          <div class="hero-panel">
+            <h2>今日建议</h2>
+            <div class="lesson-now">
+              <div><span>课前</span><b>5分钟口算热身</b></div>
+              <div><span>主课</span><b>1个知识点 + 例题讲解</b></div>
+              <div><span>练习</span><b>10到15题精练</b></div>
+              <div><span>收尾</span><b>孩子复述思路 + 错题记录</b></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>4</b><span>补习阶段</span></div>
+          <div class="stat"><b>8</b><span>三上核心单元</span></div>
+          <div class="stat"><b>60</b><span>建议每日分钟</span></div>
+          <div class="stat"><b id="doneTasks">0</b><span>今日已完成任务</span></div>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <div class="section-head" style="margin-top:0">
+              <div>
+                <h2>每日学习闭环</h2>
+                <p>不要追求一次学很多，重点是每天稳定完成并能说清楚。</p>
+              </div>
+            </div>
+            <div class="daily-list" id="dailyList"></div>
+          </div>
+          <div class="card">
+            <div class="section-head" style="margin-top:0">
+              <div>
+                <h2>辅导原则</h2>
+                <p>平台内置家长和老师最需要盯住的几个原则。</p>
+              </div>
+            </div>
+            <div class="phase-list">
+              <div class="phase-card"><div class="phase-kicker">原则 01</div><h3>宁慢勿快</h3><p>一个知识点没真正掌握，不急着往下走。做对了还要能讲出为什么。</p></div>
+              <div class="phase-card"><div class="phase-kicker">原则 02</div><h3>先建立信心</h3><p>明确表扬具体进步，减少“你怎么又错了”的挫败感。</p></div>
+              <div class="phase-card"><div class="phase-kicker">原则 03</div><h3>错题变专题</h3><p>错题不是扣分记录，而是下一次专项突破的入口。</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="route">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>四阶段补习路线</h2>
+            <p>来自总览计划，按难度和年级依赖关系拆分。</p>
+          </div>
+        </div>
+        <div class="phase-list" id="phaseList"></div>
+      </div>
+    </section>
+
+    <section class="page" id="units">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>三年级上册单元课</h2>
+            <p>从详细计划中抽取核心单元，适合作为第一阶段的主线。</p>
+          </div>
+        </div>
+        <div class="unit-toolbar" id="unitTabs"></div>
+        <div class="unit-layout">
+          <aside class="card unit-summary" id="unitSummary"></aside>
+          <div class="lesson-stack" id="lessonStack"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="practice">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>练习与检测</h2>
+            <p>先放一组可点击看答案的样题，后续可以扩展成题库和自动判分。</p>
+          </div>
+        </div>
+        <div class="practice-grid" id="practiceGrid"></div>
+      </div>
+    </section>
+
+    <section class="page" id="records">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>错题记录</h2>
+            <p>记录“错在哪里”和“下次怎么想”，比只抄答案更有效。</p>
+          </div>
+        </div>
+        <div class="record-grid">
+          <div class="card">
+            <label>所属单元</label>
+            <select id="noteUnit"></select>
+            <div style="height:12px"></div>
+            <label>错题或问题</label>
+            <textarea id="noteText" placeholder="例如：时间换算总是忘记 1 分 = 60 秒，应用题读题太快。"></textarea>
+            <div style="height:12px"></div>
+            <button class="primary" id="saveNote">保存记录</button>
+          </div>
+          <div class="card">
+            <h2 style="margin-top:0">记录列表</h2>
+            <div class="note-list" id="noteList"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="library">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>完整资料库</h2>
+            <p>这里保留两份原始 HTML，方便查看完整排版和详细题目。</p>
+          </div>
+        </div>
+        <div class="library-actions">
+          <button class="primary" data-src="math_plan_pep.html">查看总览计划</button>
+          <button class="secondary" data-src="grade3_math_plan.html">查看三年级上册详细计划</button>
+          <a class="secondary" href="math_plan_pep.html" target="_blank" rel="noreferrer" style="text-decoration:none">新窗口打开总览</a>
+          <a class="secondary" href="grade3_math_plan.html" target="_blank" rel="noreferrer" style="text-decoration:none">新窗口打开三上</a>
+        </div>
+        <iframe class="library-frame" id="libraryFrame" src="math_plan_pep.html" title="学习计划原文"></iframe>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script>
+const phases = [
+  {name:"三年级上下册核心知识", time:"约6到8周", progress:20, color:"var(--red)", points:["万以内加减法","多位数乘一位数","长方形和正方形周长面积","分数初步认识","时间、长度、质量单位"]},
+  {name:"四年级上下册核心知识", time:"约8到10周", progress:0, color:"var(--gold)", points:["三位数乘两位数","除数是两位数的除法","小数的意义与加减法","四则混合运算","角、平行与垂直"]},
+  {name:"五年级上册核心知识", time:"约6到8周", progress:0, color:"var(--green)", points:["小数乘法","小数除法","简易方程","多边形面积","统计与可能性"]},
+  {name:"巩固并追上班级进度", time:"持续进行", progress:0, color:"var(--brand)", points:["分数意义与性质","分数加减法","长方体和正方体","综合卷检测","错题专项突破"]}
+];
+
+const dailyTasks = [
+  {title:"口算热身", desc:"20道以内，重点练速度和准确率", time:"5分钟"},
+  {title:"知识点讲解", desc:"只讲一个核心点，配2到3道例题", time:"20分钟"},
+  {title:"独立练习", desc:"10到15题，错题当场讲透", time:"25分钟"},
+  {title:"复述与记录", desc:"让孩子讲思路，老师记录错因", time:"10分钟"}
+];
+
+const units = [
+  {title:"时、分、秒", week:"第1周", goal:"会进行时间单位换算，能解决简单经过时间问题。", tags:["时间换算","经过时间","生活应用"], lessons:["1时=60分，1分=60秒，先建立单位感。","用钟面或时间轴理解经过时间。","应用题先圈起点、终点和问题。"]},
+  {title:"万以内的加法和减法", week:"第2到3周", goal:"掌握竖式计算、进位退位和验算。", tags:["竖式","进位","退位","验算"], lessons:["相同数位对齐，个位从右往左算。","连续退位要慢，先写借位标记。","用估算判断答案是否离谱。"]},
+  {title:"测量", week:"第4周", goal:"熟悉毫米、厘米、分米、米、千米的换算和实际长度感。", tags:["长度单位","单位换算","估测"], lessons:["先记相邻单位进率，再练跨级换算。","把单位和真实物品绑定，形成长度感。","应用题看清最后要求的单位。"]},
+  {title:"万以内的乘法", week:"第5周", goal:"补牢乘法口诀和整十整百数乘法。", tags:["口诀","口算","整十整百"], lessons:["乘法口诀必须每天背到脱口而出。","先拆数再计算，如 30×4 看作 3×4 个十。","口算练习短频快，避免疲劳。"]},
+  {title:"倍的认识", week:"第6周", goal:"理解“几个几”和倍数关系，能画图分析应用题。", tags:["倍数关系","画图","应用题"], lessons:["先用线段图表达谁是谁的几倍。","求一个数的几倍用乘法。","已知几倍是多少，求一倍用除法。"]},
+  {title:"多位数乘一位数", week:"第7到8周", goal:"会两三位数乘一位数竖式，处理连续进位。", tags:["竖式乘法","连续进位","估算"], lessons:["从个位乘起，进位写小一点。","每一步乘完都要加进位。","用估算快速检查结果范围。"]},
+  {title:"长方形和正方形", week:"第9周", goal:"理解周长含义，能计算长方形和正方形周长。", tags:["周长","长方形","正方形"], lessons:["周长是一圈边线的长度。","长方形周长=(长+宽)×2。","正方形周长=边长×4。"]},
+  {title:"分数的初步认识", week:"第10周", goal:"理解平均分、分子分母和同分母分数加减。", tags:["平均分","分子分母","同分母加减"], lessons:["分数一定从平均分开始讲。","分母表示平均分成几份，分子表示取几份。","同分母加减时，分母不变，分子相加减。"]}
+];
+
+const practices = [
+  {unit:"时、分、秒", q:"3分 = 多少秒？", a:"3分 = 180秒"},
+  {unit:"加法和减法", q:"478 + 356 = ?", a:"834"},
+  {unit:"测量", q:"2米5分米 = 多少分米？", a:"25分米"},
+  {unit:"乘法", q:"70 × 6 = ?", a:"420"},
+  {unit:"倍的认识", q:"小明有8颗糖，小红是他的3倍，小红有多少颗？", a:"8×3=24颗"},
+  {unit:"周长", q:"长方形长8厘米，宽5厘米，周长是多少？", a:"(8+5)×2=26厘米"}
+];
+
+const storeKey = "math-platform-state-v1";
+const state = JSON.parse(localStorage.getItem(storeKey) || '{"tasks":{},"notes":[]}');
+
+function saveState() {
+  localStorage.setItem(storeKey, JSON.stringify(state));
+  renderProgress();
+}
+
+function renderProgress() {
+  const done = Object.values(state.tasks).filter(Boolean).length;
+  const pct = Math.round(done / dailyTasks.length * 100);
+  document.getElementById("sideProgress").textContent = pct + "%";
+  document.getElementById("doneTasks").textContent = done;
+}
+
+function renderDaily() {
+  const wrap = document.getElementById("dailyList");
+  wrap.innerHTML = dailyTasks.map((task, i) => `
+    <label class="check-row">
+      <input type="checkbox" data-task="${i}" ${state.tasks[i] ? "checked" : ""}>
+      <span><b>${task.title}</b><span>${task.desc}</span></span>
+      <em class="time-chip">${task.time}</em>
+    </label>
+  `).join("");
+  wrap.querySelectorAll("input").forEach(input => {
+    input.addEventListener("change", () => {
+      state.tasks[input.dataset.task] = input.checked;
+      saveState();
+    });
+  });
+}
+
+function renderPhases() {
+  document.getElementById("phaseList").innerHTML = phases.map((phase, i) => `
+    <article class="phase-card">
+      <header>
+        <div><div class="phase-kicker">阶段 ${i + 1} · ${phase.time}</div><h3>${phase.name}</h3></div>
+        <button class="secondary" onclick="showPage('units')">${i === 0 ? "进入三上单元" : "待扩展"}</button>
+      </header>
+      <p>${phase.points.join("、")}</p>
+      <div class="progress-bar"><i style="--w:${phase.progress}%; background:${phase.color}"></i></div>
+      <div class="phase-meta">建议阶段目标：对应年级测试卷达到70分左右，再进入下一阶段。</div>
+    </article>
+  `).join("");
+}
+
+function renderUnits(active = 0) {
+  document.getElementById("unitTabs").innerHTML = units.map((unit, i) => `
+    <button class="unit-btn ${i === active ? "active" : ""}" data-unit="${i}">${i + 1}. ${unit.title}</button>
+  `).join("");
+  const unit = units[active];
+  document.getElementById("unitSummary").innerHTML = `
+    <div class="phase-kicker">${unit.week}</div>
+    <h2>${unit.title}</h2>
+    <p>${unit.goal}</p>
+    <div class="tag-row">${unit.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}</div>
+  `;
+  document.getElementById("lessonStack").innerHTML = unit.lessons.map((lesson, i) => `
+    <article class="lesson">
+      <header>
+        <h3>课时 ${i + 1}</h3>
+        <span class="time-chip">建议20分钟</span>
+      </header>
+      <p>${lesson}</p>
+      <ul>
+        <li>先讲概念，再做例题。</li>
+        <li>让孩子用自己的话复述思路。</li>
+        <li>做错时记录错因，不急着刷下一题。</li>
+      </ul>
+      <div class="lesson-actions">
+        <button class="primary" onclick="showPage('practice')">去练习</button>
+        <button class="secondary" onclick="showPage('records')">记错题</button>
+      </div>
+    </article>
+  `).join("");
+  document.querySelectorAll(".unit-btn").forEach(btn => {
+    btn.addEventListener("click", () => renderUnits(Number(btn.dataset.unit)));
+  });
+}
+
+function renderPractice() {
+  document.getElementById("practiceGrid").innerHTML = practices.map(item => `
+    <article class="card practice-card">
+      <span class="tag">${item.unit}</span>
+      <h3>${item.q}</h3>
+      <p>点击按钮查看答案，讲题时要求孩子说出理由。</p>
+      <button class="secondary">查看答案</button>
+      <div class="answer">${item.a}</div>
+    </article>
+  `).join("");
+  document.querySelectorAll(".practice-card button").forEach(btn => {
+    btn.addEventListener("click", () => btn.closest(".practice-card").classList.toggle("revealed"));
+  });
+}
+
+function renderNotes() {
+  document.getElementById("noteUnit").innerHTML = units.map(u => `<option>${u.title}</option>`).join("");
+  const list = document.getElementById("noteList");
+  list.innerHTML = state.notes.length ? state.notes.map(note => `
+    <article class="note"><b>${note.unit}</b><p>${note.text}</p></article>
+  `).join("") : "<p style='color:var(--muted);line-height:1.8'>还没有记录。第一次保存后，这里会显示孩子的错题和复盘点。</p>";
+}
+
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(page => page.classList.toggle("active", page.id === id));
+  document.querySelectorAll(".nav button").forEach(btn => btn.classList.toggle("active", btn.dataset.page === id));
+  const activeBtn = document.querySelector(`.nav button[data-page="${id}"]`);
+  document.getElementById("pageTitle").textContent = activeBtn ? activeBtn.textContent.trim() : "学习平台";
+  document.body.classList.remove("menu-open");
+  window.scrollTo({top: 0, behavior: "smooth"});
+}
+
+document.querySelectorAll(".nav button").forEach(btn => {
+  btn.addEventListener("click", () => showPage(btn.dataset.page));
+});
+
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.body.classList.toggle("menu-open");
+});
+
+document.getElementById("saveNote").addEventListener("click", () => {
+  const text = document.getElementById("noteText").value.trim();
+  if (!text) return;
+  state.notes.unshift({unit: document.getElementById("noteUnit").value, text});
+  document.getElementById("noteText").value = "";
+  saveState();
+  renderNotes();
+});
+
+document.querySelectorAll(".library-actions button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.getElementById("libraryFrame").src = btn.dataset.src;
+    document.querySelectorAll(".library-actions button").forEach(b => b.className = "secondary");
+    btn.className = "primary";
+  });
+});
+
+renderDaily();
+renderPhases();
+renderUnits();
+renderPractice();
+renderNotes();
+renderProgress();
+</script>
+</body>
+</html>

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版数学补习计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --ink: #1c1c2e;
+  --red: #c0392b;
+  --orange: #d35400;
+  --gold: #d4a017;
+  --green: #1e8449;
+  --blue: #1a5276;
+  --light-blue: #2e86c1;
+  --bg: #fdf8f0;
+  --paper: #fffdf8;
+  --border: #c9a84c;
+  --muted: #7f8c8d;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  font-family: 'Noto Sans SC', sans-serif;
+  color: var(--ink);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #1c1c2e 0%, #2d2d44 100%);
+  padding: 44px 28px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '学';
+  position: absolute; right: 10px; top: -30px;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 260px; font-weight: 700;
+  color: rgba(255,255,255,0.035);
+  pointer-events: none; line-height: 1;
+}
+.badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #1c1c2e;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px;
+  padding: 4px 12px;
+  border-radius: 2px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.hero h1 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: clamp(22px, 4.5vw, 36px);
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.hero h1 em { color: var(--gold); font-style: normal; }
+.hero p {
+  color: rgba(255,255,255,0.55);
+  font-size: 13.5px;
+  line-height: 1.9;
+  max-width: 580px;
+}
+
+/* PROFILE STRIP */
+.profile {
+  background: #161627;
+  display: flex; flex-wrap: wrap; gap: 10px;
+  padding: 16px 28px;
+}
+.ptag {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(212,160,23,0.3);
+  color: rgba(255,255,255,0.8);
+  padding: 5px 13px;
+  border-radius: 20px;
+  font-size: 12.5px;
+}
+.ptag b { color: var(--gold); }
+
+/* MAIN */
+.main { max-width: 860px; margin: 0 auto; padding: 28px 20px 60px; }
+
+/* ALERT BOX */
+.alert {
+  background: #fff8e1;
+  border-left: 4px solid var(--gold);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-bottom: 28px;
+  font-size: 13.5px;
+  line-height: 1.8;
+  color: #5d4037;
+}
+.alert strong { color: #b7770d; }
+
+/* SECTION HEADING */
+.sec-head {
+  display: flex; align-items: center; gap: 12px;
+  margin: 32px 0 16px;
+}
+.sec-num {
+  width: 34px; height: 34px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 700;
+  flex-shrink: 0;
+}
+.sec-head h2 {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 18px; font-weight: 700;
+}
+
+/* PHASE CARDS */
+.phase {
+  border: 1.5px solid #e0d4b8;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background: var(--paper);
+  overflow: hidden;
+}
+.phase-header {
+  display: flex; align-items: stretch;
+  border-bottom: 1.5px solid #e0d4b8;
+}
+.phase-stripe {
+  width: 8px;
+  flex-shrink: 0;
+}
+.phase-meta {
+  padding: 14px 16px;
+  flex: 1;
+}
+.phase-label {
+  font-size: 10.5px; letter-spacing: 2px; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.phase-title {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 16px; font-weight: 700;
+}
+.phase-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.phase-duration {
+  padding: 14px 16px;
+  text-align: right;
+  display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
+  gap: 2px;
+  background: rgba(0,0,0,0.02);
+  border-left: 1px solid #e0d4b8;
+  min-width: 100px;
+}
+.phase-duration .dur-num {
+  font-size: 22px; font-weight: 700;
+  line-height: 1;
+}
+.phase-duration .dur-unit { font-size: 11px; color: var(--muted); }
+
+/* COLOR THEMES */
+.c-red   .phase-stripe { background: #e74c3c; }
+.c-red   .phase-label  { color: #c0392b; }
+.c-red   .phase-duration .dur-num { color: #c0392b; }
+
+.c-orange .phase-stripe { background: #e67e22; }
+.c-orange .phase-label  { color: #d35400; }
+.c-orange .phase-duration .dur-num { color: #d35400; }
+
+.c-green .phase-stripe { background: #27ae60; }
+.c-green .phase-label  { color: #1e8449; }
+.c-green .phase-duration .dur-num { color: #1e8449; }
+
+.c-blue  .phase-stripe { background: #2980b9; }
+.c-blue  .phase-label  { color: #1a5276; }
+.c-blue  .phase-duration .dur-num { color: #1a5276; }
+
+/* TOPIC LIST */
+.phase-body { padding: 16px 18px; }
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.topic {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 13px; line-height: 1.6;
+}
+.topic-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.c-red .topic-dot   { background: #e74c3c; }
+.c-orange .topic-dot { background: #e67e22; }
+.c-green .topic-dot  { background: #27ae60; }
+.c-blue .topic-dot   { background: #2980b9; }
+
+/* KEY TIPS */
+.tips {
+  background: #f8f5ee;
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-top: 4px;
+}
+.tips-title {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.tip-row {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 12.5px; line-height: 1.7;
+  margin-bottom: 4px;
+  color: #444;
+}
+.tip-row span:first-child { flex-shrink: 0; }
+
+/* DAILY SCHEDULE */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.sched-card {
+  background: var(--paper);
+  border: 1.5px solid #e0d4b8;
+  border-radius: 8px;
+  padding: 14px 12px;
+  text-align: center;
+}
+.sched-icon { font-size: 24px; margin-bottom: 6px; }
+.sched-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+.sched-val { font-size: 15px; font-weight: 700; color: var(--ink); }
+
+/* PRINCIPLE CARDS */
+.principle-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+.p-card {
+  background: var(--paper);
+  border: 1.5px solid #e0d4b8;
+  border-radius: 8px;
+  padding: 16px 14px;
+}
+.p-card-icon { font-size: 22px; margin-bottom: 8px; }
+.p-card-title { font-weight: 700; font-size: 14px; margin-bottom: 6px; }
+.p-card-text { font-size: 12.5px; color: #555; line-height: 1.75; }
+
+/* MILESTONE TABLE */
+.milestone-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px;
+}
+.milestone-table th {
+  background: var(--ink); color: #fff;
+  padding: 10px 14px; text-align: left;
+  font-weight: 500; font-size: 12px;
+}
+.milestone-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5dcc8;
+  vertical-align: top;
+  line-height: 1.6;
+}
+.milestone-table tr:nth-child(even) td { background: #faf6ed; }
+.milestone-table .check { color: var(--green); font-weight: 700; }
+
+/* RESOURCE BOX */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.r-card {
+  background: var(--paper);
+  border: 1.5px solid #e0d4b8;
+  border-radius: 8px;
+  padding: 14px;
+}
+.r-card-label {
+  font-size: 10px; letter-spacing: 2px; font-weight: 700;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.r-card-title { font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.r-card-text { font-size: 12.5px; color: #555; line-height: 1.7; }
+
+/* WARNING BOX */
+.warn-box {
+  background: #fdecea;
+  border-left: 4px solid #e74c3c;
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: 28px;
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: #6d1c1c;
+}
+.warn-box strong { color: #c0392b; }
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 32px 20px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid #e0d4b8;
+  margin-top: 40px;
+}
+
+/* DIVIDER */
+.divider {
+  height: 1px; background: #e0d4b8;
+  margin: 28px 0;
+}
+
+@media(max-width:500px){
+  .hero { padding: 32px 18px 24px; }
+  .profile { padding: 12px 18px; }
+  .main { padding: 20px 14px 48px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">人教版 · 数学补习方案</div>
+  <h1>从三年级基础出发<br><em>系统追赶五年级数学</em></h1>
+  <p>针对现阶段掌握薄弱的情况，从三年级知识点重建地基，分阶段稳步推进，目标：半年内跟上班级进度。</p>
+</div>
+
+<!-- PROFILE -->
+<div class="profile">
+  <span class="ptag">👦 男孩 · <b>12岁</b></span>
+  <span class="ptag">📚 <b>五年级</b> 在读</span>
+  <span class="ptag">📖 <b>人教版</b>教材</span>
+  <span class="ptag">📊 当前分数 <b>10几分</b></span>
+  <span class="ptag">🎯 补习起点：<b>三年级上册</b></span>
+  <span class="ptag">⏱ 预计周期：<b>4～6个月</b></span>
+</div>
+
+<div class="main">
+
+  <!-- 核心提示 -->
+  <div class="alert">
+    <strong>先明确一件事：</strong>10几分不代表孩子笨，大概率是<strong>基础断层</strong>——某个阶段的知识点没学牢，后面越学越看不懂。从三年级重新打好地基，是最有效的方法，不要怕"丢脸"，要怕"越来越跟不上"。
+  </div>
+
+  <!-- 每日安排 -->
+  <div class="sec-head">
+    <div class="sec-num">①</div>
+    <h2>每日学习安排建议</h2>
+  </div>
+  <div class="schedule-grid">
+    <div class="sched-card">
+      <div class="sched-icon">⏰</div>
+      <div class="sched-label">每天补习时长</div>
+      <div class="sched-val">40～60 分钟</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-icon">📝</div>
+      <div class="sched-label">新知识学习</div>
+      <div class="sched-val">20 分钟</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-icon">✏️</div>
+      <div class="sched-label">例题 + 练习</div>
+      <div class="sched-val">20 分钟</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-icon">🔁</div>
+      <div class="sched-label">复习上节内容</div>
+      <div class="sched-val">10 分钟</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-icon">📅</div>
+      <div class="sched-label">每周复习日</div>
+      <div class="sched-val">周日 全复习</div>
+    </div>
+    <div class="sched-card">
+      <div class="sched-icon">🎮</div>
+      <div class="sched-label">休息很重要</div>
+      <div class="sched-val">不要超量！</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 阶段规划 -->
+  <div class="sec-head">
+    <div class="sec-num">②</div>
+    <h2>四阶段补习路线（人教版）</h2>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase c-red">
+    <div class="phase-header">
+      <div class="phase-stripe"></div>
+      <div class="phase-meta">
+        <div class="phase-label">第一阶段 · 打地基</div>
+        <div class="phase-title">三年级上下册核心知识</div>
+        <div class="phase-sub">人教版三年级上册 + 下册</div>
+      </div>
+      <div class="phase-duration">
+        <div class="dur-num">3～4</div>
+        <div class="dur-unit">周</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="topic-grid">
+        <div class="topic"><span class="topic-dot"></span><span><b>万以内加减法</b>（竖式、进退位）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>乘法口诀表</b> 必须背熟！</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>两位数 × 一位数</b> 笔算</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>除法初步</b>（平均分、竖式）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>时、分、秒</b> 换算</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>长方形/正方形</b> 周长</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>万以内数的认识</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>简单统计表/条形图</b></span></div>
+      </div>
+      <div class="tips">
+        <div class="tips-title">⚑ 重点提示</div>
+        <div class="tip-row"><span>🔴</span><span><b>乘法口诀是重中之重</b>——如果背不熟，四年级以上的乘除法全部卡住。每天早上大声背5遍，用游戏方式测试（问"8×7=?"抢答）。</span></div>
+        <div class="tip-row"><span>🔴</span><span>竖式计算要<b>对齐数位</b>，这是很多孩子计算错误的根本原因，一开始要慢慢写，不要追求速度。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase c-orange">
+    <div class="phase-header">
+      <div class="phase-stripe"></div>
+      <div class="phase-meta">
+        <div class="phase-label">第二阶段 · 搭框架</div>
+        <div class="phase-title">四年级上下册核心知识</div>
+        <div class="phase-sub">人教版四年级上册 + 下册</div>
+      </div>
+      <div class="phase-duration">
+        <div class="dur-num">4～5</div>
+        <div class="dur-unit">周</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="topic-grid">
+        <div class="topic"><span class="topic-dot"></span><span><b>亿以内数</b> 的认识与写法</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>三位数 × 两位数</b> 笔算</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>除数是两位数</b> 的除法</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>角的认识</b>（锐角、直角、钝角）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>平行与垂直</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>长方形/正方形</b> 面积</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>小数的初步认识</b>（★关键！）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>小数加减法</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>四则运算顺序</b>（混合运算）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>运算律</b>（加法交换律、乘法分配律）</span></div>
+      </div>
+      <div class="tips">
+        <div class="tips-title">⚑ 重点提示</div>
+        <div class="tip-row"><span>🟠</span><span><b>小数的认识是四年级最大难点</b>，也是五年级小数乘除法的前提。要用现实例子讲（1.5元 = 1元5角），不要只讲规则。</span></div>
+        <div class="tip-row"><span>🟠</span><span>四则运算顺序（先乘除后加减、有括号先算括号）<b>必须形成条件反射</b>，是考试最常丢分的地方。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase c-green">
+    <div class="phase-header">
+      <div class="phase-stripe"></div>
+      <div class="phase-meta">
+        <div class="phase-label">第三阶段 · 衔接五年级</div>
+        <div class="phase-title">五年级上册核心知识</div>
+        <div class="phase-sub">人教版五年级上册（与当前班级同步）</div>
+      </div>
+      <div class="phase-duration">
+        <div class="dur-num">4～5</div>
+        <div class="dur-unit">周</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="topic-grid">
+        <div class="topic"><span class="topic-dot"></span><span><b>小数乘法</b>（含小数点移位规律）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>小数除法</b>（★最难，要多练）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>简易方程</b>（x的认识、解方程）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>多边形面积</b>（三角形、平行四边形、梯形）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>统计与可能性</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>因数与倍数</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>奇数、偶数、质数、合数</b></span></div>
+      </div>
+      <div class="tips">
+        <div class="tips-title">⚑ 重点提示</div>
+        <div class="tip-row"><span>🟢</span><span><b>小数除法是五年级最大拦路虎</b>。商的小数点和被除数对齐这个规则，要反复用不同题型巩固，至少做50道以上。</span></div>
+        <div class="tip-row"><span>🟢</span><span>方程是新概念，要让孩子理解"等式两边相等"的平衡感，可以用天平图来帮助理解。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase c-blue">
+    <div class="phase-header">
+      <div class="phase-stripe"></div>
+      <div class="phase-meta">
+        <div class="phase-label">第四阶段 · 稳固提升</div>
+        <div class="phase-title">巩固 + 追上班级进度</div>
+        <div class="phase-sub">综合练习 + 跟随五年级下册学习</div>
+      </div>
+      <div class="phase-duration">
+        <div class="dur-num">持续</div>
+        <div class="dur-unit">进行中</div>
+      </div>
+    </div>
+    <div class="phase-body">
+      <div class="topic-grid">
+        <div class="topic"><span class="topic-dot"></span><span><b>分数的意义与性质</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>分数加减法</b>（通分）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>长方体和正方体</b>（体积表面积）</span></div>
+        <div class="topic"><span class="topic-dot"></span><span><b>用方程解应用题</b></span></div>
+        <div class="topic"><span class="topic-dot"></span><span>每周做一套<b>综合卷</b>检测</span></div>
+        <div class="topic"><span class="topic-dot"></span><span>针对错题<b>专项突破</b></span></div>
+      </div>
+      <div class="tips">
+        <div class="tips-title">⚑ 重点提示</div>
+        <div class="tip-row"><span>🔵</span><span>进入这一阶段说明基础已稳。重点转向<b>应用题理解</b>——读题、画图、找等量关系，这是提分关键。</span></div>
+        <div class="tip-row"><span>🔵</span><span>建立<b>错题本</b>，每周翻看，反复做同类型题，直到不再出错。</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 阶段里程碑 -->
+  <div class="sec-head">
+    <div class="sec-num">③</div>
+    <h2>阶段目标检验（怎么知道学会了？）</h2>
+  </div>
+  <table class="milestone-table">
+    <thead>
+      <tr>
+        <th>阶段结束</th>
+        <th>会做的题型</th>
+        <th>目标分数</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><b>三年级通关后</b></td>
+        <td>乘法口诀默写全对；万以内加减竖式不出错；能算简单面积</td>
+        <td class="check">三年级卷 ≥ 70分</td>
+      </tr>
+      <tr>
+        <td><b>四年级通关后</b></td>
+        <td>三位数乘两位数；两位数除法；小数加减；混合运算顺序正确</td>
+        <td class="check">四年级卷 ≥ 70分</td>
+      </tr>
+      <tr>
+        <td><b>五年级上通关后</b></td>
+        <td>小数乘除法；解简单方程；三角形梯形面积</td>
+        <td class="check">班级测验 ≥ 50分</td>
+      </tr>
+      <tr>
+        <td><b>4～6个月后</b></td>
+        <td>跟上班级进度，能独立完成作业</td>
+        <td class="check">班级测验 ≥ 70分</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="divider"></div>
+
+  <!-- 教学原则 -->
+  <div class="sec-head">
+    <div class="sec-num">④</div>
+    <h2>给家长/辅导老师的核心原则</h2>
+  </div>
+  <div class="principle-list">
+    <div class="p-card">
+      <div class="p-card-icon">🐢</div>
+      <div class="p-card-title">宁慢勿快</div>
+      <div class="p-card-text">一个知识点没真正掌握，绝不往下走。"做对了"不够，要"说出为什么"才算学会。</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-icon">👍</div>
+      <div class="p-card-title">大量鼓励</div>
+      <div class="p-card-text">12岁男孩对"笨"非常敏感。每次进步都要明确表扬（"这题你上周还不会，现在做对了！"），建立信心比题量更重要。</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-icon">🎯</div>
+      <div class="p-card-title">小目标驱动</div>
+      <div class="p-card-text">设置每周小目标（如"这周把除法竖式做熟"），完成后给予奖励，不要讲大道理，要讲具体进步。</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-icon">📖</div>
+      <div class="p-card-title">口算要每天练</div>
+      <div class="p-card-text">每天5分钟口算练习（20道以内），用人教版配套口算题卡。口算速度提升后，整体计算效率会明显提高。</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-icon">🗣️</div>
+      <div class="p-card-title">让他讲题</div>
+      <div class="p-card-text">做完一道题，让孩子用自己的话说说"怎么想的"。说得出来才是真正懂了，说不出来就是在猜。</div>
+    </div>
+    <div class="p-card">
+      <div class="p-card-icon">❌</div>
+      <div class="p-card-title">避免题海战术</div>
+      <div class="p-card-text">不是题做得越多越好。10道题弄明白，比100道题走马观花强10倍。精做、精讲、精析错题。</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 推荐资源 -->
+  <div class="sec-head">
+    <div class="sec-num">⑤</div>
+    <h2>推荐配套资源</h2>
+  </div>
+  <div class="resource-grid">
+    <div class="r-card">
+      <div class="r-card-label">教材</div>
+      <div class="r-card-title">人教版数学教材</div>
+      <div class="r-card-text">从三年级上册教材开始，按顺序跟着例题走，不要跳。教材例题是最好的入门材料。</div>
+    </div>
+    <div class="r-card">
+      <div class="r-card-label">练习册</div>
+      <div class="r-card-title">人教版同步练习册</div>
+      <div class="r-card-text">每册配套的《同步练习》或《课堂作业本》，题量合适，不偏不怪。</div>
+    </div>
+    <div class="r-card">
+      <div class="r-card-label">口算</div>
+      <div class="r-card-title">人教版口算题卡</div>
+      <div class="r-card-text">专项口算训练，从三年级题卡开始，每天一页，约5分钟，持续2个月见效。</div>
+    </div>
+    <div class="r-card">
+      <div class="r-card-label">视频讲解</div>
+      <div class="r-card-title">网课辅助</div>
+      <div class="r-card-text">B站搜"人教版三年级数学"有大量免费讲解视频，适合孩子自主预习或复习。</div>
+    </div>
+    <div class="r-card">
+      <div class="r-card-label">错题管理</div>
+      <div class="r-card-title">错题本（必备）</div>
+      <div class="r-card-text">准备一本专门的错题本，把每次做错的题抄上去，写清楚"哪里错了"，每周回顾。</div>
+    </div>
+    <div class="r-card">
+      <div class="r-card-label">检测</div>
+      <div class="r-card-title">各年级期末真题卷</div>
+      <div class="r-card-text">每个阶段结束后，下载对应年级的期末真题卷做一遍，检验是否真正掌握。</div>
+    </div>
+  </div>
+
+  <!-- 警示 -->
+  <div class="warn-box">
+    <strong>⚠️ 特别注意：</strong>如果孩子出现明显的学习厌恶、抵触情绪，<strong>先停下来聊聊</strong>，找出原因（是没听懂？是太累？还是受过打击？）。强迫学习会让孩子越来越怕数学。耐心和信任是整个补习计划的前提。<br><br>
+    数学是<strong>积累性学科</strong>——只要地基打好，分数会突然跳升，家长要有耐心等待那个"拐点"出现。
+  </div>
+
+</div>
+
+<div class="footer">
+  人教版数学补习方案 · 专为五年级追赶制定 · 建议每月重新评估进度并调整计划
+</div>
+
+</body>
+</html>

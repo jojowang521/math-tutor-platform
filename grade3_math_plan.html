@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版三年级上册数学 · 详细补习计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg: #f5f0e8;
+  --paper: #fffdf7;
+  --ink: #1a1a2e;
+  --red: #c0392b;
+  --orange: #d35400;
+  --gold: #b8860b;
+  --green: #1a6b3c;
+  --blue: #1a4f7a;
+  --purple: #6b3fa0;
+  --muted: #7a7060;
+  --border: #d8ccb0;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  font-family: 'Noto Sans SC', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.header {
+  background: var(--ink);
+  padding: 36px 24px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(255,255,255,0.015) 20px,
+    rgba(255,255,255,0.015) 40px
+  );
+}
+.header-inner { position: relative; max-width: 900px; margin: 0 auto; }
+.header-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(184,134,11,0.2);
+  border: 1px solid rgba(184,134,11,0.5);
+  color: #f0c040;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; padding: 4px 12px;
+  border-radius: 2px; margin-bottom: 14px;
+}
+.header h1 {
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: clamp(24px, 5vw, 38px);
+  color: #fff; line-height: 1.35;
+  margin-bottom: 10px;
+}
+.header h1 span { color: #f0c040; }
+.header-desc {
+  color: rgba(255,255,255,0.5);
+  font-size: 13px; line-height: 1.9;
+}
+.header-stats {
+  display: flex; flex-wrap: wrap; gap: 16px;
+  margin-top: 20px;
+}
+.hstat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 16px; border-radius: 4px;
+  text-align: center;
+}
+.hstat-n { font-size: 20px; font-weight: 700; color: #f0c040; }
+.hstat-l { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 1px; }
+
+/* ===== NAV TABS ===== */
+.nav-wrap {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.nav-tabs {
+  display: flex; overflow-x: auto;
+  max-width: 900px; margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab {
+  flex-shrink: 0;
+  padding: 14px 18px;
+  border: none; background: none;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 13px; cursor: pointer;
+  color: var(--muted);
+  border-bottom: 3px solid transparent;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.nav-tab:hover { color: var(--ink); }
+.nav-tab.active {
+  color: var(--ink);
+  font-weight: 700;
+  border-bottom-color: var(--ink);
+}
+.nav-tab .tab-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  font-size: 10px; font-weight: 700;
+  margin-right: 6px;
+  background: var(--border);
+  color: var(--muted);
+}
+.nav-tab.active .tab-num {
+  color: #fff;
+}
+
+/* ===== MAIN ===== */
+.main { max-width: 900px; margin: 0 auto; padding: 28px 16px 60px; }
+
+/* ===== UNIT PAGE ===== */
+.unit-page { display: none; }
+.unit-page.active { display: block; }
+
+/* Unit Header */
+.unit-header {
+  border-radius: 10px;
+  padding: 22px 24px;
+  margin-bottom: 20px;
+  position: relative; overflow: hidden;
+}
+.unit-header::after {
+  content: attr(data-icon);
+  position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px; opacity: 0.12;
+  line-height: 1;
+}
+.unit-week { font-size: 11px; font-weight: 700; letter-spacing: 2px; opacity: 0.75; margin-bottom: 6px; }
+.unit-title { font-family: 'ZCOOL XiaoWei', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+.unit-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+.u-red    { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+.u-orange { background: linear-gradient(135deg, #d35400, #e67e22); }
+.u-green  { background: linear-gradient(135deg, #1a6b3c, #27ae60); }
+.u-blue   { background: linear-gradient(135deg, #1a4f7a, #2980b9); }
+.u-purple { background: linear-gradient(135deg, #6b3fa0, #9b59b6); }
+.u-teal   { background: linear-gradient(135deg, #117a65, #1abc9c); }
+.u-brown  { background: linear-gradient(135deg, #7b4e2c, #c0874a); }
+.u-navy   { background: linear-gradient(135deg, #1a2a4a, #2c4a7a); }
+
+/* Color tab accents */
+.nav-tab[data-unit="0"].active { border-bottom-color: #c0392b; color: #c0392b; }
+.nav-tab[data-unit="0"].active .tab-num { background: #c0392b; }
+.nav-tab[data-unit="1"].active { border-bottom-color: #d35400; color: #d35400; }
+.nav-tab[data-unit="1"].active .tab-num { background: #d35400; }
+.nav-tab[data-unit="2"].active { border-bottom-color: #1a6b3c; color: #1a6b3c; }
+.nav-tab[data-unit="2"].active .tab-num { background: #1a6b3c; }
+.nav-tab[data-unit="3"].active { border-bottom-color: #1a4f7a; color: #1a4f7a; }
+.nav-tab[data-unit="3"].active .tab-num { background: #1a4f7a; }
+.nav-tab[data-unit="4"].active { border-bottom-color: #6b3fa0; color: #6b3fa0; }
+.nav-tab[data-unit="4"].active .tab-num { background: #6b3fa0; }
+.nav-tab[data-unit="5"].active { border-bottom-color: #117a65; color: #117a65; }
+.nav-tab[data-unit="5"].active .tab-num { background: #117a65; }
+.nav-tab[data-unit="6"].active { border-bottom-color: #7b4e2c; color: #7b4e2c; }
+.nav-tab[data-unit="6"].active .tab-num { background: #7b4e2c; }
+.nav-tab[data-unit="7"].active { border-bottom-color: #1a2a4a; color: #1a2a4a; }
+.nav-tab[data-unit="7"].active .tab-num { background: #1a2a4a; }
+
+/* ===== KNOWLEDGE SECTION ===== */
+.section-label {
+  display: flex; align-items: center; gap: 10px;
+  margin: 0 0 14px;
+}
+.section-label .sl-icon {
+  width: 28px; height: 28px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.section-label h3 { font-size: 15px; font-weight: 700; }
+
+.knowledge-box {
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.kp-list { list-style: none; }
+.kp-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 13.5px; line-height: 1.75;
+}
+.kp-item:last-child { border-bottom: none; padding-bottom: 0; }
+.kp-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  margin-top: 7px; flex-shrink: 0;
+}
+.kp-item strong { color: var(--ink); }
+.kp-item .kp-note {
+  display: block;
+  font-size: 12px; color: var(--muted);
+  margin-top: 2px;
+}
+
+/* Key formula box */
+.formula-box {
+  background: #fff9e6;
+  border: 1.5px solid #e8c84a;
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-top: 12px;
+}
+.formula-title {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; color: #9a7c00;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.formula-row {
+  font-size: 14px; font-weight: 700;
+  color: #5a4000;
+  padding: 4px 0;
+  line-height: 1.6;
+}
+
+/* ===== EXERCISES ===== */
+.ex-box {
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.ex-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1.5px solid var(--border);
+  background: #faf6ec;
+}
+.ex-type {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted);
+}
+.ex-difficulty {
+  display: flex; gap: 3px;
+}
+.ex-star { font-size: 13px; }
+
+.ex-body { padding: 16px 18px; }
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.ex-item {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: all .2s;
+  position: relative;
+}
+.ex-item:hover { border-color: #aaa; background: #f0ebe0; }
+.ex-q { font-size: 15px; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+.ex-blank {
+  display: inline-block;
+  min-width: 40px; height: 22px;
+  border-bottom: 2px solid var(--ink);
+  vertical-align: bottom;
+  text-align: center;
+  font-weight: 700;
+  color: var(--green);
+  font-size: 15px;
+}
+.ex-ans {
+  display: none;
+  font-size: 12px;
+  color: var(--green);
+  margin-top: 6px;
+  font-weight: 700;
+}
+.ex-item.revealed .ex-ans { display: block; }
+.ex-item.revealed { background: #edf7f0; border-color: #7dbe9a; }
+
+/* Show answer button */
+.show-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px; cursor: pointer;
+  color: var(--muted);
+  transition: all .2s;
+  margin-top: 4px;
+}
+.show-btn:hover { border-color: var(--green); color: var(--green); }
+.show-btn.revealed { color: var(--green); border-color: var(--green); background: #edf7f0; }
+
+/* Word problems */
+.word-problem {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all .2s;
+}
+.word-problem:hover { border-color: #aaa; }
+.wp-num {
+  display: inline-block;
+  background: var(--ink); color: #fff;
+  font-size: 11px; font-weight: 700;
+  width: 22px; height: 22px; border-radius: 50%;
+  text-align: center; line-height: 22px;
+  margin-right: 8px; flex-shrink: 0;
+}
+.wp-q { font-size: 13.5px; line-height: 1.8; }
+.wp-hint {
+  font-size: 12px; color: var(--muted);
+  margin-top: 6px; font-style: italic;
+}
+.wp-ans {
+  display: none;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: 13px; color: var(--green);
+  line-height: 1.75;
+}
+.wp-ans strong { font-size: 14px; }
+.word-problem.revealed { background: #edf7f0; border-color: #7dbe9a; }
+.word-problem.revealed .wp-ans { display: block; }
+
+/* Tips */
+.tip-box {
+  background: #fff3e0;
+  border-left: 4px solid var(--orange);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 10px 0;
+  font-size: 13px; line-height: 1.8; color: #7a3b00;
+}
+.tip-box b { color: #d35400; }
+
+/* Progress tracker */
+.progress-wrap {
+  background: var(--paper);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+.progress-title { font-size: 13px; font-weight: 700; margin-bottom: 10px; }
+.progress-bar-outer {
+  height: 8px; background: var(--border);
+  border-radius: 4px; overflow: hidden;
+  margin-bottom: 6px;
+}
+.progress-bar-inner {
+  height: 100%; border-radius: 4px;
+  transition: width .4s ease;
+}
+.progress-text { font-size: 12px; color: var(--muted); }
+.progress-score { font-size: 13px; font-weight: 700; color: var(--green); }
+
+/* Checklist */
+.checklist { list-style: none; }
+.check-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border);
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.check-item:last-child { border-bottom: none; }
+.check-box {
+  width: 20px; height: 20px; border-radius: 4px;
+  border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: 12px;
+  transition: all .2s;
+}
+.check-item.done .check-box {
+  background: var(--green); border-color: var(--green); color: #fff;
+}
+.check-item.done .check-text { text-decoration: line-through; color: var(--muted); }
+
+/* Divider */
+.divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+/* Two-col */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+@media(max-width: 540px) { .two-col { grid-template-columns: 1fr; } }
+
+/* Vertical layout drill */
+.vertical-drill {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin-bottom: 12px;
+}
+.v-item {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 18px;
+  min-width: 110px;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Courier New', monospace;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.v-item:hover { border-color: #aaa; }
+.v-item .v-line { white-space: pre; }
+.v-item .v-sep { border-top: 2px solid var(--ink); margin: 4px 0; }
+.v-item .v-ans { color: var(--green); font-weight: 700; display: none; }
+.v-item.revealed { background: #edf7f0; border-color: #7dbe9a; }
+.v-item.revealed .v-ans { display: block; }
+
+.ex-note {
+  font-size: 12px; color: var(--muted);
+  margin-bottom: 12px;
+  display: flex; align-items: center; gap: 6px;
+}
+
+/* Multiplication table */
+.mult-table-wrap { overflow-x: auto; margin-bottom: 12px; }
+.mult-table {
+  border-collapse: collapse;
+  font-size: 13px; min-width: 400px;
+}
+.mult-table td, .mult-table th {
+  border: 1px solid var(--border);
+  padding: 7px 10px;
+  text-align: center;
+}
+.mult-table th {
+  background: var(--ink); color: #fff; font-size: 12px;
+}
+.mult-table td.blank {
+  background: #fef9ed;
+  font-weight: 700; color: var(--green);
+  cursor: pointer;
+}
+.mult-table td.filled { background: #edf7f0; color: var(--green); font-weight: 700; }
+
+/* Clock face */
+.clock-section { text-align: center; margin: 12px 0; }
+.clock-svg { width: 120px; height: 120px; }
+
+/* SCROLL TO TOP */
+.scrolltop {
+  position: fixed; bottom: 24px; right: 20px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--ink); color: #fff;
+  border: none; cursor: pointer;
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  opacity: 0; transition: opacity .3s;
+  z-index: 200;
+}
+.scrolltop.visible { opacity: 1; }
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">📚 人教版 · 三年级上册 · 数学补习</div>
+    <h1>三年级上册<span>完整补习计划</span></h1>
+    <p>8个单元 · 知识点精讲 + 分层练习题 · 点击题目可查看答案<br>建议每天1个模块，扎实掌握后再进入下一模块</p>
+    <div class="header-stats">
+      <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">个单元</div></div>
+      <div class="hstat"><div class="hstat-n">3~4</div><div class="hstat-l">建议周数</div></div>
+      <div class="hstat"><div class="hstat-n">200+</div><div class="hstat-l">道练习题</div></div>
+      <div class="hstat"><div class="hstat-n">点击</div><div class="hstat-l">查看答案</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV TABS -->
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-unit="0" onclick="showUnit(0)">
+      <span class="tab-num">1</span>时分秒
+    </button>
+    <button class="nav-tab" data-unit="1" onclick="showUnit(1)">
+      <span class="tab-num">2</span>万以内加减法
+    </button>
+    <button class="nav-tab" data-unit="2" onclick="showUnit(2)">
+      <span class="tab-num">3</span>测量
+    </button>
+    <button class="nav-tab" data-unit="3" onclick="showUnit(3)">
+      <span class="tab-num">4</span>万以内乘法
+    </button>
+    <button class="nav-tab" data-unit="4" onclick="showUnit(4)">
+      <span class="tab-num">5</span>倍的认识
+    </button>
+    <button class="nav-tab" data-unit="5" onclick="showUnit(5)">
+      <span class="tab-num">6</span>多位数乘一位数
+    </button>
+    <button class="nav-tab" data-unit="6" onclick="showUnit(6)">
+      <span class="tab-num">7</span>长方形正方形
+    </button>
+    <button class="nav-tab" data-unit="7" onclick="showUnit(7)">
+      <span class="tab-num">8</span>分数初步认识
+    </button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ============================================================ -->
+<!-- UNIT 0: 时分秒 -->
+<!-- ============================================================ -->
+<div class="unit-page active" id="unit-0">
+  <div class="unit-header u-red" data-icon="⏰">
+    <div class="unit-week">第1单元 · 建议学习：3天</div>
+    <div class="unit-title">时、分、秒</div>
+    <div class="unit-desc">认识时间单位，学会看钟表，掌握时间换算和简单的时间计算</div>
+  </div>
+
+  <!-- 知识点 -->
+  <div class="section-label">
+    <div class="sl-icon" style="background:#fde8e8;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0392b"></span>
+        <div>
+          <strong>时间单位：时、分、秒</strong>
+          <span class="kp-note">时钟上的长针是分针，短针是时针，最细的是秒针</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0392b"></span>
+        <div>
+          <strong>换算关系（必须背！）</strong>
+          <span class="kp-note">1时 = 60分 &nbsp;|&nbsp; 1分 = 60秒 &nbsp;|&nbsp; 1时 = 3600秒</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0392b"></span>
+        <div>
+          <strong>读时间方法</strong>
+          <span class="kp-note">先看时针（短针）读小时；再看分针（长针）读分钟。分针指1表示5分，指2表示10分，以此类推</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0392b"></span>
+        <div>
+          <strong>时间的计算</strong>
+          <span class="kp-note">结束时间 - 开始时间 = 经过时间；若分钟不够减，向小时借1（借1当60分）</span>
+        </div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 关键公式</div>
+      <div class="formula-row">1时 = 60分 &nbsp;&nbsp; 1分 = 60秒</div>
+      <div class="formula-row">经过时间 = 结束时间 − 开始时间</div>
+      <div class="formula-row">结束时间 = 开始时间 + 经过时间</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <b>学习技巧：</b>拿一个真实的时钟（或手机），随机说一个时间让孩子拨针，或者拨好针让他读出来。每天练5分钟，比做题更有效。
+  </div>
+
+  <!-- 练习一：换算 -->
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#fde8e8;">✏️</div>
+    <h3>练习一：时间换算（基础）</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">填空题 · 换算</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-note">👆 点击每道题查看答案</div>
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">2时 = <span class="ex-blank"></span>分</div>
+          <div class="ex-ans">✓ 答案：120分</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">3分 = <span class="ex-blank"></span>秒</div>
+          <div class="ex-ans">✓ 答案：180秒</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">120分 = <span class="ex-blank"></span>时</div>
+          <div class="ex-ans">✓ 答案：2时</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">90秒 = <span class="ex-blank"></span>分<span class="ex-blank"></span>秒</div>
+          <div class="ex-ans">✓ 答案：1分30秒</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">1时30分 = <span class="ex-blank"></span>分</div>
+          <div class="ex-ans">✓ 答案：90分</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">4分20秒 = <span class="ex-blank"></span>秒</div>
+          <div class="ex-ans">✓ 答案：260秒</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">半小时 = <span class="ex-blank"></span>分</div>
+          <div class="ex-ans">✓ 答案：30分</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">2时45分 = <span class="ex-blank"></span>分</div>
+          <div class="ex-ans">✓ 答案：165分</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 练习二：时间计算 -->
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">计算题 · 经过时间</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">8:00 → 8:45<br>经过<span class="ex-blank"></span>分钟</div>
+          <div class="ex-ans">✓ 答案：45分钟</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">9:30 → 10:00<br>经过<span class="ex-blank"></span>分钟</div>
+          <div class="ex-ans">✓ 答案：30分钟</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">7:50 → 8:20<br>经过<span class="ex-blank"></span>分钟</div>
+          <div class="ex-ans">✓ 答案：30分钟</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">2:40 → 3:10<br>经过<span class="ex-blank"></span>分钟</div>
+          <div class="ex-ans">✓ 答案：30分钟</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 应用题 -->
+  <div class="section-label">
+    <div class="sl-icon" style="background:#fde8e8;">🧩</div>
+    <h3>练习三：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">小明8时15分开始写作业，8时50分写完。他写作业用了多少分钟？</div>
+        <div class="wp-hint">💡 提示：用结束时间 - 开始时间</div>
+        <div class="wp-ans">
+          解：50 - 15 = <strong>35分钟</strong><br>
+          答：小明写作业用了35分钟。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">一节课40分钟，从8:00开始上课，什么时候下课？</div>
+        <div class="wp-hint">💡 提示：开始时间 + 经过时间 = 结束时间</div>
+        <div class="wp-ans">
+          解：8时0分 + 40分 = <strong>8时40分</strong><br>
+          答：8时40分下课。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">3</span>
+      <div>
+        <div class="wp-q">爸爸从家出发，7时45分出门，乘车25分钟到达公司，请问几时几分到达公司？</div>
+        <div class="wp-hint">💡 提示：45 + 25 = 70分 = 1时10分，所以要进位</div>
+        <div class="wp-ans">
+          解：7时45分 + 25分 = 7时70分 = <strong>8时10分</strong><br>
+          （45+25=70分，70分=1时10分，7时+1时=8时）<br>
+          答：8时10分到达公司。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 1: 万以内加减法 -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-1">
+  <div class="unit-header u-orange" data-icon="➕">
+    <div class="unit-week">第2单元 · 建议学习：5天（最重要！）</div>
+    <div class="unit-title">万以内的加法和减法</div>
+    <div class="unit-desc">竖式计算加减法，掌握进位和退位，这是整个数学的计算基础</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#fde8d8;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#d35400"></span>
+        <div>
+          <strong>加法竖式：相同数位对齐，从个位加起</strong>
+          <span class="kp-note">个位满10向十位进1；十位满10向百位进1；以此类推</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#d35400"></span>
+        <div>
+          <strong>减法竖式：相同数位对齐，从个位减起</strong>
+          <span class="kp-note">个位不够减，从十位借1（当10用）；十位不够减，从百位借1；以此类推</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#d35400"></span>
+        <div>
+          <strong>加法验算：用减法验算（和 - 一个加数 = 另一个加数）</strong>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#d35400"></span>
+        <div>
+          <strong>减法验算：用加法验算（差 + 减数 = 被减数）</strong>
+        </div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 竖式口诀</div>
+      <div class="formula-row">加法：数位对齐，个位起，满十进一</div>
+      <div class="formula-row">减法：数位对齐，个位起，不够借一当十</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <b>常见错误：</b>①数位没有对齐（个位和十位写在一起）②借位后忘记减1 ③进位后忘记加上进来的1。建议用方格纸练习，强制对齐数位。
+  </div>
+
+  <!-- 竖式练习 -->
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#fde8d8;">✏️</div>
+    <h3>练习一：加法竖式（点击看答案）</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">竖式计算 · 加法</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="vertical-drill">
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line">  365</div>
+          <div class="v-line">+ 428</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">  793</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line">  547</div>
+          <div class="v-line">+ 368</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">  915</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 1246</div>
+          <div class="v-line">+ 578</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 1824</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 3865</div>
+          <div class="v-line">+ 2476</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 6341</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line">  789</div>
+          <div class="v-line">+ 456</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 1245</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 4523</div>
+          <div class="v-line">+ 3897</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 8420</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">竖式计算 · 减法（含退位）</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="vertical-drill">
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line">  732</div>
+          <div class="v-line">- 468</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">  264</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 5000</div>
+          <div class="v-line">- 3764</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 1236</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 8001</div>
+          <div class="v-line">- 2546</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 5455</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line">  600</div>
+          <div class="v-line">- 348</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">  252</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 4032</div>
+          <div class="v-line">- 1865</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 2167</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 9000</div>
+          <div class="v-line">- 4567</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 4433</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#fde8d8;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">图书馆上午借出图书486本，下午借出图书358本。这一天共借出图书多少本？</div>
+        <div class="wp-ans">解：486 + 358 = <strong>844本</strong><br>答：这一天共借出图书844本。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">学校有学生1250人，其中女生568人，男生有多少人？</div>
+        <div class="wp-ans">解：1250 - 568 = <strong>682人</strong><br>答：男生有682人。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">3</span>
+      <div>
+        <div class="wp-q">一本书共有365页，小红已经读了187页，还有多少页没读？</div>
+        <div class="wp-ans">解：365 - 187 = <strong>178页</strong><br>答：还有178页没有读。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">4</span>
+      <div>
+        <div class="wp-q">甲地到乙地5000米，甲地到丙地3486米。乙地到丙地有多远？（丙地在甲乙之间）</div>
+        <div class="wp-hint">💡 提示：画线段图帮助理解</div>
+        <div class="wp-ans">解：5000 - 3486 = <strong>1514米</strong><br>答：乙地到丙地有1514米。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 2: 测量 -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-2">
+  <div class="unit-header u-green" data-icon="📏">
+    <div class="unit-week">第3单元 · 建议学习：3天</div>
+    <div class="unit-title">测量（长度单位）</div>
+    <div class="unit-desc">认识毫米、分米，掌握各长度单位之间的换算，学会用尺测量</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8f5ee;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6b3c"></span>
+        <div>
+          <strong>长度单位从大到小：千米 &gt; 米 &gt; 分米 &gt; 厘米 &gt; 毫米</strong>
+          <span class="kp-note">记忆口诀：千米（公里）→ 米 → 分米 → 厘米 → 毫米</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6b3c"></span>
+        <div>
+          <strong>换算关系（必须背！）</strong>
+          <span class="kp-note">1千米=1000米 | 1米=10分米 | 1分米=10厘米 | 1厘米=10毫米</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6b3c"></span>
+        <div>
+          <strong>实物参考（帮助记忆）</strong>
+          <span class="kp-note">1毫米≈一枚硬币厚度 | 1厘米≈一个手指宽 | 1分米≈手机屏幕长 | 1米≈门的宽度</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6b3c"></span>
+        <div>
+          <strong>质量单位：克(g) 和 千克(kg)</strong>
+          <span class="kp-note">1千克 = 1000克；1千克也叫1公斤</span>
+        </div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 换算关系</div>
+      <div class="formula-row">1千米 = 1000米</div>
+      <div class="formula-row">1米 = 10分米 = 100厘米 = 1000毫米</div>
+      <div class="formula-row">1分米 = 10厘米 &nbsp;&nbsp; 1厘米 = 10毫米</div>
+      <div class="formula-row">1千克 = 1000克</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <b>记忆技巧：</b>相邻单位都是10倍关系（千米到米是1000倍）。换算时：大单位→小单位，乘以进率；小单位→大单位，除以进率。
+  </div>
+
+  <!-- 换算练习 -->
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#e8f5ee;">✏️</div>
+    <h3>练习一：单位换算</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">填空题 · 长度换算</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">3米 = <span class="ex-blank"></span>分米</div>
+          <div class="ex-ans">✓ 30分米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">50毫米 = <span class="ex-blank"></span>厘米</div>
+          <div class="ex-ans">✓ 5厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">2分米5厘米 = <span class="ex-blank"></span>厘米</div>
+          <div class="ex-ans">✓ 25厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">4千米 = <span class="ex-blank"></span>米</div>
+          <div class="ex-ans">✓ 4000米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">300厘米 = <span class="ex-blank"></span>米</div>
+          <div class="ex-ans">✓ 3米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">1米8分米 = <span class="ex-blank"></span>分米</div>
+          <div class="ex-ans">✓ 18分米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">5000克 = <span class="ex-blank"></span>千克</div>
+          <div class="ex-ans">✓ 5千克</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">3千克500克 = <span class="ex-blank"></span>克</div>
+          <div class="ex-ans">✓ 3500克</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">判断题 · 选合适单位</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-note">👆 点击查看正确答案</div>
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">一支铅笔长约18（）</div>
+          <div class="ex-ans">✓ 厘米（cm）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">教室门高约2（）</div>
+          <div class="ex-ans">✓ 米（m）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">一枚硬币厚约2（）</div>
+          <div class="ex-ans">✓ 毫米（mm）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">北京到上海约1200（）</div>
+          <div class="ex-ans">✓ 千米（km）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">一个鸡蛋重约60（）</div>
+          <div class="ex-ans">✓ 克（g）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">小明体重约35（）</div>
+          <div class="ex-ans">✓ 千克（kg）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8f5ee;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">一根绳子长5米，剪去180厘米，还剩多少厘米？</div>
+        <div class="wp-hint">💡 提示：先把5米换成厘米</div>
+        <div class="wp-ans">解：5米 = 500厘米<br>500 - 180 = <strong>320厘米</strong><br>答：还剩320厘米。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">小明买了2千克苹果和500克梨，一共买了多少克水果？合多少千克多少克？</div>
+        <div class="wp-ans">解：2千克 = 2000克<br>2000 + 500 = <strong>2500克</strong><br>2500克 = <strong>2千克500克</strong><br>答：一共买了2500克，也就是2千克500克。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 3: 万以内乘法（口算） -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-3">
+  <div class="unit-header u-blue" data-icon="✖️">
+    <div class="unit-week">第4单元 · 建议学习：4天（背熟口诀是关键！）</div>
+    <div class="unit-title">万以内的乘法（口算为主）</div>
+    <div class="unit-desc">在乘法口诀基础上，学习两位数乘一位数的口算和估算</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8f0f8;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4f7a"></span>
+        <div>
+          <strong>乘法口诀表（1×1 到 9×9）——必须完全背熟！</strong>
+          <span class="kp-note">这是一切乘除法的根基。背不熟会拖累所有后续内容。每天早晨大声背3遍。</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4f7a"></span>
+        <div>
+          <strong>整十数乘一位数（口算）</strong>
+          <span class="kp-note">20×3：先算2×3=6，再添一个0，得60。规律：几十乘几，先乘数，再添0</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4f7a"></span>
+        <div>
+          <strong>两位数乘一位数（口算）</strong>
+          <span class="kp-note">23×3：分开算，20×3=60，3×3=9，合起来60+9=69</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4f7a"></span>
+        <div>
+          <strong>估算</strong>
+          <span class="kp-note">把其中一个数看成整十数来估算。如28×3，把28看成30，30×3=90，所以28×3大约等于90</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 口诀表 -->
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#e8f0f8;">📋</div>
+    <h3>乘法口诀表（点击格子背诵）</h3>
+  </div>
+  <div class="knowledge-box">
+    <div class="mult-table-wrap">
+      <table class="mult-table" id="multTable">
+        <tr>
+          <th>×</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+        </tr>
+      </table>
+    </div>
+    <button class="show-btn" onclick="toggleMultTable()" id="multBtn">👁 显示全部答案</button>
+    <p style="font-size:12px;color:var(--muted);margin-top:8px;">点击每个格子可以单独查看答案</p>
+  </div>
+
+  <div class="tip-box">
+    <b>背口诀小游戏：</b>家长说"7乘8等于多少？"孩子在3秒内答出来算赢。每天玩5分钟，两周内就能完全背熟。
+  </div>
+
+  <!-- 口算练习 -->
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#e8f0f8;">✏️</div>
+    <h3>练习一：口算训练</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">口算 · 整十数乘一位数</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">20 × 4 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 80</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">30 × 6 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 180</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">50 × 7 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 350</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">80 × 9 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 720</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">40 × 5 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 200</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">70 × 8 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 560</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">口算 · 两位数乘一位数</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">23 × 3 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 69</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">41 × 4 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 164</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">32 × 5 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 160</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">21 × 7 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 147</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">43 × 2 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 86</div></div>
+        <div class="ex-item" onclick="revealItem(this)"><div class="ex-q">34 × 3 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 102</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8f0f8;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">一盒彩笔有12支，买3盒共有多少支彩笔？</div>
+        <div class="wp-ans">解：12 × 3 = <strong>36支</strong><br>答：共有36支彩笔。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">操场每圈长约400米，小明跑了5圈，大约跑了多少米？</div>
+        <div class="wp-ans">解：400 × 5 = <strong>2000米</strong><br>答：大约跑了2000米。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 4: 倍的认识 -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-4">
+  <div class="unit-header u-purple" data-icon="🔢">
+    <div class="unit-week">第5单元 · 建议学习：2天</div>
+    <div class="unit-title">倍的认识</div>
+    <div class="unit-desc">理解"倍"的含义，会用乘除法解决倍数关系的问题</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#f0e8f8;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6b3fa0"></span>
+        <div>
+          <strong>"倍"的含义</strong>
+          <span class="kp-note">A是B的几倍 = A里面有几个B（A÷B=几）</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6b3fa0"></span>
+        <div>
+          <strong>求一个数是另一个数的几倍 → 用除法</strong>
+          <span class="kp-note">例：12是4的几倍？ 12 ÷ 4 = 3，所以12是4的3倍</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6b3fa0"></span>
+        <div>
+          <strong>求一个数的几倍是多少 → 用乘法</strong>
+          <span class="kp-note">例：4的3倍是多少？ 4 × 3 = 12</span>
+        </div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 关键关系</div>
+      <div class="formula-row">A是B的几倍：A ÷ B = 几倍（除法）</div>
+      <div class="formula-row">A的几倍：A × 几倍 = 结果（乘法）</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <b>画图帮助理解：</b>用小圆圈排成一排来表示，比如4个○是一份，3份就是12个○，这样孩子能直观感受"3倍"的含义，不容易混淆。
+  </div>
+
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#f0e8f8;">✏️</div>
+    <h3>练习一：基础填空</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">填空题</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">15是5的<span class="ex-blank"></span>倍</div>
+          <div class="ex-ans">✓ 3倍（15÷5=3）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">6的4倍是<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 24（6×4=24）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">36是9的<span class="ex-blank"></span>倍</div>
+          <div class="ex-ans">✓ 4倍（36÷9=4）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">8的7倍是<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 56（8×7=56）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">48是6的<span class="ex-blank"></span>倍</div>
+          <div class="ex-ans">✓ 8倍（48÷6=8）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">5的9倍是<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 45（5×9=45）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#f0e8f8;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">小红有贴纸8张，小明的贴纸是小红的3倍。小明有多少张贴纸？</div>
+        <div class="wp-ans">解：8 × 3 = <strong>24张</strong><br>答：小明有24张贴纸。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">爸爸今年36岁，小明今年9岁。爸爸的年龄是小明的几倍？</div>
+        <div class="wp-ans">解：36 ÷ 9 = <strong>4倍</strong><br>答：爸爸的年龄是小明的4倍。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">3</span>
+      <div>
+        <div class="wp-q">白兔有5只，灰兔的数量是白兔的4倍，黑兔的数量是白兔的2倍。灰兔和黑兔一共有多少只？</div>
+        <div class="wp-hint">💡 提示：分两步算</div>
+        <div class="wp-ans">解：灰兔：5 × 4 = 20只<br>黑兔：5 × 2 = 10只<br>合计：20 + 10 = <strong>30只</strong><br>答：灰兔和黑兔一共有30只。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 5: 多位数乘一位数 -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-5">
+  <div class="unit-header u-teal" data-icon="✖">
+    <div class="unit-week">第6单元 · 建议学习：5天（竖式计算核心！）</div>
+    <div class="unit-title">多位数乘一位数</div>
+    <div class="unit-desc">掌握两位数、三位数乘一位数的竖式计算，含进位情况</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8f8f5;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#117a65"></span>
+        <div>
+          <strong>竖式乘法步骤（从个位起，依次乘）</strong>
+          <span class="kp-note">①个位×一位数；②十位×一位数（加上进位）；③百位×一位数（加上进位）</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#117a65"></span>
+        <div>
+          <strong>进位处理</strong>
+          <span class="kp-note">某位的积≥10时，将十位上的数进到高位，记在竖式上方，下一步相加时要加上</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#117a65"></span>
+        <div>
+          <strong>中间或末尾有0的乘法</strong>
+          <span class="kp-note">如 204×3：0×3=0，写0，继续算2×3=6；结果612</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#117a65"></span>
+        <div>
+          <strong>估算</strong>
+          <span class="kp-note">把多位数四舍五入到整十/整百，再相乘。如 198×4≈200×4=800</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="tip-box">
+    <b>关键难点：</b>进位！很多孩子在进位这里出错。方法：把进的数字写在上面，算下一位时一定要加上它，做完后擦掉。建议先做不进位的练透，再练进位。
+  </div>
+
+  <!-- 竖式练习 -->
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#e8f8f5;">✏️</div>
+    <h3>练习一：竖式计算（两位数×一位数）</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">竖式 · 不进位</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="vertical-drill">
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 23</div>
+          <div class="v-line">× 3</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 69</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 41</div>
+          <div class="v-line">× 2</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 82</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 32</div>
+          <div class="v-line">× 3</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 96</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">竖式 · 有进位（重点练习）</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="vertical-drill">
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 36</div>
+          <div class="v-line">× 4</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">144</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 57</div>
+          <div class="v-line">× 6</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">342</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 78</div>
+          <div class="v-line">× 9</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">702</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 86</div>
+          <div class="v-line">× 7</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">602</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">竖式 · 三位数×一位数</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span><span class="ex-star">⭐</span><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="vertical-drill">
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 213</div>
+          <div class="v-line">×  4</div>
+          <div class="v-sep"></div>
+          <div class="v-ans"> 852</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 362</div>
+          <div class="v-line">×  5</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">1810</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 248</div>
+          <div class="v-line">×  6</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">1488</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 307</div>
+          <div class="v-line">×  8</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">2456</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 405</div>
+          <div class="v-line">×  7</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">2835</div>
+        </div>
+        <div class="v-item" onclick="revealItem(this)">
+          <div class="v-line"> 573</div>
+          <div class="v-line">×  9</div>
+          <div class="v-sep"></div>
+          <div class="v-ans">5157</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8f8f5;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">一张桌子的价格是椅子的4倍，椅子售价128元，桌子售价多少元？</div>
+        <div class="wp-ans">解：128 × 4 = <strong>512元</strong><br>答：桌子售价512元。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">工厂每天生产零件358个，6天生产多少个？估算大约是多少？</div>
+        <div class="wp-ans">精确：358 × 6 = <strong>2148个</strong><br>估算：358≈360，360×6=<strong>约2160个</strong><br>答：6天生产2148个，大约2160个。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">3</span>
+      <div>
+        <div class="wp-q">超市运来苹果和梨各5箱，苹果每箱48千克，梨每箱36千克，两种水果共多少千克？</div>
+        <div class="wp-hint">💡 提示：分别算苹果和梨的总量，再加起来</div>
+        <div class="wp-ans">解：苹果：48×5=240千克<br>梨：36×5=180千克<br>合计：240+180=<strong>420千克</strong><br>答：两种水果共420千克。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 6: 长方形和正方形 -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-6">
+  <div class="unit-header u-brown" data-icon="⬜">
+    <div class="unit-week">第7单元 · 建议学习：3天</div>
+    <div class="unit-title">长方形和正方形（周长）</div>
+    <div class="unit-desc">认识长方形和正方形的特征，学会计算周长</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#f8f0e8;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#7b4e2c"></span>
+        <div>
+          <strong>长方形特征</strong>
+          <span class="kp-note">4个角都是直角；对边相等（上=下，左=右）；有2组对边</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#7b4e2c"></span>
+        <div>
+          <strong>正方形特征</strong>
+          <span class="kp-note">4个角都是直角；4条边都相等；是特殊的长方形</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#7b4e2c"></span>
+        <div>
+          <strong>周长的含义</strong>
+          <span class="kp-note">围成图形一周的长度叫做周长。计算时要把所有边加在一起。</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#7b4e2c"></span>
+        <div>
+          <strong>周长公式（必须记！）</strong>
+          <span class="kp-note">长方形周长 = (长 + 宽) × 2；正方形周长 = 边长 × 4</span>
+        </div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 周长公式</div>
+      <div class="formula-row">长方形周长 = (长 + 宽) × 2</div>
+      <div class="formula-row">正方形周长 = 边长 × 4</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <b>实物练习：</b>找家里的书本、桌子，用尺子量出长和宽，然后算周长。实际测量比做题更容易记住公式。
+  </div>
+
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#f8f0e8;">✏️</div>
+    <h3>练习一：计算周长</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">计算题 · 周长</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">长方形<br>长8厘米，宽5厘米<br>周长=<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ (8+5)×2=26厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">正方形<br>边长6厘米<br>周长=<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 6×4=24厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">长方形<br>长12cm，宽7cm<br>周长=<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ (12+7)×2=38厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">正方形<br>边长9厘米<br>周长=<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 9×4=36厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">长方形<br>长15cm，宽8cm<br>周长=<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ (15+8)×2=46厘米</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">已知周长=28cm<br>是正方形<br>边长=<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 28÷4=7厘米</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#f8f0e8;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">一块正方形手帕的边长是25厘米，它的周长是多少厘米？</div>
+        <div class="wp-ans">解：25 × 4 = <strong>100厘米</strong><br>答：手帕的周长是100厘米。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">花园的长是18米，宽是12米。在花园的四周围一圈篱笆，篱笆有多长？</div>
+        <div class="wp-ans">解：(18 + 12) × 2 = 30 × 2 = <strong>60米</strong><br>答：篱笆长60米。</div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">3</span>
+      <div>
+        <div class="wp-q">一个长方形的周长是36厘米，长是11厘米，宽是多少厘米？</div>
+        <div class="wp-hint">💡 提示：先求长+宽，再减去长</div>
+        <div class="wp-ans">解：长+宽 = 36÷2 = 18厘米<br>宽 = 18 - 11 = <strong>7厘米</strong><br>答：宽是7厘米。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- UNIT 7: 分数初步认识 -->
+<!-- ============================================================ -->
+<div class="unit-page" id="unit-7">
+  <div class="unit-header u-navy" data-icon="½">
+    <div class="unit-week">第8单元 · 建议学习：3天</div>
+    <div class="unit-title">分数的初步认识</div>
+    <div class="unit-desc">认识分数的含义，理解分子分母，学会简单的分数比较和加减</div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8ecf5;">📖</div>
+    <h3>核心知识点</h3>
+  </div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a2a4a"></span>
+        <div>
+          <strong>分数的含义</strong>
+          <span class="kp-note">把一个整体平均分成几份，其中的一份或几份，用分数表示。如：把1个苹果切成4块，每块是1/4</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a2a4a"></span>
+        <div>
+          <strong>分子和分母</strong>
+          <span class="kp-note">分数线下面是分母（平均分成几份），分数线上面是分子（取了几份）</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a2a4a"></span>
+        <div>
+          <strong>同分母分数的大小比较</strong>
+          <span class="kp-note">分母相同时，分子大的分数更大。如：3/8 &gt; 2/8（因为3&gt;2）</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a2a4a"></span>
+        <div>
+          <strong>同分子分数的大小比较</strong>
+          <span class="kp-note">分子相同时，分母大的分数反而更小。如：1/3 &lt; 1/2（因为3份中的1份比2份中的1份少）</span>
+        </div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a2a4a"></span>
+        <div>
+          <strong>同分母分数加减法</strong>
+          <span class="kp-note">分母不变，分子相加减。如：2/7 + 3/7 = 5/7；5/8 - 2/8 = 3/8</span>
+        </div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 同分母分数运算</div>
+      <div class="formula-row">a/n + b/n = (a+b)/n &nbsp;（分母不变，分子相加）</div>
+      <div class="formula-row">a/n - b/n = (a-b)/n &nbsp;（分母不变，分子相减）</div>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <b>用披萨来理解：</b>一个披萨切成8份，你吃了3份就是3/8，再吃2份就是2/8，合起来就是5/8。用实物理解分数，比硬背规则有效10倍。
+  </div>
+
+  <div class="section-label" style="margin-top:20px;">
+    <div class="sl-icon" style="background:#e8ecf5;">✏️</div>
+    <h3>练习一：基础认识</h3>
+  </div>
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">填空题 · 分数概念</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">把1块饼干平均分成6块，每块是这块饼干的<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 1/6</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">3/8中，分母是<span class="ex-blank"></span>，分子是<span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 分母：8，分子：3</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">比较：3/7 ○ 5/7</div>
+          <div class="ex-ans">✓ 3/7 &lt; 5/7<br>（分母同，分子小的小）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">比较：1/4 ○ 1/6</div>
+          <div class="ex-ans">✓ 1/4 &gt; 1/6<br>（分子同，分母大的小）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header">
+      <span class="ex-type">计算题 · 同分母分数加减</span>
+      <span class="ex-difficulty"><span class="ex-star">⭐</span><span class="ex-star">⭐</span></span>
+    </div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">2/9 + 4/9 = <span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 6/9</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">7/8 - 3/8 = <span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 4/8（即1/2）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">1/5 + 3/5 = <span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 4/5</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">5/6 - 2/6 = <span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 3/6（即1/2）</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">3/10 + 4/10 = <span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 7/10</div>
+        </div>
+        <div class="ex-item" onclick="revealItem(this)">
+          <div class="ex-q">1 - 3/7 = <span class="ex-blank"></span></div>
+          <div class="ex-ans">✓ 4/7<br>（1 = 7/7，7/7-3/7=4/7）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label">
+    <div class="sl-icon" style="background:#e8ecf5;">🧩</div>
+    <h3>练习二：应用题</h3>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">1</span>
+      <div>
+        <div class="wp-q">一个西瓜平均分成8块，小明吃了3块，小红吃了2块，他们两人共吃了这个西瓜的几分之几？还剩几分之几？</div>
+        <div class="wp-ans">
+          共吃了：3/8 + 2/8 = <strong>5/8</strong><br>
+          还剩：1 - 5/8 = 8/8 - 5/8 = <strong>3/8</strong><br>
+          答：共吃了5/8，还剩3/8。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="word-problem" onclick="revealWP(this)">
+    <div style="display:flex;align-items:flex-start;gap:8px;">
+      <span class="wp-num">2</span>
+      <div>
+        <div class="wp-q">小华看一本书，第一天看了全书的2/9，第二天看了全书的4/9，两天共看了全书的几分之几？还剩几分之几没看？</div>
+        <div class="wp-ans">
+          共看：2/9 + 4/9 = <strong>6/9</strong><br>
+          还剩：1 - 6/9 = 9/9 - 6/9 = <strong>3/9</strong><br>
+          答：两天共看了6/9，还剩3/9没看。
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<button class="scrolltop" id="scrolltop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// Show unit
+function showUnit(n) {
+  document.querySelectorAll('.unit-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('unit-' + n).classList.add('active');
+  document.querySelector('.nav-tab[data-unit="' + n + '"]').classList.add('active');
+  window.scrollTo({top: document.querySelector('.nav-wrap').offsetTop - 10, behavior: 'smooth'});
+}
+
+// Reveal individual item
+function revealItem(el) {
+  el.classList.toggle('revealed');
+}
+
+// Reveal word problem
+function revealWP(el) {
+  el.classList.toggle('revealed');
+}
+
+// Build multiplication table
+const multData = [
+  [1,2,3,4,5,6,7,8,9],
+  [2,4,6,8,10,12,14,16,18],
+  [3,6,9,12,15,18,21,24,27],
+  [4,8,12,16,20,24,28,32,36],
+  [5,10,15,20,25,30,35,40,45],
+  [6,12,18,24,30,36,42,48,54],
+  [7,14,21,28,35,42,49,56,63],
+  [8,16,24,32,40,48,56,64,72],
+  [9,18,27,36,45,54,63,72,81]
+];
+
+const table = document.getElementById('multTable');
+let tableRevealed = false;
+
+for(let i = 0; i < 9; i++) {
+  const tr = document.createElement('tr');
+  const th = document.createElement('th');
+  th.textContent = i + 1;
+  tr.appendChild(th);
+  for(let j = 0; j < 9; j++) {
+    if(j < i) {
+      const td = document.createElement('td');
+      td.style.background = '#f5f0e8';
+      tr.appendChild(td);
+    } else {
+      const td = document.createElement('td');
+      td.className = 'blank';
+      td.dataset.val = multData[i][j];
+      td.dataset.label = `${i+1}×${j+1}`;
+      td.textContent = `${i+1}×${j+1}`;
+      td.onclick = function() {
+        if(this.classList.contains('filled')) {
+          this.textContent = this.dataset.label;
+          this.classList.remove('filled');
+          this.classList.add('blank');
+        } else {
+          this.textContent = this.dataset.val;
+          this.classList.remove('blank');
+          this.classList.add('filled');
+        }
+      };
+      tr.appendChild(td);
+    }
+  }
+  table.appendChild(tr);
+}
+
+function toggleMultTable() {
+  const cells = table.querySelectorAll('td.blank, td.filled');
+  const btn = document.getElementById('multBtn');
+  if(!tableRevealed) {
+    cells.forEach(c => {
+      c.textContent = c.dataset.val;
+      c.classList.remove('blank'); c.classList.add('filled');
+    });
+    btn.textContent = '🙈 隐藏答案';
+    tableRevealed = true;
+  } else {
+    cells.forEach(c => {
+      c.textContent = c.dataset.label;
+      c.classList.remove('filled'); c.classList.add('blank');
+    });
+    btn.textContent = '👁 显示全部答案';
+    tableRevealed = false;
+  }
+}
+
+// Scroll to top
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('scrolltop');
+  btn.classList.toggle('visible', window.scrollY > 300);
+});
+</script>
+</body>
+</html>
