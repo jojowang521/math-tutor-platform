@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版四年级上册数学 · 详细补习计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg: #f0f0f8;
+  --paper: #fafafe;
+  --ink: #1a1a3a;
+  --red: #a02030;
+  --orange: #b05010;
+  --gold: #907000;
+  --green: #1a6040;
+  --blue: #1040a0;
+  --indigo: #3030a0;
+  --purple: #6020a0;
+  --teal: #006080;
+  --muted: #606080;
+  --border: #c0c0e0;
+  --shadow: rgba(0,0,0,0.07);
+  --accent: #4060e0;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  font-family: 'Noto Sans SC', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #12124a 0%, #1e1e70 50%, #2a1060 100%);
+  padding: 38px 24px 30px;
+  position: relative; overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(80,80,255,0.15) 0%, transparent 60%);
+}
+.header::after {
+  content: '四';
+  position: absolute; right: -20px; top: -30px;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 280px; color: rgba(255,255,255,0.03);
+  line-height: 1; pointer-events: none;
+}
+.header-inner { position: relative; max-width: 940px; margin: 0 auto; }
+.header-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(100,120,255,0.2);
+  border: 1px solid rgba(100,120,255,0.5);
+  color: #a0b8ff;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  padding: 4px 12px; border-radius: 2px; margin-bottom: 14px;
+}
+.header h1 {
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: clamp(24px, 5vw, 40px);
+  color: #fff; line-height: 1.35; margin-bottom: 10px;
+}
+.header h1 span { color: #a0c8ff; }
+.header-desc { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.9; }
+.header-stats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+.hstat {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 18px; border-radius: 4px; text-align: center;
+}
+.hstat-n { font-size: 20px; font-weight: 700; color: #a0c8ff; }
+.hstat-l { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 1px; }
+
+/* NAV */
+.nav-wrap {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.nav-tabs {
+  display: flex; overflow-x: auto; max-width: 940px; margin: 0 auto;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab {
+  flex-shrink: 0; padding: 13px 15px;
+  border: none; background: none;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12px; cursor: pointer; color: var(--muted);
+  border-bottom: 3px solid transparent; transition: all .2s;
+  white-space: nowrap; line-height: 1.3;
+}
+.nav-tab:hover { color: var(--ink); }
+.nav-tab.active { font-weight: 700; }
+.nav-tab .tn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  font-size: 10px; font-weight: 700; margin-right: 5px;
+  background: var(--border); color: var(--muted); flex-shrink: 0;
+}
+.nav-tab.active .tn { color: #fff; }
+
+/* per-unit accent colors */
+.nav-tab[data-u="0"].active{border-bottom-color:#a02030;color:#a02030;}.nav-tab[data-u="0"].active .tn{background:#a02030;}
+.nav-tab[data-u="1"].active{border-bottom-color:#b05010;color:#b05010;}.nav-tab[data-u="1"].active .tn{background:#b05010;}
+.nav-tab[data-u="2"].active{border-bottom-color:#1040a0;color:#1040a0;}.nav-tab[data-u="2"].active .tn{background:#1040a0;}
+.nav-tab[data-u="3"].active{border-bottom-color:#1a6040;color:#1a6040;}.nav-tab[data-u="3"].active .tn{background:#1a6040;}
+.nav-tab[data-u="4"].active{border-bottom-color:#907000;color:#907000;}.nav-tab[data-u="4"].active .tn{background:#907000;}
+.nav-tab[data-u="5"].active{border-bottom-color:#6020a0;color:#6020a0;}.nav-tab[data-u="5"].active .tn{background:#6020a0;}
+.nav-tab[data-u="6"].active{border-bottom-color:#006080;color:#006080;}.nav-tab[data-u="6"].active .tn{background:#006080;}
+.nav-tab[data-u="7"].active{border-bottom-color:#3030a0;color:#3030a0;}.nav-tab[data-u="7"].active .tn{background:#3030a0;}
+
+/* MAIN */
+.main { max-width: 940px; margin: 0 auto; padding: 26px 16px 60px; }
+
+/* UNIT PAGE */
+.unit-page { display: none; animation: fadein .22s ease; }
+.unit-page.active { display: block; }
+@keyframes fadein { from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;} }
+
+/* Unit header card */
+.unit-header {
+  border-radius: 10px; padding: 22px 24px;
+  margin-bottom: 20px; position: relative; overflow: hidden;
+}
+.unit-header::after {
+  content: attr(data-icon);
+  position: absolute; right: 18px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 76px; opacity: 0.1; line-height: 1; pointer-events: none;
+}
+.unit-week { font-size: 11px; font-weight: 700; letter-spacing: 2px; opacity:.75; margin-bottom:6px; }
+.unit-title { font-family:'ZCOOL XiaoWei',serif; font-size:22px; color:#fff; margin-bottom:6px; }
+.unit-desc { font-size:13px; color:rgba(255,255,255,0.7); line-height:1.75; }
+
+.u-r  { background: linear-gradient(135deg,#a02030,#d04050); }
+.u-o  { background: linear-gradient(135deg,#b05010,#e07030); }
+.u-b  { background: linear-gradient(135deg,#1040a0,#2060d0); }
+.u-g  { background: linear-gradient(135deg,#1a6040,#28a060); }
+.u-gd { background: linear-gradient(135deg,#907000,#c09800); }
+.u-p  { background: linear-gradient(135deg,#6020a0,#9040d0); }
+.u-t  { background: linear-gradient(135deg,#006080,#0090b0); }
+.u-i  { background: linear-gradient(135deg,#3030a0,#5050c8); }
+
+/* Section labels */
+.section-label {
+  display:flex; align-items:center; gap:10px; margin:18px 0 12px;
+}
+.sl-icon {
+  width:28px; height:28px; border-radius:6px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; flex-shrink:0;
+}
+.section-label h3 { font-size:15px; font-weight:700; }
+
+/* Knowledge box */
+.knowledge-box {
+  background: var(--paper); border: 1.5px solid var(--border);
+  border-radius:8px; padding:18px 20px; margin-bottom:14px;
+}
+.kp-list { list-style:none; }
+.kp-item {
+  display:flex; align-items:flex-start; gap:10px;
+  padding:8px 0; border-bottom:1px dashed var(--border);
+  font-size:13.5px; line-height:1.75;
+}
+.kp-item:last-child { border-bottom:none; padding-bottom:0; }
+.kp-dot { width:8px; height:8px; border-radius:50%; margin-top:7px; flex-shrink:0; }
+.kp-note { display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+
+.formula-box {
+  background:#f0f0ff; border:1.5px solid #a0a8e0;
+  border-radius:6px; padding:14px 16px; margin-top:12px;
+}
+.formula-title { font-size:11px; font-weight:700; letter-spacing:2px; color:#3040a0; margin-bottom:8px; }
+.formula-row { font-size:14px; font-weight:700; color:#1a2080; padding:4px 0; line-height:1.65; font-family: 'Courier New', monospace; }
+
+/* Exercise box */
+.ex-box {
+  background:var(--paper); border:1.5px solid var(--border);
+  border-radius:8px; overflow:hidden; margin-bottom:14px;
+}
+.ex-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:11px 18px; border-bottom:1.5px solid var(--border);
+  background:#f4f4fc;
+}
+.ex-type { font-size:11px; font-weight:700; letter-spacing:2px; color:var(--muted); }
+.ex-body { padding:16px 18px; }
+.ex-note { font-size:12px; color:var(--muted); margin-bottom:12px; }
+
+.ex-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(168px,1fr));
+  gap:10px; margin-bottom:8px;
+}
+.ex-item {
+  background:var(--bg); border:1.5px solid var(--border);
+  border-radius:6px; padding:12px 14px;
+  cursor:pointer; transition:all .18s;
+}
+.ex-item:hover { border-color:#8090d0; background:#e8e8f8; }
+.ex-q { font-size:14.5px; font-weight:700; margin-bottom:4px; line-height:1.5; }
+.ex-blank {
+  display:inline-block; min-width:36px; height:21px;
+  border-bottom:2px solid var(--ink); vertical-align:bottom;
+  text-align:center; font-weight:700; color:var(--blue); font-size:14.5px;
+}
+.ex-ans { display:none; font-size:12px; color:var(--blue); margin-top:5px; font-weight:700; line-height:1.5; }
+.ex-item.revealed { background:#e8eeff; border-color:#6878d0; }
+.ex-item.revealed .ex-ans { display:block; }
+
+/* Vertical drills */
+.vdrill { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:10px; }
+.vi {
+  background:var(--bg); border:1.5px solid var(--border);
+  border-radius:6px; padding:14px 18px; min-width:130px;
+  cursor:pointer; transition:all .18s;
+  font-family:'Courier New',monospace; font-size:15px; line-height:1.9;
+}
+.vi:hover { border-color:#8090d0; }
+.vi .vl { white-space:pre; }
+.vi .vs { border-top:2px solid var(--ink); margin:4px 0; }
+.vi .va { color:var(--blue); font-weight:700; display:none; font-size:14px; }
+.vi.revealed { background:#e8eeff; border-color:#6878d0; }
+.vi.revealed .va { display:block; }
+
+/* Word problems */
+.wp {
+  background:var(--bg); border:1.5px solid var(--border);
+  border-radius:8px; padding:15px 16px; margin-bottom:10px;
+  cursor:pointer; transition:all .18s;
+}
+.wp:hover { border-color:#8090d0; }
+.wp-row { display:flex; align-items:flex-start; gap:10px; }
+.wp-num {
+  display:inline-flex; align-items:center; justify-content:center;
+  background:var(--ink); color:#fff;
+  font-size:11px; font-weight:700;
+  width:22px; height:22px; border-radius:50%;
+  flex-shrink:0; margin-top:1px;
+}
+.wp-q { font-size:13.5px; line-height:1.85; }
+.wp-hint { font-size:12px; color:var(--muted); margin-top:5px; font-style:italic; }
+.wp-ans {
+  display:none; margin-top:10px; padding-top:10px;
+  border-top:1px dashed var(--border);
+  font-size:13px; color:#1040a0; line-height:1.8;
+}
+.wp-ans strong { font-size:14px; color:#0a308a; }
+.wp.revealed { background:#e8eeff; border-color:#6878d0; }
+.wp.revealed .wp-ans { display:block; }
+
+/* Tip / warn */
+.tip { background:#fff8e0; border-left:4px solid #c0a000; border-radius:0 6px 6px 0; padding:12px 16px; margin:10px 0; font-size:13px; line-height:1.8; color:#504000; }
+.tip b { color:#907000; }
+.warn { background:#ffeef0; border-left:4px solid #c03040; border-radius:0 6px 6px 0; padding:12px 16px; margin:10px 0; font-size:13px; line-height:1.8; color:#501020; }
+.warn b { color:#a02030; }
+.info { background:#e8f0ff; border-left:4px solid #4060d0; border-radius:0 6px 6px 0; padding:12px 16px; margin:10px 0; font-size:13px; line-height:1.8; color:#102060; }
+.info b { color:#3050b0; }
+
+/* Table */
+.dt { width:100%; border-collapse:collapse; font-size:13px; }
+.dt th { background:var(--ink); color:#fff; padding:9px 12px; text-align:left; font-size:12px; }
+.dt td { padding:9px 12px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.65; }
+.dt tr:nth-child(even) td { background:#f4f4fc; }
+.dt .ok { color:var(--blue); font-weight:700; }
+
+/* Number line */
+.numline {
+  display:flex; align-items:center; gap:0;
+  margin:12px 0; overflow-x:auto;
+  padding:10px 4px;
+}
+.nl-seg { display:flex; flex-direction:column; align-items:center; }
+.nl-line { width:60px; height:3px; background:var(--ink); }
+.nl-tick { width:2px; height:12px; background:var(--ink); }
+.nl-label { font-size:11px; color:var(--muted); margin-top:3px; }
+.nl-val { font-size:12px; font-weight:700; color:var(--blue); margin-bottom:3px; }
+
+.divider { height:1px; background:var(--border); margin:18px 0; }
+
+/* place value table */
+.pv-table { border-collapse:collapse; font-size:13px; min-width:360px; }
+.pv-table th { background:#2030a0; color:#fff; padding:8px 12px; text-align:center; border:1px solid #a0a8e0; }
+.pv-table td { padding:8px 12px; text-align:center; border:1px solid var(--border); }
+.pv-table .pv-period { background:#e8eeff; font-weight:700; color:#2030a0; }
+.pv-table .pv-val { font-size:16px; font-weight:700; color:#1040c0; }
+
+/* Angle demos */
+.angle-grid { display:flex; flex-wrap:wrap; gap:14px; margin:12px 0; }
+.angle-card {
+  background:var(--bg); border:1.5px solid var(--border);
+  border-radius:8px; padding:14px; text-align:center;
+  min-width:100px; cursor:pointer;
+}
+.angle-card:hover { border-color:#8090d0; }
+.angle-svg { width:80px; height:70px; }
+.angle-label { font-size:13px; font-weight:700; margin-top:6px; }
+.angle-range { font-size:11px; color:var(--muted); }
+.angle-ans { display:none; font-size:12px; color:var(--blue); margin-top:4px; font-weight:700; }
+.angle-card.revealed .angle-ans { display:block; }
+.angle-card.revealed { background:#e8eeff; border-color:#6878d0; }
+
+/* Operation order demo */
+.op-box {
+  background:#f0f0ff; border:1.5px solid #a0a8e0;
+  border-radius:8px; padding:14px 16px; margin:10px 0;
+  font-size:14px; line-height:2;
+}
+.op-step { display:flex; align-items:center; gap:8px; padding:4px 0; }
+.op-arrow { color:#4060d0; font-weight:700; }
+.op-highlight { background:#d0d8ff; border-radius:3px; padding:1px 6px; font-weight:700; }
+
+/* Scroll top */
+.scrolltop {
+  position:fixed; bottom:24px; right:20px;
+  width:40px; height:40px; border-radius:50%;
+  background:var(--ink); color:#fff;
+  border:none; cursor:pointer; font-size:18px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.2);
+  opacity:0; transition:opacity .3s; z-index:200;
+}
+.scrolltop.visible { opacity:1; }
+
+/* Responsive */
+@media(max-width:520px){
+  .ex-grid { grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); }
+  .vdrill { gap:8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">📘 人教版 · 四年级上册 · 数学补习</div>
+    <h1>四年级上册<span>完整补习计划</span></h1>
+    <p>8个单元 · 知识点精讲 + 分层练习题 · 点击题目查看答案<br>四年级是小学数学分水岭，打好基础至关重要</p>
+    <div class="header-stats">
+      <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">个单元</div></div>
+      <div class="hstat"><div class="hstat-n">4~5</div><div class="hstat-l">建议周数</div></div>
+      <div class="hstat"><div class="hstat-n">250+</div><div class="hstat-l">道练习题</div></div>
+      <div class="hstat"><div class="hstat-n">点击</div><div class="hstat-l">查看答案</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-u="0" onclick="showUnit(0)"><span class="tn">1</span>大数的认识</button>
+    <button class="nav-tab" data-u="1" onclick="showUnit(1)"><span class="tn">2</span>公顷与千米</button>
+    <button class="nav-tab" data-u="2" onclick="showUnit(2)"><span class="tn">3</span>角的度量</button>
+    <button class="nav-tab" data-u="3" onclick="showUnit(3)"><span class="tn">4</span>三位数乘两位数</button>
+    <button class="nav-tab" data-u="4" onclick="showUnit(4)"><span class="tn">5</span>平行与垂直</button>
+    <button class="nav-tab" data-u="5" onclick="showUnit(5)"><span class="tn">6</span>除数是两位数</button>
+    <button class="nav-tab" data-u="6" onclick="showUnit(6)"><span class="tn">7</span>条形统计图</button>
+    <button class="nav-tab" data-u="7" onclick="showUnit(7)"><span class="tn">8</span>数学广角·优化</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ================================================================ -->
+<!-- UNIT 0: 大数的认识 -->
+<!-- ================================================================ -->
+<div class="unit-page active" id="unit-0">
+  <div class="unit-header u-r" data-icon="🔢">
+    <div class="unit-week">第1单元 · 建议学习：5天（地基！）</div>
+    <div class="unit-title">大数的认识（亿以内的数）</div>
+    <div class="unit-desc">认识万级、亿级大数，掌握数位表，学会读写大数及大数的比较与改写</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fce8ea;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#a02030"></span>
+        <div><strong>数位顺序（从右往左）</strong>
+          <span class="kp-note">个、十、百、千 → 万、十万、百万、千万 → 亿、十亿、百亿、千亿<br>每四位为一级：个级 | 万级 | 亿级</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#a02030"></span>
+        <div><strong>大数的读法</strong>
+          <span class="kp-note">①从高位往低位读；②万级的数后面加"万"字；③每级末尾的0不读，中间连续几个0只读一个零；如：10 0304读作"十万零三百零四"</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#a02030"></span>
+        <div><strong>大数的写法</strong>
+          <span class="kp-note">从高位往低位写，哪一位上没有就写0占位。如"三十万零八百"写作300800</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#a02030"></span>
+        <div><strong>大数的比较</strong>
+          <span class="kp-note">①位数多的数大；②位数相同，从最高位起逐位比较，大的那位决定大小</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#a02030"></span>
+        <div><strong>改写与近似数（四舍五入）</strong>
+          <span class="kp-note">改写成"万"为单位：末尾加"万"字，去掉后4位（要看第5位决定是否进位）。如78600≈8万（四舍五入到万位）</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 数位表（背熟！）</div>
+      <div class="formula-row">亿级：亿 十亿 百亿 千亿</div>
+      <div class="formula-row">万级：万 十万 百万 千万</div>
+      <div class="formula-row">个级：个 十  百  千</div>
+      <div class="formula-row">相邻单位关系：10个低级 = 1个高级</div>
+    </div>
+  </div>
+
+  <!-- 数位表 -->
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#fce8ea;">📋</div><h3>数位表与读数示例</h3></div>
+  <div class="knowledge-box">
+    <div style="overflow-x:auto;">
+      <table class="pv-table">
+        <tr>
+          <th colspan="4" style="background:#6020a0;">亿级</th>
+          <th colspan="4" style="background:#1040a0;">万级</th>
+          <th colspan="4" style="background:#1a6040;">个级</th>
+        </tr>
+        <tr>
+          <td class="pv-period">千亿</td><td class="pv-period">百亿</td><td class="pv-period">十亿</td><td class="pv-period">亿</td>
+          <td class="pv-period">千万</td><td class="pv-period">百万</td><td class="pv-period">十万</td><td class="pv-period">万</td>
+          <td class="pv-period">千</td><td class="pv-period">百</td><td class="pv-period">十</td><td class="pv-period">个</td>
+        </tr>
+        <tr>
+          <td></td><td></td><td></td><td></td>
+          <td class="pv-val">3</td><td class="pv-val">0</td><td class="pv-val">4</td><td class="pv-val">5</td>
+          <td class="pv-val">0</td><td class="pv-val">0</td><td class="pv-val">6</td><td class="pv-val">8</td>
+        </tr>
+      </table>
+    </div>
+    <p style="margin-top:10px;font-size:13px;color:var(--muted);">上表中的数：30450068，读作"三千零四十五万零六十八"（中间连续两个0只读一个零）</p>
+  </div>
+
+  <div class="tip"><b>读数三步骤：</b>①分级（每四位一级，从右往左）②各级分别读③万级后加"万"字。中间有0只读一次，末尾的0不读。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#fce8ea;">✏️</div><h3>练习一：读数、写数</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 读数（写出读法）</span></div>
+    <div class="ex-body">
+      <div class="ex-note">👆 点击查看答案</div>
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">30500 读作</div><div class="ex-ans">✓ 三万零五百</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">1080000 读作</div><div class="ex-ans">✓ 一百零八万</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">40060700 读作</div><div class="ex-ans">✓ 四千零六万零七百</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">300050008 读作</div><div class="ex-ans">✓ 三亿零五万零八</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">"五十万零八百"写作</div><div class="ex-ans">✓ 500800</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">"三亿零四千"写作</div><div class="ex-ans">✓ 300004000</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">"六千零七万八千"写作</div><div class="ex-ans">✓ 60078000</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">比较：10800□10080<br>填&gt;、&lt;或＝</div><div class="ex-ans">✓ &gt;（10800 > 10080）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 四舍五入取近似值</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">34800≈<span class="ex-blank"></span>万<br>（四舍五入到万位）</div><div class="ex-ans">✓ ≈4万<br>(千位3<5，舍去)</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">85000≈<span class="ex-blank"></span>万</div><div class="ex-ans">✓ ≈9万<br>(千位5≥5，进一)</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">3080000≈<span class="ex-blank"></span>百万</div><div class="ex-ans">✓ ≈3百万<br>(即约300万)</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">6亿4千万≈<span class="ex-blank"></span>亿</div><div class="ex-ans">✓ ≈6亿<br>(4千万<5千万，舍去)</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fce8ea;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">中国大约有14亿人口，写出这个数，并说出各数位上的数字。</div>
+        <div class="wp-ans">写作：<strong>1 400 000 000</strong><br>1在十亿位，4在亿位，其余各位都是0。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">某市去年财政收入为38560000元，改写成以"万元"为单位的数是多少？</div>
+        <div class="wp-ans">解：38560000元 = <strong>3856万元</strong><br>（去掉末尾4个0，写"万"字）</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">按从小到大排列：1050万、970万、1005万、1500万</div>
+        <div class="wp-ans">先统一：各数位数相同时从最高位比。<br>970万 &lt; 1005万 &lt; 1050万 &lt; 1500万<br>答：<strong>970万、1005万、1050万、1500万</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 1: 公顷与千米 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-1">
+  <div class="unit-header u-o" data-icon="📏">
+    <div class="unit-week">第2单元 · 建议学习：2天</div>
+    <div class="unit-title">公顷和千米</div>
+    <div class="unit-desc">认识大面积单位公顷和公里，掌握与常用单位的换算</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fdf0e4;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b05010"></span>
+        <div><strong>公顷（hm²）</strong>
+          <span class="kp-note">1公顷 = 10000平方米（边长100米的正方形面积）。常用于表示农田、公园、湖泊等大面积。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b05010"></span>
+        <div><strong>平方千米（km²）</strong>
+          <span class="kp-note">1平方千米 = 100公顷 = 1000000平方米。常用于表示城市、国家、海洋等超大面积。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b05010"></span>
+        <div><strong>面积单位换算顺序</strong>
+          <span class="kp-note">平方毫米→平方厘米→平方分米→平方米→公顷→平方千米<br>前四个相邻单位进率100；平方米→公顷进率10000；公顷→平方千米进率100</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b05010"></span>
+        <div><strong>千米（公里，km）</strong>
+          <span class="kp-note">1千米 = 1000米（复习）。千米用于表示城市之间的距离、公路里程等。</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 换算关系</div>
+      <div class="formula-row">1公顷 = 10000平方米</div>
+      <div class="formula-row">1平方千米 = 100公顷 = 1000000平方米</div>
+      <div class="formula-row">1千米 = 1000米</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>实物帮助记忆：</b>1公顷≈1.4个标准足球场；天安门广场约44公顷；北京市面积约1.6万平方千米。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#fdf0e4;">✏️</div><h3>练习：单位换算</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 换算</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">5公顷=<span class="ex-blank"></span>平方米</div><div class="ex-ans">✓ 50000平方米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">30000平方米=<span class="ex-blank"></span>公顷</div><div class="ex-ans">✓ 3公顷</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">3平方千米=<span class="ex-blank"></span>公顷</div><div class="ex-ans">✓ 300公顷</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">500公顷=<span class="ex-blank"></span>平方千米</div><div class="ex-ans">✓ 5平方千米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">选合适单位：<br>一个农场面积约60（）</div><div class="ex-ans">✓ 公顷（hm²）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">选合适单位：<br>中国陆地面积约960万（）</div><div class="ex-ans">✓ 平方千米（km²）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fdf0e4;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">一块长方形菜地，长200米，宽150米，这块菜地有多少公顷？</div>
+        <div class="wp-ans">解：200×150=30000平方米<br>30000÷10000=<strong>3公顷</strong><br>答：这块菜地有3公顷。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一个公园的面积是1.5平方千米，合多少公顷？合多少平方米？</div>
+        <div class="wp-ans">1.5×100=<strong>150公顷</strong><br>1.5×1000000=<strong>1500000平方米</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 2: 角的度量 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-2">
+  <div class="unit-header u-b" data-icon="📐">
+    <div class="unit-week">第3单元 · 建议学习：3天</div>
+    <div class="unit-title">角的度量</div>
+    <div class="unit-desc">认识角的度量单位"度"，用量角器量角和画角，掌握角的分类</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e4eeff;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1040a0"></span>
+        <div><strong>角的度量单位：度（°）</strong>
+          <span class="kp-note">1周角=360°，1平角=180°，1直角=90°</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1040a0"></span>
+        <div><strong>角的分类（必须记！）</strong>
+          <span class="kp-note">锐角：0°&lt;角&lt;90°；直角：=90°；钝角：90°&lt;角&lt;180°；平角：=180°；周角：=360°</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1040a0"></span>
+        <div><strong>量角器的使用（三步骤）</strong>
+          <span class="kp-note">①中心点对准角的顶点；②零刻度线对准一条边；③另一条边指向的刻度就是角的度数</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1040a0"></span>
+        <div><strong>内外圈的选择</strong>
+          <span class="kp-note">量角器有内外两圈刻度。选哪圈：从0°开始数——从哪侧的0°对准边，就读那侧（内或外）的度数</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 角的大小关系</div>
+      <div class="formula-row">锐角 &lt; 直角(90°) &lt; 钝角 &lt; 平角(180°) &lt; 周角(360°)</div>
+      <div class="formula-row">平角 = 2个直角；周角 = 4个直角 = 2个平角</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#e4eeff;">✏️</div><h3>练习一：角的分类</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 判断角的类型</span></div>
+    <div class="ex-body">
+      <div class="ex-note">👆 点击每题查看答案</div>
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">35° 是<span class="ex-blank"></span>角</div><div class="ex-ans">✓ 锐角（0°&lt;35°&lt;90°）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">90° 是<span class="ex-blank"></span>角</div><div class="ex-ans">✓ 直角（正好90°）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">120° 是<span class="ex-blank"></span>角</div><div class="ex-ans">✓ 钝角（90°&lt;120°&lt;180°）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">180° 是<span class="ex-blank"></span>角</div><div class="ex-ans">✓ 平角</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">360° 是<span class="ex-blank"></span>角</div><div class="ex-ans">✓ 周角</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">1平角=<span class="ex-blank"></span>个直角</div><div class="ex-ans">✓ 2个直角</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">1周角=<span class="ex-blank"></span>个直角</div><div class="ex-ans">✓ 4个直角</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">比较：115° ○ 直角</div><div class="ex-ans">✓ 115° &gt; 90°（直角）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">计算 · 角度推算</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">一个角是35°，它的补角是多少°？<br>（两角之和=180°）</div><div class="ex-ans">✓ 180°-35°=145°</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">一个角是60°，它的余角是多少°？<br>（两角之和=90°）</div><div class="ex-ans">✓ 90°-60°=30°</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">一个三角形两个角分别是45°和75°，第三个角是多少°？</div><div class="ex-ans">✓ 180°-45°-75°=60°<br>（三角形内角和=180°）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">时钟3时整，时针和分针的夹角是多少°？</div><div class="ex-ans">✓ 90°（正好是直角）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e4eeff;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">一个等腰三角形（两腰相等），顶角是40°，两个底角各是多少度？</div>
+        <div class="wp-hint">💡 提示：三角形三个内角和是180°，两个底角相等</div>
+        <div class="wp-ans">解：两个底角之和 = 180°-40° = 140°<br>每个底角 = 140°÷2 = <strong>70°</strong><br>答：两个底角各是70°。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一个四边形的四个角分别是：80°、90°、105°、?°（四边形内角和=360°）</div>
+        <div class="wp-ans">解：360°-80°-90°-105° = <strong>85°</strong><br>答：第四个角是85°（锐角）。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 3: 三位数乘两位数 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-3">
+  <div class="unit-header u-g" data-icon="✖">
+    <div class="unit-week">第4单元 · 建议学习：5天（核心计算！）</div>
+    <div class="unit-title">三位数乘两位数</div>
+    <div class="unit-desc">掌握三位数乘两位数的竖式计算，学会估算，理解积的变化规律</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e0f0ea;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6040"></span>
+        <div><strong>三位数×两位数竖式（与两位数×两位数类似，多一位）</strong>
+          <span class="kp-note">①先用个位数乘三位数；②再用十位数乘三位数（结果左移一位）；③两个积相加</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6040"></span>
+        <div><strong>估算方法</strong>
+          <span class="kp-note">把两个因数各自四舍五入成整十或整百再乘。如：198×42≈200×40=8000</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a6040"></span>
+        <div><strong>积的变化规律</strong>
+          <span class="kp-note">①一个因数×n，积也×n；②一个因数÷n，积也÷n；③一个×n另一个÷n，积不变</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 竖式示例（124×32）</div>
+      <div class="formula-row">&nbsp;&nbsp;&nbsp;&nbsp;124</div>
+      <div class="formula-row">&nbsp;&nbsp;×&nbsp;&nbsp;32</div>
+      <div class="formula-row">&nbsp;──────</div>
+      <div class="formula-row">&nbsp;&nbsp;&nbsp;&nbsp;248 ← 124×2（个位）</div>
+      <div class="formula-row">+&nbsp;&nbsp;3720 ← 124×30（十位）</div>
+      <div class="formula-row">&nbsp;──────</div>
+      <div class="formula-row">&nbsp;&nbsp;&nbsp;3968</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>注意：</b>用十位数乘时，结果要和十位对齐（或理解为末尾补0）。进位后一定要加上，这是最容易漏掉的地方。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#e0f0ea;">✏️</div><h3>练习一：竖式计算</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">竖式 · 三位数×两位数</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 123 × 21</div><div class="vs"></div><div class="va">= 2583</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 214 × 32</div><div class="vs"></div><div class="va">= 6848</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 365 × 24</div><div class="vs"></div><div class="va">= 8760</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 408 × 35</div><div class="vs"></div><div class="va">= 14280</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 567 × 48</div><div class="vs"></div><div class="va">= 27216</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 309 × 76</div><div class="vs"></div><div class="va">= 23484</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 480 × 25</div><div class="vs"></div><div class="va">= 12000</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 625 × 16</div><div class="vs"></div><div class="va">= 10000</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">估算 · 判断范围</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">198×42的估算值约是</div><div class="ex-ans">✓ 200×40=8000<br>（精确值=8316）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">306×49的估算值约是</div><div class="ex-ans">✓ 300×50=15000<br>（精确值=14994）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">452×38的估算值约是</div><div class="ex-ans">✓ 450×40=18000<br>（精确值=17176）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">23×18，积是几位数？</div><div class="ex-ans">✓ 3位数<br>（23×18=414）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e0f0ea;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">学校图书馆有图书360册，少年宫图书馆的藏书量是学校的28倍，少年宫图书馆有图书多少册？</div>
+        <div class="wp-ans">解：360×28=<strong>10080册</strong><br>答：少年宫图书馆有10080册图书。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一列火车每小时行驶125千米，从甲城到乙城需要行驶36小时，两城相距多少千米？</div>
+        <div class="wp-ans">解：125×36=<strong>4500千米</strong><br>答：两城相距4500千米。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">工厂计划每天生产零件235个，计划生产48天。如果每天多生产15个，可以提前几天完成？</div>
+        <div class="wp-hint">💡 提示：先算总数，再算新速度下需要几天</div>
+        <div class="wp-ans">总数：235×48=11280个<br>新速度：235+15=250个/天<br>新天数：11280÷250=45.12天，需46天（有余数）<br>实际：11280÷250=45……30，需要46天<br>提前：48-46=<strong>2天</strong>（若整除45天则提前3天）<br>精确：250×45=11250，还差30个，第46天完成<br>提前：48-46=<strong>2天</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 4: 平行与垂直 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-4">
+  <div class="unit-header u-gd" data-icon="⊥">
+    <div class="unit-week">第5单元 · 建议学习：3天</div>
+    <div class="unit-title">平行四边形和梯形</div>
+    <div class="unit-desc">认识平行与垂直，掌握平行四边形和梯形的特征与画法</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fdf8e0;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#907000"></span>
+        <div><strong>平行线</strong>
+          <span class="kp-note">在同一平面内，永不相交的两条直线叫平行线，记作 a∥b。平行线之间的距离处处相等。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#907000"></span>
+        <div><strong>垂直</strong>
+          <span class="kp-note">两条直线相交成直角，叫做垂直，记作 a⊥b。其中一条叫另一条的垂线，交点叫垂足。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#907000"></span>
+        <div><strong>平行四边形特征</strong>
+          <span class="kp-note">两组对边分别平行且相等；对角相等；对角线互相平分。容易变形（不稳定）</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#907000"></span>
+        <div><strong>梯形特征</strong>
+          <span class="kp-note">只有一组对边平行（叫上底和下底），另一组不平行（叫腰）。等腰梯形：两腰相等，两底角相等。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#907000"></span>
+        <div><strong>四边形包含关系</strong>
+          <span class="kp-note">正方形 ⊂ 长方形 ⊂ 平行四边形 ⊂ 四边形；梯形 ⊂ 四边形（梯形不是平行四边形）</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 特征对比</div>
+      <div class="formula-row">长方形：2组平行，4个直角，对边相等</div>
+      <div class="formula-row">平行四边形：2组平行，对边相等，无直角</div>
+      <div class="formula-row">梯形：1组平行，另1组不平行</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#fdf8e0;">✏️</div><h3>练习一：判断与填空</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">判断题（点击查看正误）</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">长方形是特殊的平行四边形。（&nbsp;&nbsp;&nbsp;）</div><div class="ex-ans">✓ 正确（√）<br>长方形有两组平行边，对边相等</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">平行四边形是特殊的梯形。（&nbsp;&nbsp;&nbsp;）</div><div class="ex-ans">✗ 错误（×）<br>梯形只有1组平行，平行四边形有2组，二者不是包含关系</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">正方形是特殊的长方形。（&nbsp;&nbsp;&nbsp;）</div><div class="ex-ans">✓ 正确（√）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">两条直线不平行就一定相交。（&nbsp;&nbsp;&nbsp;）</div><div class="ex-ans">✓ 正确（√）<br>（在同一平面内）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">平行四边形的四个角都是直角。（&nbsp;&nbsp;&nbsp;）</div><div class="ex-ans">✗ 错误（×）<br>只有长方形/正方形四角是直角</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">梯形有且只有一组平行边。（&nbsp;&nbsp;&nbsp;）</div><div class="ex-ans">✓ 正确（√）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 图形特征</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">平行四边形有<span class="ex-blank"></span>组平行的对边</div><div class="ex-ans">✓ 2组</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">梯形的上底和下底是<span class="ex-blank"></span>关系</div><div class="ex-ans">✓ 平行关系</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">过一点作已知直线的垂线，可以画<span class="ex-blank"></span>条</div><div class="ex-ans">✓ 1条（唯一）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">等腰梯形的两腰<span class="ex-blank"></span>，两底角<span class="ex-blank"></span></div><div class="ex-ans">✓ 相等；相等</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fdf8e0;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">一个等腰梯形，上底是6cm，下底是10cm，腰长是5cm，这个梯形的周长是多少？</div>
+        <div class="wp-ans">解：6+10+5+5=<strong>26厘米</strong><br>答：周长是26厘米。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一个平行四边形，其中一个角是60°，其他三个角各是多少度？</div>
+        <div class="wp-hint">💡 提示：平行四边形对角相等，相邻两角互补（之和=180°）</div>
+        <div class="wp-ans">与60°相对的角也是60°；<br>相邻角：180°-60°=120°，有两个120°的角。<br>答：<strong>60°、120°、60°、120°</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 5: 除数是两位数的除法 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-5">
+  <div class="unit-header u-p" data-icon="➗">
+    <div class="unit-week">第6单元 · 建议学习：6天（最难！）</div>
+    <div class="unit-title">除数是两位数的除法</div>
+    <div class="unit-desc">掌握两位数除法的试商方法，学习商的位置判断，提高计算准确性</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#f0e4ff;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6020a0"></span>
+        <div><strong>判断商是几位数</strong>
+          <span class="kp-note">被除数最高位（或前几位）是否大于等于除数：够除商在高位，不够就多看一位，商在低一位</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6020a0"></span>
+        <div><strong>试商方法：四舍五入法</strong>
+          <span class="kp-note">把除数看成整十数（四舍五入）来试商。如 156÷13，把13看成10，先试商15；若余数太大要调大商，若不够减要调小商</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6020a0"></span>
+        <div><strong>调商规律</strong>
+          <span class="kp-note">除数个位是1~4（四舍）→试商偏大，需减小；除数个位是5~9（五入）→试商偏小，需增大</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#6020a0"></span>
+        <div><strong>商中间有0</strong>
+          <span class="kp-note">落下的数比除数小（不够除），商写0，继续落下一位</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 试商口诀</div>
+      <div class="formula-row">除数末位1~4：四舍，试商往大猜，积大了减小商</div>
+      <div class="formula-row">除数末位5~9：五入，试商往小猜，余数大了增大商</div>
+      <div class="formula-row">验算：商×除数 + 余数 = 被除数</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>最难的地方：</b>试商要"试"，第一次猜的商不一定对，要检验：若商×除数 &gt; 被除数（减不了），商要减1；若余数≥除数，商要加1。多练是关键！</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#f0e4ff;">✏️</div><h3>练习一：口算入门</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">口算 · 整十数除法</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">80÷20=<span class="ex-blank"></span></div><div class="ex-ans">✓ 4</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">180÷30=<span class="ex-blank"></span></div><div class="ex-ans">✓ 6</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">420÷60=<span class="ex-blank"></span></div><div class="ex-ans">✓ 7</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">560÷70=<span class="ex-blank"></span></div><div class="ex-ans">✓ 8</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">360÷40=<span class="ex-blank"></span></div><div class="ex-ans">✓ 9</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">720÷90=<span class="ex-blank"></span></div><div class="ex-ans">✓ 8</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">竖式 · 两位数÷两位数 ⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 85 ÷ 17</div><div class="vs"></div><div class="va">= 5<br>验：5×17=85✓</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 96 ÷ 24</div><div class="vs"></div><div class="va">= 4<br>验：4×24=96✓</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 78 ÷ 13</div><div class="vs"></div><div class="va">= 6<br>验：6×13=78✓</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 91 ÷ 26</div><div class="vs"></div><div class="va">= 3……13<br>验：3×26+13=91✓</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 83 ÷ 18</div><div class="vs"></div><div class="va">= 4……11<br>验：4×18+11=83✓</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 74 ÷ 32</div><div class="vs"></div><div class="va">= 2……10<br>验：2×32+10=74✓</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">竖式 · 三四位数÷两位数 ⭐⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 672 ÷ 21</div><div class="vs"></div><div class="va">= 32</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 576 ÷ 18</div><div class="vs"></div><div class="va">= 32</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 931 ÷ 43</div><div class="vs"></div><div class="va">= 21……28</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">1344 ÷ 32</div><div class="vs"></div><div class="va">= 42</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">2688 ÷ 56</div><div class="vs"></div><div class="va">= 48</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">3536 ÷ 68</div><div class="vs"></div><div class="va">= 52</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#f0e4ff;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">学校买来672本图书，准备分给24个班，平均每班分几本？</div>
+        <div class="wp-ans">解：672÷24=<strong>28本</strong><br>答：平均每班分28本。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一批货物共1488千克，用一辆最多载重36千克的小车运送，至少需要运几次？</div>
+        <div class="wp-ans">解：1488÷36=41……12<br>41次运41×36=1476千克，剩12千克还需1次。<br>共需：41+1=<strong>42次</strong><br>答：至少需要运42次。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">生产车间45天生产零件4275个，平均每天生产多少个？照这样的速度，再生产30天能生产多少个？</div>
+        <div class="wp-ans">每天：4275÷45=<strong>95个</strong><br>30天：95×30=<strong>2850个</strong><br>答：平均每天95个，再生产30天能生产2850个。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 6: 条形统计图 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-6">
+  <div class="unit-header u-t" data-icon="📊">
+    <div class="unit-week">第7单元 · 建议学习：2天</div>
+    <div class="unit-title">条形统计图</div>
+    <div class="unit-desc">学会读、制条形统计图，根据统计图提出并解决问题</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#daf4f8;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#006080"></span>
+        <div><strong>条形统计图的组成</strong>
+          <span class="kp-note">标题、横轴（项目）、纵轴（数量）、刻度（数量单位）、条形（每个条形代表一项数据）</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#006080"></span>
+        <div><strong>读图要点</strong>
+          <span class="kp-note">①看纵轴刻度确定每格代表多少；②看每个条形的高度读出数值；③通过比较条形的长短分析数据</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#006080"></span>
+        <div><strong>条形统计图 vs 统计表</strong>
+          <span class="kp-note">统计图更直观，便于比较大小；统计表更精确，便于查具体数据。两者都要掌握。</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#daf4f8;">✏️</div><h3>练习：读图分析</h3></div>
+  <div class="knowledge-box">
+    <p style="font-size:13px;font-weight:700;margin-bottom:12px;">某班同学最喜欢的课外活动统计（每格代表2人）</p>
+    <!-- Simple ASCII bar chart simulation -->
+    <div style="display:flex;align-items:flex-end;gap:16px;height:140px;padding:8px;background:#f4f4fc;border-radius:6px;margin-bottom:10px;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        <div style="width:36px;background:#4060d0;height:80px;border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">读书<br>16人</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        <div style="width:36px;background:#e04050;height:110px;border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">运动<br>22人</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        <div style="width:36px;background:#20a060;height:60px;border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">画画<br>12人</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        <div style="width:36px;background:#d08000;height:90px;border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">音乐<br>18人</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        <div style="width:36px;background:#8040c0;height:40px;border-radius:3px 3px 0 0;"></div>
+        <div style="font-size:11px;color:var(--muted);text-align:center;">游戏<br>8人</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">最受欢迎的课外活动是什么？有多少人？</div>
+        <div class="wp-ans"><strong>运动</strong>，22人最多。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">喜欢读书和画画的同学共有多少人？</div>
+        <div class="wp-ans">解：16+12=<strong>28人</strong></div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">喜欢运动的同学比喜欢游戏的多几倍？</div>
+        <div class="wp-ans">解：22÷8=2……6（不整除）<br>22比8多：22-8=14人，14÷8=1.75倍<br>（或者说：运动的同学是游戏同学的约2.75倍，比游戏多14人）</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">4</span>
+      <div><div class="wp-q">全班同学共多少人？（只统计这5类活动）</div>
+        <div class="wp-ans">解：16+22+12+18+8=<strong>76人</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 7: 数学广角·优化 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-7">
+  <div class="unit-header u-i" data-icon="🔧">
+    <div class="unit-week">第8单元 · 建议学习：2天</div>
+    <div class="unit-title">数学广角——优化（统筹方法）</div>
+    <div class="unit-desc">学习统筹规划的思想，找出最优方案，节省时间和资源</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e8e8f8;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#3030a0"></span>
+        <div><strong>统筹方法的核心思想</strong>
+          <span class="kp-note">合理安排工序，使各步骤尽量同时进行（不浪费等待时间），从而达到总时间最短。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#3030a0"></span>
+        <div><strong>经典问题：烧水泡茶</strong>
+          <span class="kp-note">烧水需15分钟、洗茶壶1分钟、洗茶杯2分钟、拿茶叶1分钟。最优：烧水的同时做其他准备，总用时15分钟。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#3030a0"></span>
+        <div><strong>关键：找出哪些事情可以同时做</strong>
+          <span class="kp-note">将等待时间（如等水烧开）用来做其他事，而非顺序完成所有步骤。</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 统筹策略</div>
+      <div class="formula-row">最优方案 = 最长不可中断任务 + 利用等待期完成其他任务</div>
+      <div class="formula-row">总时间 ≈ 最长任务的时间（而非所有任务时间之和）</div>
+    </div>
+  </div>
+
+  <div class="info"><b>生活中的统筹：</b>早上起来同时热牛奶和洗漱；边等电梯边穿外套；烤箱预热时准备食材。这种"同时做"的思维非常实用！</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#e8e8f8;">🧩</div><h3>练习题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">妈妈要完成三件事：洗碗（10分钟）、拖地（8分钟）、烧饭（20分钟，需要等）。如何安排顺序，使总时间最短？最短需要多少分钟？</div>
+        <div class="wp-hint">💡 提示：烧饭时可以做其他事</div>
+        <div class="wp-ans"><strong>最优安排：</strong><br>先开始烧饭，同时洗碗（10分钟）和拖地（8分钟）。<br>洗碗+拖地=10+8=18分钟，烧饭20分钟。<br>烧饭时间够完成洗碗和拖地。<br>总时间 = <strong>20分钟</strong>（烧饭的时间）</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一个煎锅一次只能煎2片面包，每面需要煎1分钟。现在要煎3片面包，最少需要几分钟？</div>
+        <div class="wp-hint">💡 提示：如果顺序煎：A面+B面正→翻→A面+B面反→C面+再翻=不对！想想怎么安排</div>
+        <div class="wp-ans"><strong>最优方案：</strong><br>第1分钟：同时煎A正面、B正面<br>第2分钟：翻A（煎A反面）+ 放入C（煎C正面），取出B<br>第3分钟：取出A，翻B放回（煎B反面）+ 继续煎C反面<br>等等——实际上：<br>第1分钟：A正、B正<br>第2分钟：A反、C正（取出B）<br>第3分钟：B反、C反（取出A）<br>最少 = <strong>3分钟</strong></div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">小华要完成：读课文（5分钟）、听写生词（3分钟）、做数学题（15分钟）、背英语单词（4分钟）。这些都是必须独立完成的事。最少需要多少分钟？</div>
+        <div class="wp-hint">💡 这些任务必须逐一完成（无法同时），所以只能顺序安排</div>
+        <div class="wp-ans">由于每项任务都需要独立专注完成，无法同时进行。<br>最少时间 = 5+3+15+4 = <strong>27分钟</strong><br>（可以按自己喜欢的顺序排，总时间不变）</div></div></div></div>
+
+  <div class="divider"></div>
+  <div class="knowledge-box" style="text-align:center;padding:28px;">
+    <div style="font-size:36px;margin-bottom:12px;">🎓</div>
+    <div style="font-family:'ZCOOL XiaoWei',serif;font-size:22px;margin-bottom:10px;color:var(--ink);">四年级上册全部完成！</div>
+    <div style="font-size:13.5px;color:var(--muted);line-height:2;">
+      恭喜完成四年级上册全部8个单元！<br>
+      <b style="color:var(--blue);">重点回顾：</b>大数认识 · 三位数乘两位数 · 除数是两位数的除法（最难）<br>
+      建议做一套完整的四年级上册期末测试卷检验。<br>
+      如果测试能达到70分，说明基础已经稳固，可以继续四年级下册！
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<button class="scrolltop" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function showUnit(n) {
+  document.querySelectorAll('.unit-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('unit-' + n).classList.add('active');
+  document.querySelector('.nav-tab[data-u="' + n + '"]').classList.add('active');
+  window.scrollTo({ top: document.querySelector('.nav-wrap').offsetTop - 10, behavior: 'smooth' });
+}
+function rev(el) { el.classList.toggle('revealed'); }
+function revWP(el) { el.classList.toggle('revealed'); }
+
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+});
+</script>
+</body>
+</html>

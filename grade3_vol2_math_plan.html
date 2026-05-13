@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版三年级下册数学 · 详细补习计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg: #eef4f0;
+  --paper: #f9fdf9;
+  --ink: #1a2e1e;
+  --red: #b5320e;
+  --orange: #c0620a;
+  --gold: #8a7000;
+  --green: #1e6b3a;
+  --blue: #1a4a72;
+  --teal: #0e6b5c;
+  --purple: #5a3090;
+  --muted: #607060;
+  --border: #b8d0bc;
+  --shadow: rgba(0,0,0,0.07);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: var(--bg);
+  font-family: 'Noto Sans SC', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #1a2e1e 0%, #2e4e34 100%);
+  padding: 36px 24px 28px;
+  position: relative; overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 24px,
+    rgba(255,255,255,0.018) 24px, rgba(255,255,255,0.018) 48px
+  );
+}
+.header-inner { position: relative; max-width: 920px; margin: 0 auto; }
+.header-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(139,190,100,0.18);
+  border: 1px solid rgba(139,190,100,0.45);
+  color: #a8e060;
+  font-size: 11px; font-weight: 700; letter-spacing: 2px;
+  padding: 4px 12px; border-radius: 2px; margin-bottom: 14px;
+}
+.header h1 {
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: clamp(24px, 5vw, 38px);
+  color: #fff; line-height: 1.35; margin-bottom: 10px;
+}
+.header h1 span { color: #a8e060; }
+.header-desc { color: rgba(255,255,255,0.5); font-size: 13px; line-height: 1.9; }
+.header-stats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 20px; }
+.hstat {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 8px 16px; border-radius: 4px; text-align: center;
+}
+.hstat-n { font-size: 20px; font-weight: 700; color: #a8e060; }
+.hstat-l { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 1px; }
+
+/* NAV */
+.nav-wrap {
+  background: #fff;
+  border-bottom: 2px solid var(--border);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+.nav-tabs {
+  display: flex; overflow-x: auto; max-width: 920px; margin: 0 auto;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tab {
+  flex-shrink: 0; padding: 13px 16px;
+  border: none; background: none;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 12.5px; cursor: pointer; color: var(--muted);
+  border-bottom: 3px solid transparent; transition: all .2s;
+  white-space: nowrap;
+}
+.nav-tab:hover { color: var(--ink); }
+.nav-tab.active { color: var(--ink); font-weight: 700; }
+.nav-tab .tn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 18px; height: 18px; border-radius: 50%;
+  font-size: 10px; font-weight: 700; margin-right: 5px;
+  background: var(--border); color: var(--muted);
+}
+.nav-tab.active .tn { color: #fff; }
+
+/* Color accents per unit */
+.nav-tab[data-u="0"].active { border-bottom-color:#1e6b3a; color:#1e6b3a; }
+.nav-tab[data-u="0"].active .tn { background:#1e6b3a; }
+.nav-tab[data-u="1"].active { border-bottom-color:#b5320e; color:#b5320e; }
+.nav-tab[data-u="1"].active .tn { background:#b5320e; }
+.nav-tab[data-u="2"].active { border-bottom-color:#1a4a72; color:#1a4a72; }
+.nav-tab[data-u="2"].active .tn { background:#1a4a72; }
+.nav-tab[data-u="3"].active { border-bottom-color:#c0620a; color:#c0620a; }
+.nav-tab[data-u="3"].active .tn { background:#c0620a; }
+.nav-tab[data-u="4"].active { border-bottom-color:#0e6b5c; color:#0e6b5c; }
+.nav-tab[data-u="4"].active .tn { background:#0e6b5c; }
+.nav-tab[data-u="5"].active { border-bottom-color:#5a3090; color:#5a3090; }
+.nav-tab[data-u="5"].active .tn { background:#5a3090; }
+.nav-tab[data-u="6"].active { border-bottom-color:#8a7000; color:#8a7000; }
+.nav-tab[data-u="6"].active .tn { background:#8a7000; }
+.nav-tab[data-u="7"].active { border-bottom-color:#2e4e34; color:#2e4e34; }
+.nav-tab[data-u="7"].active .tn { background:#2e4e34; }
+
+/* MAIN */
+.main { max-width: 920px; margin: 0 auto; padding: 26px 16px 60px; }
+
+/* UNIT PAGE */
+.unit-page { display: none; animation: fadein .25s ease; }
+.unit-page.active { display: block; }
+@keyframes fadein { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+/* Unit header */
+.unit-header {
+  border-radius: 10px; padding: 22px 24px;
+  margin-bottom: 20px; position: relative; overflow: hidden;
+}
+.unit-header::after {
+  content: attr(data-icon);
+  position: absolute; right: 16px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px; opacity: 0.1; line-height: 1; pointer-events: none;
+}
+.unit-week { font-size: 11px; font-weight: 700; letter-spacing: 2px; opacity: .75; margin-bottom: 6px; }
+.unit-title { font-family: 'ZCOOL XiaoWei', serif; font-size: 22px; color: #fff; margin-bottom: 6px; }
+.unit-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+.u-g  { background: linear-gradient(135deg,#1e6b3a,#2ea854); }
+.u-r  { background: linear-gradient(135deg,#b5320e,#e04a1a); }
+.u-b  { background: linear-gradient(135deg,#1a4a72,#2878c0); }
+.u-o  { background: linear-gradient(135deg,#c0620a,#e88020); }
+.u-t  { background: linear-gradient(135deg,#0e6b5c,#18a890); }
+.u-p  { background: linear-gradient(135deg,#5a3090,#8850c8); }
+.u-gd { background: linear-gradient(135deg,#7a6200,#c0a010); }
+.u-dk { background: linear-gradient(135deg,#1e3028,#2e5040); }
+
+/* Section label */
+.section-label {
+  display: flex; align-items: center; gap: 10px; margin: 18px 0 12px;
+}
+.sl-icon {
+  width: 28px; height: 28px; border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; flex-shrink: 0;
+}
+.section-label h3 { font-size: 15px; font-weight: 700; }
+
+/* Knowledge box */
+.knowledge-box {
+  background: var(--paper); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 18px 20px; margin-bottom: 14px;
+}
+.kp-list { list-style: none; }
+.kp-item {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0; border-bottom: 1px dashed var(--border);
+  font-size: 13.5px; line-height: 1.75;
+}
+.kp-item:last-child { border-bottom: none; padding-bottom: 0; }
+.kp-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+.kp-note { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.formula-box {
+  background: #f5fbf0; border: 1.5px solid #8ecf80;
+  border-radius: 6px; padding: 14px 16px; margin-top: 12px;
+}
+.formula-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #3a7020; margin-bottom: 8px; }
+.formula-row { font-size: 14px; font-weight: 700; color: #2a5010; padding: 4px 0; line-height: 1.6; }
+
+/* Exercise box */
+.ex-box {
+  background: var(--paper); border: 1.5px solid var(--border);
+  border-radius: 8px; overflow: hidden; margin-bottom: 14px;
+}
+.ex-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 11px 18px; border-bottom: 1.5px solid var(--border);
+  background: #f0f8f2;
+}
+.ex-type { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--muted); }
+.ex-body { padding: 16px 18px; }
+.ex-note { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+
+.ex-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+  gap: 10px; margin-bottom: 8px;
+}
+.ex-item {
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 6px; padding: 12px 14px;
+  cursor: pointer; transition: all .18s; position: relative;
+}
+.ex-item:hover { border-color:#8ebe90; background:#e8f4ea; }
+.ex-q { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.ex-blank {
+  display: inline-block; min-width: 38px; height: 22px;
+  border-bottom: 2px solid var(--ink); vertical-align: bottom;
+  text-align: center; font-weight: 700; color: var(--green); font-size: 15px;
+}
+.ex-ans { display: none; font-size: 12px; color: var(--green); margin-top: 5px; font-weight: 700; }
+.ex-item.revealed { background: #e6f5ea; border-color: #6ebe7a; }
+.ex-item.revealed .ex-ans { display: block; }
+
+/* Vertical drills */
+.vdrill { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.vi {
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 6px; padding: 14px 18px; min-width: 120px;
+  cursor: pointer; transition: all .18s;
+  font-family: 'Courier New', monospace; font-size: 15px; line-height: 1.85;
+}
+.vi:hover { border-color:#8ebe90; }
+.vi .vl { white-space: pre; }
+.vi .vs { border-top: 2px solid var(--ink); margin: 4px 0; }
+.vi .va { color: var(--green); font-weight: 700; display: none; }
+.vi.revealed { background:#e6f5ea; border-color:#6ebe7a; }
+.vi.revealed .va { display: block; }
+
+/* Word problems */
+.wp {
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 15px 16px; margin-bottom: 10px;
+  cursor: pointer; transition: all .18s;
+}
+.wp:hover { border-color:#8ebe90; }
+.wp-row { display: flex; align-items: flex-start; gap: 10px; }
+.wp-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--ink); color: #fff;
+  font-size: 11px; font-weight: 700;
+  width: 22px; height: 22px; border-radius: 50%;
+  flex-shrink: 0; margin-top: 1px;
+}
+.wp-q { font-size: 13.5px; line-height: 1.8; }
+.wp-hint { font-size: 12px; color: var(--muted); margin-top: 5px; font-style: italic; }
+.wp-ans {
+  display: none; margin-top: 10px; padding-top: 10px;
+  border-top: 1px dashed var(--border);
+  font-size: 13px; color: var(--green); line-height: 1.8;
+}
+.wp-ans strong { font-size: 14px; }
+.wp.revealed { background:#e6f5ea; border-color:#6ebe7a; }
+.wp.revealed .wp-ans { display: block; }
+
+/* Tip box */
+.tip { background:#fff9e0; border-left:4px solid #c8a000; border-radius:0 6px 6px 0; padding:12px 16px; margin:10px 0; font-size:13px; line-height:1.8; color:#5a4800; }
+.tip b { color:#9a7800; }
+
+.warn { background:#fdf0ee; border-left:4px solid var(--red); border-radius:0 6px 6px 0; padding:12px 16px; margin:10px 0; font-size:13px; line-height:1.8; color:#5a1a0a; }
+.warn b { color:#b5320e; }
+
+/* Division layout */
+.div-layout {
+  font-family: 'Courier New', monospace;
+  font-size: 15px; line-height: 2;
+  background: var(--bg); border: 1.5px solid var(--border);
+  border-radius: 6px; padding: 14px 18px; display: inline-block;
+  margin: 4px; cursor: pointer; transition: all .18s;
+  vertical-align: top;
+}
+.div-layout:hover { border-color:#8ebe90; }
+.div-layout .da { color: var(--green); font-weight: 700; }
+.div-layout .dh { display: none; }
+.div-layout.revealed .dh { display: block; }
+.div-layout.revealed { background:#e6f5ea; border-color:#6ebe7a; }
+.div-wrap { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+
+/* Table styles */
+.data-table { width:100%; border-collapse:collapse; font-size:13px; }
+.data-table th { background:var(--ink); color:#fff; padding:9px 12px; text-align:left; font-size:12px; }
+.data-table td { padding:9px 12px; border-bottom:1px solid var(--border); vertical-align:top; line-height:1.65; }
+.data-table tr:nth-child(even) td { background:#f2f8f3; }
+.data-table .ok { color:var(--green); font-weight:700; }
+
+/* Two-col */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+@media(max-width:520px){ .two-col{ grid-template-columns:1fr; } }
+
+.divider { height:1px; background:var(--border); margin:18px 0; }
+
+/* Shape area visual */
+.shape-demo {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #ddf0de; border: 2px solid var(--green);
+  border-radius: 4px; font-size: 12px; color: var(--green);
+  font-weight: 700; padding: 6px 10px; margin: 4px;
+}
+
+/* Scroll top */
+.scrolltop {
+  position: fixed; bottom: 24px; right: 20px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--ink); color: #fff;
+  border: none; cursor: pointer; font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  opacity: 0; transition: opacity .3s; z-index: 200;
+}
+.scrolltop.visible { opacity: 1; }
+
+/* Progress strip */
+.progress-strip {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 18px;
+}
+.ps-item {
+  flex: 1; min-width: 80px;
+  background: var(--paper); border: 1.5px solid var(--border);
+  border-radius: 6px; padding: 10px 10px 8px; text-align: center;
+  cursor: pointer; transition: all .18s;
+}
+.ps-item:hover { border-color: #8ebe90; }
+.ps-item.done { background: #daf0de; border-color: #6ebe7a; }
+.ps-icon { font-size: 18px; margin-bottom: 3px; }
+.ps-label { font-size: 11px; color: var(--muted); }
+.ps-item.done .ps-label { color: var(--green); font-weight: 700; }
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">📗 人教版 · 三年级下册 · 数学补习</div>
+    <h1>三年级下册<span>完整补习计划</span></h1>
+    <p>8个单元 · 知识点精讲 + 分层练习题 · 点击题目查看答案<br>建议每天完成1个模块，掌握后再进入下一单元</p>
+    <div class="header-stats">
+      <div class="hstat"><div class="hstat-n">8</div><div class="hstat-l">个单元</div></div>
+      <div class="hstat"><div class="hstat-n">3~4</div><div class="hstat-l">建议周数</div></div>
+      <div class="hstat"><div class="hstat-n">200+</div><div class="hstat-l">道练习题</div></div>
+      <div class="hstat"><div class="hstat-n">点击</div><div class="hstat-l">查看答案</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-u="0" onclick="showUnit(0)"><span class="tn">1</span>除法</button>
+    <button class="nav-tab" data-u="1" onclick="showUnit(1)"><span class="tn">2</span>认识除法竖式</button>
+    <button class="nav-tab" data-u="2" onclick="showUnit(2)"><span class="tn">3</span>复式统计表</button>
+    <button class="nav-tab" data-u="3" onclick="showUnit(3)"><span class="tn">4</span>两位数乘两位数</button>
+    <button class="nav-tab" data-u="4" onclick="showUnit(4)"><span class="tn">5</span>面积</button>
+    <button class="nav-tab" data-u="5" onclick="showUnit(5)"><span class="tn">6</span>年月日</button>
+    <button class="nav-tab" data-u="6" onclick="showUnit(6)"><span class="tn">7</span>小数初步</button>
+    <button class="nav-tab" data-u="7" onclick="showUnit(7)"><span class="tn">8</span>数学广角</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ================================================================ -->
+<!-- UNIT 0: 除法 (平均分 / 有余数除法) -->
+<!-- ================================================================ -->
+<div class="unit-page active" id="unit-0">
+  <div class="unit-header u-g" data-icon="➗">
+    <div class="unit-week">第1单元 · 建议学习：5天（超级重要！）</div>
+    <div class="unit-title">除法——平均分与有余数的除法</div>
+    <div class="unit-desc">从"平均分"理解除法的含义，掌握有余数除法，学会验算</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#dff0df;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1e6b3a"></span>
+        <div><strong>除法的含义：平均分</strong>
+          <span class="kp-note">把一些东西平均分成几份，或者看能分成几份，都用除法。如：12个苹果平均分给3人，每人4个 → 12÷3=4</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1e6b3a"></span>
+        <div><strong>有余数的除法</strong>
+          <span class="kp-note">分完还有剩余叫做余数。如：13÷3=4……1（商4，余1）。余数必须比除数小！</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1e6b3a"></span>
+        <div><strong>除法各部分名称</strong>
+          <span class="kp-note">被除数 ÷ 除数 = 商……余数。例：17÷5=3……2，其中17是被除数，5是除数，3是商，2是余数</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1e6b3a"></span>
+        <div><strong>验算方法</strong>
+          <span class="kp-note">商×除数 + 余数 = 被除数。如验算17÷5=3……2：3×5+2=17 ✓</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1e6b3a"></span>
+        <div><strong>余数的规律</strong>
+          <span class="kp-note">余数只能是 0、1、2、……（除数-1），余数不能等于或超过除数</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 核心关系</div>
+      <div class="formula-row">被除数 ÷ 除数 = 商 …… 余数</div>
+      <div class="formula-row">验算：商 × 除数 + 余数 = 被除数</div>
+      <div class="formula-row">余数 &lt; 除数（余数必须比除数小！）</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <b>用乘法口诀找商：</b>做除法时，先想"几乘以除数最接近被除数但不超过"，那个"几"就是商。如：17÷5，想"几×5≤17"，3×5=15，4×5=20超过了，所以商是3，余数17-15=2。
+  </div>
+
+  <div class="section-label" style="margin-top:18px;"><div class="sl-icon" style="background:#dff0df;">✏️</div><h3>练习一：基础除法（整除）</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">口算 · 整除</span></div>
+    <div class="ex-body">
+      <div class="ex-note">👆 点击题目查看答案</div>
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">24 ÷ 4 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 6</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">45 ÷ 9 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 5</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">56 ÷ 7 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 8</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">36 ÷ 6 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 6</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">63 ÷ 9 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 7</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">72 ÷ 8 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 9</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">48 ÷ 6 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 8</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">81 ÷ 9 = <span class="ex-blank"></span></div><div class="ex-ans">✓ 9</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">有余数除法 · 重点练习 ⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">17 ÷ 5 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商3余2<br>验算：3×5+2=17✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">23 ÷ 4 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商5余3<br>验算：5×4+3=23✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">31 ÷ 6 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商5余1<br>验算：5×6+1=31✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">50 ÷ 7 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商7余1<br>验算：7×7+1=50✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">38 ÷ 9 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商4余2<br>验算：4×9+2=38✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">47 ÷ 8 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商5余7<br>验算：5×8+7=47✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">25 ÷ 3 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商8余1<br>验算：8×3+1=25✓</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">43 ÷ 5 = <span class="ex-blank"></span>…<span class="ex-blank"></span></div><div class="ex-ans">✓ 商8余3<br>验算：8×5+3=43✓</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#dff0df;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">43个同学去春游，每辆车坐6人，需要几辆车？</div>
+        <div class="wp-hint">💡 提示：有余数时，余下的人也需要一辆车</div>
+        <div class="wp-ans">解：43÷6=7……1<br>7辆坐42人，还余1人，所以还需要1辆。<br>共需要：7+1=<strong>8辆车</strong><br>答：需要8辆车。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">25颗糖平均分给8个小朋友，每人能分几颗？还剩几颗？</div>
+        <div class="wp-ans">解：25÷8=3……1<br>每人分<strong>3颗</strong>，还剩<strong>1颗</strong>。<br>答：每人分3颗，还剩1颗。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">一根绳子长46米，剪成每段5米，能剪几段？还剩几米？</div>
+        <div class="wp-ans">解：46÷5=9……1<br>能剪<strong>9段</strong>，还剩<strong>1米</strong>。<br>验算：9×5+1=46 ✓</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">4</span>
+      <div><div class="wp-q">今天是星期三，再过50天是星期几？</div>
+        <div class="wp-hint">💡 提示：一周7天，用50÷7看余数</div>
+        <div class="wp-ans">解：50÷7=7……1<br>余1天，即从星期三再数1天。<br>星期三 + 1天 = <strong>星期四</strong><br>答：再过50天是星期四。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 1: 除法竖式 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-1">
+  <div class="unit-header u-r" data-icon="📐">
+    <div class="unit-week">第2单元 · 建议学习：4天</div>
+    <div class="unit-title">除法竖式（两三位数÷一位数）</div>
+    <div class="unit-desc">用竖式计算较大数的除法，掌握商的书写位置和余数处理</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fde8e4;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b5320e"></span>
+        <div><strong>竖式除法步骤：从高位起，"除、乘、减、落"</strong>
+          <span class="kp-note">①看被除数的最高位能否被整除；②商写在对应位置；③商×除数写在下面；④被除数减去乘积得余数；⑤落下一位继续除</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b5320e"></span>
+        <div><strong>商的位置</strong>
+          <span class="kp-note">除到哪一位，商就写在那一位上方。若某位不够除（如0÷3），商写0</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#b5320e"></span>
+        <div><strong>商中间或末尾有0的情况</strong>
+          <span class="kp-note">如306÷3：3÷3=1，0÷3=0，6÷3=2，商102。遇到0不能跳过，要写0占位</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 竖式步骤口诀</div>
+      <div class="formula-row">除 → 乘 → 减 → 落（循环直到算完）</div>
+      <div class="formula-row">验算：商 × 除数（+ 余数）= 被除数</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>易错点：</b>①商写错位置（如百位的商写到十位）②余数比除数大说明商小了，要重新试商③中间有0时漏写0。每次做完用验算检查！</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#fde8e4;">✏️</div><h3>练习一：两位数÷一位数</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">竖式计算</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl">  84 ÷ 4</div><div class="vs"></div><div class="va">= 21</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  96 ÷ 3</div><div class="vs"></div><div class="va">= 32</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  75 ÷ 5</div><div class="vs"></div><div class="va">= 15</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  68 ÷ 4</div><div class="vs"></div><div class="va">= 17</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  91 ÷ 7</div><div class="vs"></div><div class="va">= 13</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  85 ÷ 5</div><div class="vs"></div><div class="va">= 17</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">三位数÷一位数（无余数）⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 639 ÷ 3</div><div class="vs"></div><div class="va">= 213</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 848 ÷ 4</div><div class="vs"></div><div class="va">= 212</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 936 ÷ 6</div><div class="vs"></div><div class="va">= 156</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 728 ÷ 7</div><div class="vs"></div><div class="va">= 104</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 408 ÷ 4</div><div class="vs"></div><div class="va">= 102</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 906 ÷ 3</div><div class="vs"></div><div class="va">= 302</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">三位数÷一位数（有余数）⭐⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 547 ÷ 4</div><div class="vs"></div><div class="va">= 136…3<br><small>验：136×4+3=547✓</small></div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 673 ÷ 5</div><div class="vs"></div><div class="va">= 134…3<br><small>验：134×5+3=673✓</small></div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 859 ÷ 6</div><div class="vs"></div><div class="va">= 143…1<br><small>验：143×6+1=859✓</small></div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 437 ÷ 7</div><div class="vs"></div><div class="va">= 62…3<br><small>验：62×7+3=437✓</small></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fde8e4;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">工厂3天生产了486个零件，平均每天生产多少个？</div>
+        <div class="wp-ans">解：486÷3=<strong>162个</strong><br>答：平均每天生产162个零件。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">学校买来876本图书，平均分给4个班，每班可以分到多少本，还剩多少本？</div>
+        <div class="wp-ans">解：876÷4=219<br>每班分<strong>219本</strong>，<strong>没有剩余</strong>。<br>答：每班219本，无剩余。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">一根742厘米的钢管，截成每段6厘米，能截几段，还剩几厘米？</div>
+        <div class="wp-ans">解：742÷6=123……4<br>能截<strong>123段</strong>，还剩<strong>4厘米</strong>。<br>验算：123×6+4=742 ✓</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 2: 复式统计表 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-2">
+  <div class="unit-header u-b" data-icon="📊">
+    <div class="unit-week">第3单元 · 建议学习：2天</div>
+    <div class="unit-title">复式统计表</div>
+    <div class="unit-desc">学会制作和读取复式统计表，用统计表解决实际问题</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e4eef8;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4a72"></span>
+        <div><strong>单式统计表 vs 复式统计表</strong>
+          <span class="kp-note">单式：只统计一种数据。复式：同一张表格统计多种数据，便于比较</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4a72"></span>
+        <div><strong>复式统计表的读法</strong>
+          <span class="kp-note">看行（横向）和列（纵向）找到对应数据。合计行=各组数据之和</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#1a4a72"></span>
+        <div><strong>根据统计表提出问题并解答</strong>
+          <span class="kp-note">如：哪组最多？两组相差多少？总计是多少？</span></div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#e4eef8;">✏️</div><h3>练习：读表并回答问题</h3></div>
+  <div class="knowledge-box">
+    <p style="font-size:13px;font-weight:700;margin-bottom:10px;">三年级各班图书角藏书情况（单位：本）</p>
+    <div style="overflow-x:auto;">
+      <table class="data-table" style="min-width:380px;">
+        <tr><th>班级</th><th>故事书</th><th>科学书</th><th>漫画书</th><th>合计</th></tr>
+        <tr><td>一班</td><td>36</td><td>24</td><td>18</td><td>78</td></tr>
+        <tr><td>二班</td><td>42</td><td>30</td><td>15</td><td>87</td></tr>
+        <tr><td>三班</td><td>28</td><td>36</td><td>20</td><td>84</td></tr>
+        <tr><td><b>合计</b></td><td>106</td><td>90</td><td>53</td><td>249</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">哪个班的藏书总量最多？最少的是哪班？</div>
+        <div class="wp-ans">最多：<strong>二班（87本）</strong><br>最少：<strong>一班（78本）</strong></div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">三个班的故事书比科学书多多少本？</div>
+        <div class="wp-ans">解：106 - 90 = <strong>16本</strong><br>答：故事书比科学书多16本。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">三年级图书角一共有多少本书？</div>
+        <div class="wp-ans">解：78 + 87 + 84 = <strong>249本</strong>（或直接看合计行：249本）</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">4</span>
+      <div><div class="wp-q">二班的故事书是三班故事书的几倍？</div>
+        <div class="wp-ans">解：42 ÷ 14 — 先看三班故事书28，42÷28不整除。<br>实际：42÷28=1.5，即1倍多一些。<br>（此题可引导孩子发现不是整数倍，说明不是所有情况都能整除）</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 3: 两位数乘两位数 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-3">
+  <div class="unit-header u-o" data-icon="✖">
+    <div class="unit-week">第4单元 · 建议学习：5天（核心！）</div>
+    <div class="unit-title">两位数乘两位数</div>
+    <div class="unit-desc">口算整十数相乘，掌握两位数乘两位数竖式，学会估算</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fdf0e4;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0620a"></span>
+        <div><strong>整十数 × 整十数（口算）</strong>
+          <span class="kp-note">20×30：先算2×3=6，再数两个0，得600。规律：数字相乘，数0的个数后面添上</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0620a"></span>
+        <div><strong>两位数×两位数竖式步骤</strong>
+          <span class="kp-note">①先用个位数乘；②再用十位数乘（结果左移一位，即末位对齐十位）；③两次结果相加</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#c0620a"></span>
+        <div><strong>估算</strong>
+          <span class="kp-note">把两个数各自四舍五入到整十再相乘。如 28×32≈30×30=900</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 竖式例示（14×23）</div>
+      <div class="formula-row" style="font-family:monospace;">
+        &nbsp;&nbsp;&nbsp;14<br>× &nbsp;23<br>────<br>
+        &nbsp;&nbsp;&nbsp;42 &nbsp;← 14×3（个位）<br>
+        + 280 &nbsp;← 14×20（十位，末位写0）<br>
+        ────<br>
+        &nbsp;&nbsp;322
+      </div>
+    </div>
+  </div>
+
+  <div class="tip"><b>十位乘的结果要左移：</b>用十位乘时，所得结果的个位要对准十位写（或者末尾写一个0）。这是最容易错的地方，建议在草稿纸上画格子对位。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#fdf0e4;">✏️</div><h3>练习一：口算（整十数）</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">口算 · 整十×整十</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">20×30=<span class="ex-blank"></span></div><div class="ex-ans">✓ 600</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">40×50=<span class="ex-blank"></span></div><div class="ex-ans">✓ 2000</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">30×70=<span class="ex-blank"></span></div><div class="ex-ans">✓ 2100</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">60×80=<span class="ex-blank"></span></div><div class="ex-ans">✓ 4800</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">50×90=<span class="ex-blank"></span></div><div class="ex-ans">✓ 4500</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">70×60=<span class="ex-blank"></span></div><div class="ex-ans">✓ 4200</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">竖式 · 两位数×两位数（无进位）⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 12 × 34</div><div class="vs"></div><div class="va">= 408</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 21 × 43</div><div class="vs"></div><div class="va">= 903</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 13 × 23</div><div class="vs"></div><div class="va">= 299</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 11 × 56</div><div class="vs"></div><div class="va">= 616</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">竖式 · 有进位（重点！）⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl"> 36 × 24</div><div class="vs"></div><div class="va">= 864</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 48 × 35</div><div class="vs"></div><div class="va">= 1680</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 57 × 43</div><div class="vs"></div><div class="va">= 2451</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 69 × 78</div><div class="vs"></div><div class="va">= 5382</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 76 × 54</div><div class="vs"></div><div class="va">= 4104</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 85 × 67</div><div class="vs"></div><div class="va">= 5695</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#fdf0e4;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">学校买来24套课桌椅，每套桌椅售价78元，一共需要多少钱？</div>
+        <div class="wp-ans">解：78×24=<strong>1872元</strong><br>答：一共需要1872元。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一本书有36页，小明每天读15页，读完这本书大约需要几天？（估算）</div>
+        <div class="wp-hint">💡 提示：先估算，15≈20，36÷20≈2天，再精确</div>
+        <div class="wp-ans">精确：36÷15=2……6，需要3天（第3天读完剩余6页）<br>估算：36÷15≈2天多，大约<strong>3天</strong>。<br>答：大约需要3天。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">操场跑道每圈400米，小明跑了12圈，小红跑了15圈，两人一共跑了多少米？</div>
+        <div class="wp-hint">💡 提示：可以先算各自的再加，也可先加圈数再乘</div>
+        <div class="wp-ans">方法一：400×12+400×15=4800+6000=<strong>10800米</strong><br>方法二：400×(12+15)=400×27=<strong>10800米</strong><br>答：两人一共跑了10800米。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 4: 面积 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-4">
+  <div class="unit-header u-t" data-icon="📐">
+    <div class="unit-week">第5单元 · 建议学习：4天</div>
+    <div class="unit-title">面积</div>
+    <div class="unit-desc">理解面积的含义，认识面积单位，掌握长方形和正方形面积公式</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#daf5f0;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#0e6b5c"></span>
+        <div><strong>面积的含义</strong>
+          <span class="kp-note">物体表面或围成图形的大小叫做面积。注意：周长是"一圈有多长"，面积是"占了多大地方"，这是两个不同概念！</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#0e6b5c"></span>
+        <div><strong>面积单位：平方毫米、平方厘米、平方分米、平方米、平方千米</strong>
+          <span class="kp-note">1平方厘米≈指甲盖大小；1平方分米≈手掌大小；1平方米≈一块地砖大小</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#0e6b5c"></span>
+        <div><strong>面积单位换算</strong>
+          <span class="kp-note">1平方米=100平方分米；1平方分米=100平方厘米；1平方厘米=100平方毫米</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#0e6b5c"></span>
+        <div><strong>长方形面积公式</strong>
+          <span class="kp-note">面积 = 长 × 宽</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#0e6b5c"></span>
+        <div><strong>正方形面积公式</strong>
+          <span class="kp-note">面积 = 边长 × 边长</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 面积公式</div>
+      <div class="formula-row">长方形面积 = 长 × 宽</div>
+      <div class="formula-row">正方形面积 = 边长 × 边长</div>
+      <div class="formula-row">1平方米 = 100平方分米 = 10000平方厘米</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>周长 vs 面积，务必分清：</b>周长是"线"的长度（用cm、m等），面积是"面"的大小（用cm²、m²等）。同一个图形的周长和面积是两回事，单位不同，不能比较大小。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#daf5f0;">✏️</div><h3>练习一：单位换算</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 面积单位</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">3平方米=<span class="ex-blank"></span>平方分米</div><div class="ex-ans">✓ 300平方分米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">500平方厘米=<span class="ex-blank"></span>平方分米</div><div class="ex-ans">✓ 5平方分米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">2平方分米=<span class="ex-blank"></span>平方厘米</div><div class="ex-ans">✓ 200平方厘米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">40000平方厘米=<span class="ex-blank"></span>平方米</div><div class="ex-ans">✓ 4平方米</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#daf5f0;">✏️</div><h3>练习二：计算面积</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">计算题 · 面积公式</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">长方形<br>长9cm，宽6cm<br>面积=<span class="ex-blank"></span></div><div class="ex-ans">✓ 9×6=54平方厘米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">正方形<br>边长8cm<br>面积=<span class="ex-blank"></span></div><div class="ex-ans">✓ 8×8=64平方厘米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">长方形<br>长15cm，宽8cm<br>面积=<span class="ex-blank"></span></div><div class="ex-ans">✓ 15×8=120平方厘米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">正方形<br>边长12cm<br>面积=<span class="ex-blank"></span></div><div class="ex-ans">✓ 12×12=144平方厘米</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">已知面积=56cm²<br>长=8cm，宽=?</div><div class="ex-ans">✓ 56÷8=7cm</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">正方形周长=20cm<br>面积=<span class="ex-blank"></span></div><div class="ex-ans">✓ 边长=20÷4=5cm<br>面积=5×5=25cm²</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#daf5f0;">🧩</div><h3>练习三：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">教室的长是9米，宽是7米，教室的面积是多少平方米？</div>
+        <div class="wp-ans">解：9×7=<strong>63平方米</strong><br>答：教室的面积是63平方米。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">一块正方形地砖的边长是3分米，用这样的地砖铺一间长6米、宽4米的地板，需要多少块地砖？</div>
+        <div class="wp-hint">💡 提示：先换算单位，6米=60分米，4米=40分米</div>
+        <div class="wp-ans">地板面积：60×40=2400平方分米<br>每块地砖面积：3×3=9平方分米<br>需要地砖：2400÷9=<strong>约267块</strong>（实际需要268块，因为要补边角）<br>精确：2400÷9=266……6，需要<strong>267块</strong>（剩余部分需1块）<br>答：需要267块地砖。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">一个长方形花坛，长12米，宽5米，在它四周修一条1米宽的小路，小路的面积是多少？</div>
+        <div class="wp-hint">💡 提示：大长方形（含小路）的面积减去花坛面积</div>
+        <div class="wp-ans">大长方形：(12+2)×(5+2)=14×7=98平方米<br>花坛：12×5=60平方米<br>小路面积：98-60=<strong>38平方米</strong><br>答：小路的面积是38平方米。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 5: 年月日 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-5">
+  <div class="unit-header u-p" data-icon="📅">
+    <div class="unit-week">第6单元 · 建议学习：3天</div>
+    <div class="unit-title">年、月、日</div>
+    <div class="unit-desc">认识年历，掌握各月天数，区分平年闰年，计算天数</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#f0e8f8;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#5a3090"></span>
+        <div><strong>各月天数口诀</strong>
+          <span class="kp-note">大月（31天）：1、3、5、7、8、10、12月<br>小月（30天）：4、6、9、11月<br>二月：平年28天，闰年29天<br>口诀：一三五七八十腊，三十一天永不差；四六九冬三十天；二月有个大变化。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#5a3090"></span>
+        <div><strong>平年和闰年</strong>
+          <span class="kp-note">平年：365天（二月28天）；闰年：366天（二月29天）<br>判断：年份÷4没有余数是闰年（整百年要÷400）。如2024÷4=506，是闰年；2100÷400≠整数，是平年。</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#5a3090"></span>
+        <div><strong>计算天数</strong>
+          <span class="kp-note">跨月计算时：先算当月剩余天数，再加上后面完整月份的天数，再加目标月的天数</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#5a3090"></span>
+        <div><strong>时间单位换算</strong>
+          <span class="kp-note">1年=12个月；1周=7天；平年1年=365天；闰年1年=366天</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 各月天数速记</div>
+      <div class="formula-row">大月（31天）：1、3、5、7、8、10、12</div>
+      <div class="formula-row">小月（30天）：4、6、9、11</div>
+      <div class="formula-row">二月：平年28天 / 闰年29天</div>
+      <div class="formula-row">闰年判断：年份÷4=0（整百年÷400=0）</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>用拳头记月份：</b>握拳，从食指关节开始，凸起=大月（31天），凹处=小月（30天）。依次是1月(凸)、2月(凹)、3月(凸)……数到7月(凸)后从食指重新开始数8月(凸)。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#f0e8f8;">✏️</div><h3>练习一：月份与天数</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空题</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">7月有<span class="ex-blank"></span>天</div><div class="ex-ans">✓ 31天（大月）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">9月有<span class="ex-blank"></span>天</div><div class="ex-ans">✓ 30天（小月）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">平年2月有<span class="ex-blank"></span>天</div><div class="ex-ans">✓ 28天</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">闰年全年有<span class="ex-blank"></span>天</div><div class="ex-ans">✓ 366天</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">2024年是平年还是闰年？</div><div class="ex-ans">✓ 闰年（2024÷4=506）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">2100年是平年还是闰年？</div><div class="ex-ans">✓ 平年（整百年要÷400，2100÷400≠整数）</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">上半年（1～6月）共<span class="ex-blank"></span>天（平年）</div><div class="ex-ans">✓ 31+28+31+30+31+30=181天</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">一年中有<span class="ex-blank"></span>个大月</div><div class="ex-ans">✓ 7个大月</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#f0e8f8;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">小红的生日是3月15日，到6月15日，中间经过了多少天？</div>
+        <div class="wp-hint">💡 提示：3月15日到6月15日，经过3月剩余+4月+5月+6月前15天</div>
+        <div class="wp-ans">3月剩余：31-15=16天<br>4月：30天<br>5月：31天<br>6月：15天<br>合计：16+30+31+15=<strong>92天</strong><br>答：经过了92天。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">小明从2月1日开始读一本书，每天读5页，共读了28天读完，这本书共有多少页？</div>
+        <div class="wp-ans">解：5×28=<strong>140页</strong><br>答：这本书共有140页。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">国庆节放假7天，从10月1日开始，到哪天假期结束？</div>
+        <div class="wp-ans">解：10月1日开始，放7天。<br>10月1、2、3、4、5、6、7日，共7天。<br>假期到<strong>10月7日</strong>结束。<br>答：到10月7日假期结束。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 6: 小数初步认识 -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-6">
+  <div class="unit-header u-gd" data-icon="0.1">
+    <div class="unit-week">第7单元 · 建议学习：3天</div>
+    <div class="unit-title">小数的初步认识</div>
+    <div class="unit-desc">认识小数，理解小数的含义，会比较小数大小，进行简单加减</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#faf4d8;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#8a7000"></span>
+        <div><strong>小数的意义</strong>
+          <span class="kp-note">小数是用来表示比1小的量或带有零头的量。小数点左边是整数部分，右边是小数部分。如 3.5，整数部分是3，小数部分是5（表示5个0.1）</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#8a7000"></span>
+        <div><strong>小数的读法</strong>
+          <span class="kp-note">整数部分正常读；小数点读"点"；小数部分每个数字单独读。如：3.25读作"三点二五"</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#8a7000"></span>
+        <div><strong>小数大小比较</strong>
+          <span class="kp-note">①先比整数部分，大的大；②整数部分相同，比十分位，大的大；③以此类推</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#8a7000"></span>
+        <div><strong>小数加减法</strong>
+          <span class="kp-note">小数点对齐，然后按整数加减法计算，最后在结果中小数点对齐写上</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#8a7000"></span>
+        <div><strong>小数与分数的关系（了解）</strong>
+          <span class="kp-note">0.1=1/10；0.2=2/10；0.5=5/10=1/2；1分米=0.1米；1厘米=0.01米</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 小数计算要点</div>
+      <div class="formula-row">加减法：小数点对齐再计算</div>
+      <div class="formula-row">结果中小数点位置：与上面对齐</div>
+      <div class="formula-row">0.1米=1分米；0.01米=1厘米</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>用钱来理解小数：</b>3.5元 = 3元5角；0.8元 = 8角；3.25元 = 3元2角5分。用购物场景练习，孩子最容易接受。</div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#faf4d8;">✏️</div><h3>练习一：读数与比大小</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">填空 · 小数读写</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">4.7读作：<span class="ex-blank"></span></div><div class="ex-ans">✓ 四点七</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">"零点零八"写作：<span class="ex-blank"></span></div><div class="ex-ans">✓ 0.08</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">3.45中，3在<span class="ex-blank"></span>位</div><div class="ex-ans">✓ 个位</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">比较：3.8 ○ 3.75</div><div class="ex-ans">✓ 3.8 > 3.75<br>(整数同，十分位8>7)</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">比较：0.9 ○ 1.0</div><div class="ex-ans">✓ 0.9 < 1.0<br>(整数部分0<1)</div></div>
+        <div class="ex-item" onclick="rev(this)"><div class="ex-q">1.5米=<span class="ex-blank"></span>分米</div><div class="ex-ans">✓ 15分米</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">计算 · 小数加减法 ⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="vdrill">
+        <div class="vi" onclick="rev(this)"><div class="vl">  3.6</div><div class="vl">+ 2.5</div><div class="vs"></div><div class="va">  6.1</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  5.8</div><div class="vl">- 2.3</div><div class="vs"></div><div class="va">  3.5</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  7.4</div><div class="vl">+ 1.8</div><div class="vs"></div><div class="va">  9.2</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl">  8.0</div><div class="vl">- 3.6</div><div class="vs"></div><div class="va">  4.4</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 12.5</div><div class="vl">+  6.8</div><div class="vs"></div><div class="va"> 19.3</div></div>
+        <div class="vi" onclick="rev(this)"><div class="vl"> 10.0</div><div class="vl">-  4.7</div><div class="vs"></div><div class="va">  5.3</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#faf4d8;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">一瓶果汁1.5升，喝了0.8升，还剩多少升？</div>
+        <div class="wp-ans">解：1.5 - 0.8 = <strong>0.7升</strong><br>答：还剩0.7升。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">小明身高1.32米，小红身高1.28米，小明比小红高多少米？谁高？</div>
+        <div class="wp-ans">解：1.32 - 1.28 = <strong>0.04米</strong><br><strong>小明</strong>高，小明比小红高0.04米。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">妈妈买了3.5千克苹果、2.8千克梨和1.6千克橙子，一共买了多少千克水果？</div>
+        <div class="wp-ans">解：3.5 + 2.8 + 1.6 = <strong>7.9千克</strong><br>答：一共买了7.9千克水果。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 7: 数学广角（搭配与集合） -->
+<!-- ================================================================ -->
+<div class="unit-page" id="unit-7">
+  <div class="unit-header u-dk" data-icon="🔍">
+    <div class="unit-week">第8单元 · 建议学习：2天</div>
+    <div class="unit-title">数学广角——搭配与集合</div>
+    <div class="unit-desc">学习有序排列与搭配的方法，初步认识集合思想（重叠问题）</div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e4e8f0;">📖</div><h3>核心知识点</h3></div>
+  <div class="knowledge-box">
+    <ul class="kp-list">
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#2e4e34"></span>
+        <div><strong>有序搭配</strong>
+          <span class="kp-note">把所有可能的情况按顺序全部列出，不遗漏、不重复。如上衣3件、裤子2条，共有3×2=6种穿法</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#2e4e34"></span>
+        <div><strong>搭配计数规律</strong>
+          <span class="kp-note">A类有m种，B类有n种，A与B搭配共有 m×n 种</span></div>
+      </li>
+      <li class="kp-item">
+        <span class="kp-dot" style="background:#2e4e34"></span>
+        <div><strong>重叠问题（集合初步）</strong>
+          <span class="kp-note">如：班里既喜欢语文又喜欢数学的情况，两者之和会把重叠部分算两次，要减去一次。公式：A+B−重叠=总数</span></div>
+      </li>
+    </ul>
+    <div class="formula-box">
+      <div class="formula-title">⚡ 重叠问题公式</div>
+      <div class="formula-row">总人数 = 喜欢A的 + 喜欢B的 − 两者都喜欢的</div>
+      <div class="formula-row">搭配总数 = A的种数 × B的种数</div>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:16px;"><div class="sl-icon" style="background:#e4e8f0;">✏️</div><h3>练习一：搭配问题</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">搭配计数</span></div>
+    <div class="ex-body">
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)">
+          <div class="ex-q">有4件上衣、3条裤子，共有几种搭配？</div>
+          <div class="ex-ans">✓ 4×3=12种</div>
+        </div>
+        <div class="ex-item" onclick="rev(this)">
+          <div class="ex-q">从A到B有3条路，从B到C有2条路，A→B→C共有几种走法？</div>
+          <div class="ex-ans">✓ 3×2=6种</div>
+        </div>
+        <div class="ex-item" onclick="rev(this)">
+          <div class="ex-q">用数字1、2、3组成两位数（不重复），能组成几个？</div>
+          <div class="ex-ans">✓ 3×2=6个<br>(12,13,21,23,31,32)</div>
+        </div>
+        <div class="ex-item" onclick="rev(this)">
+          <div class="ex-q">午餐有3种主食、4种菜，各选一种，共几种选法？</div>
+          <div class="ex-ans">✓ 3×4=12种</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e4e8f0;">✏️</div><h3>练习二：重叠问题</h3></div>
+  <div class="ex-box">
+    <div class="ex-header"><span class="ex-type">集合初步 · 重叠问题 ⭐⭐</span></div>
+    <div class="ex-body">
+      <div class="ex-note">关键：两个集合加起来，重叠部分被计算了两次，要减去一次</div>
+      <div class="ex-grid">
+        <div class="ex-item" onclick="rev(this)">
+          <div class="ex-q" style="font-size:13px;">喜欢语文25人，喜欢数学20人，两科都喜欢8人，班里共多少人？</div>
+          <div class="ex-ans">✓ 25+20-8=37人</div>
+        </div>
+        <div class="ex-item" onclick="rev(this)">
+          <div class="ex-q" style="font-size:13px;">参加跳绳30人，参加跑步26人，两项都参加12人，共多少人参加活动？</div>
+          <div class="ex-ans">✓ 30+26-12=44人</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-label"><div class="sl-icon" style="background:#e4e8f0;">🧩</div><h3>练习三：应用题</h3></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">1</span>
+      <div><div class="wp-q">书店有连环画5种、科普书3种，各选一本，有多少种买法？</div>
+        <div class="wp-ans">解：5×3=<strong>15种</strong><br>答：有15种买法。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">2</span>
+      <div><div class="wp-q">三年级参加兴趣班的同学：参加美术班32人，参加音乐班28人，两个班都参加的有10人，参加兴趣班的同学一共有多少人？</div>
+        <div class="wp-hint">💡 提示：不能直接32+28，因为10人被数了两次</div>
+        <div class="wp-ans">解：32 + 28 - 10 = <strong>50人</strong><br>答：参加兴趣班的同学一共有50人。</div></div></div></div>
+  <div class="wp" onclick="revWP(this)">
+    <div class="wp-row"><span class="wp-num">3</span>
+      <div><div class="wp-q">用0、1、2三个数字，每次用两个不同的数字组成两位数，能组成哪些？最大的是多少？最小的是多少？</div>
+        <div class="wp-hint">💡 注意：两位数的十位不能是0</div>
+        <div class="wp-ans">可组成：10、12、20、21（十位不能是0，所以不能有01、02）<br>最大：<strong>21</strong>；最小：<strong>10</strong><br>答：能组成10、12、20、21，最大21，最小10。</div></div></div></div>
+
+  <div class="divider"></div>
+  <div class="knowledge-box" style="text-align:center;">
+    <div style="font-size:32px;margin-bottom:10px;">🎉</div>
+    <div style="font-family:'ZCOOL XiaoWei',serif;font-size:20px;margin-bottom:8px;">三年级下册全部完成！</div>
+    <div style="font-size:13px;color:var(--muted);line-height:1.9;">
+      恭喜你学完了三年级下册的全部8个单元。<br>
+      下一步建议：做一套完整的三年级下册期末测试卷，检验学习成果。<br>
+      如果分数达到70分以上，可以开始四年级上册的学习了！
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<button class="scrolltop" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function showUnit(n) {
+  document.querySelectorAll('.unit-page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('unit-' + n).classList.add('active');
+  document.querySelector('.nav-tab[data-u="' + n + '"]').classList.add('active');
+  window.scrollTo({ top: document.querySelector('.nav-wrap').offsetTop - 10, behavior: 'smooth' });
+}
+
+function rev(el) { el.classList.toggle('revealed'); }
+function revWP(el) { el.classList.toggle('revealed'); }
+
+window.addEventListener('scroll', () => {
+  document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 300);
+});
+</script>
+</body>
+</html>

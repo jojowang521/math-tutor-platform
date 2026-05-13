@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版五年级上册数学 · 详细补习计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg: #f5f0eb;
+  --paper: #fdfaf6;
+  --ink: #2a1a0a;
+  --c0: #7a2800;
+  --c1: #1a4a6a;
+  --c2: #3a6a00;
+  --c3: #6a0060;
+  --c4: #005a5a;
+  --c5: #6a4a00;
+  --c6: #002a6a;
+  --c7: #4a006a;
+  --muted: #7a6a5a;
+  --border: #d8c8b0;
+  --shadow: rgba(0,0,0,0.08);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:var(--bg); font-family:'Noto Sans SC',sans-serif; color:var(--ink); }
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg,#2a1000 0%,#4a2000 50%,#3a1800 100%);
+  padding:38px 24px 30px; position:relative; overflow:hidden;
+}
+.header::before {
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 75% 40%,rgba(255,160,60,0.1) 0%,transparent 55%);
+}
+.header::after {
+  content:'五';font-family:'ZCOOL XiaoWei',serif;
+  position:absolute;right:-15px;bottom:-30px;
+  font-size:260px;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;
+}
+.hi{position:relative;max-width:940px;margin:0 auto;}
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,160,60,0.15);border:1px solid rgba(255,160,60,0.4);
+  color:#ffb870;font-size:11px;font-weight:700;letter-spacing:2px;
+  padding:4px 12px;border-radius:2px;margin-bottom:14px;
+}
+.header h1{font-family:'ZCOOL XiaoWei',serif;font-size:clamp(24px,5vw,40px);
+  color:#fff;line-height:1.35;margin-bottom:10px;}
+.header h1 span{color:#ffb870;}
+.header p{color:rgba(255,255,255,0.5);font-size:13px;line-height:1.9;}
+.stats{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;}
+.st{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
+  padding:8px 18px;border-radius:4px;text-align:center;}
+.st-n{font-size:20px;font-weight:700;color:#ffb870;}
+.st-l{font-size:11px;color:rgba(255,255,255,0.45);margin-top:1px;}
+
+/* NAV */
+.nav-wrap{background:#fff;border-bottom:2px solid var(--border);
+  position:sticky;top:0;z-index:100;box-shadow:0 2px 12px var(--shadow);}
+.nav-tabs{display:flex;overflow-x:auto;max-width:940px;margin:0 auto;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nav-tabs::-webkit-scrollbar{display:none;}
+.nt{flex-shrink:0;padding:13px 14px;border:none;background:none;
+  font-family:'Noto Sans SC',sans-serif;font-size:12px;cursor:pointer;
+  color:var(--muted);border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.nt:hover{color:var(--ink);}
+.nt.on{font-weight:700;}
+.tn{display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;
+  margin-right:5px;background:var(--border);color:var(--muted);flex-shrink:0;}
+.nt.on .tn{color:#fff;}
+.nt[data-u="0"].on{border-bottom-color:var(--c0);color:var(--c0);}.nt[data-u="0"].on .tn{background:var(--c0);}
+.nt[data-u="1"].on{border-bottom-color:var(--c1);color:var(--c1);}.nt[data-u="1"].on .tn{background:var(--c1);}
+.nt[data-u="2"].on{border-bottom-color:var(--c2);color:var(--c2);}.nt[data-u="2"].on .tn{background:var(--c2);}
+.nt[data-u="3"].on{border-bottom-color:var(--c3);color:var(--c3);}.nt[data-u="3"].on .tn{background:var(--c3);}
+.nt[data-u="4"].on{border-bottom-color:var(--c4);color:var(--c4);}.nt[data-u="4"].on .tn{background:var(--c4);}
+.nt[data-u="5"].on{border-bottom-color:var(--c5);color:var(--c5);}.nt[data-u="5"].on .tn{background:var(--c5);}
+.nt[data-u="6"].on{border-bottom-color:var(--c6);color:var(--c6);}.nt[data-u="6"].on .tn{background:var(--c6);}
+.nt[data-u="7"].on{border-bottom-color:var(--c7);color:var(--c7);}.nt[data-u="7"].on .tn{background:var(--c7);}
+
+/* MAIN */
+.main{max-width:940px;margin:0 auto;padding:26px 16px 60px;}
+.up{display:none;animation:fi .22s ease;}
+.up.on{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
+
+/* Unit header */
+.uh{border-radius:10px;padding:22px 24px;margin-bottom:20px;position:relative;overflow:hidden;}
+.uh::after{content:attr(data-icon);position:absolute;right:18px;top:50%;
+  transform:translateY(-50%);font-size:76px;opacity:.09;line-height:1;pointer-events:none;}
+.uw{font-size:11px;font-weight:700;letter-spacing:2px;opacity:.75;margin-bottom:6px;}
+.ut{font-family:'ZCOOL XiaoWei',serif;font-size:22px;color:#fff;margin-bottom:6px;}
+.ud{font-size:13px;color:rgba(255,255,255,.72);line-height:1.75;}
+.uh0{background:linear-gradient(135deg,#7a2800,#b04010);}
+.uh1{background:linear-gradient(135deg,#1a4a6a,#2878b0);}
+.uh2{background:linear-gradient(135deg,#3a6a00,#60a800);}
+.uh3{background:linear-gradient(135deg,#6a0060,#a800a0);}
+.uh4{background:linear-gradient(135deg,#005a5a,#009090);}
+.uh5{background:linear-gradient(135deg,#6a4a00,#b08000);}
+.uh6{background:linear-gradient(135deg,#002a6a,#0050b0);}
+.uh7{background:linear-gradient(135deg,#4a006a,#8000b0);}
+
+/* Section label */
+.sl{display:flex;align-items:center;gap:10px;margin:18px 0 12px;}
+.si{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;font-size:14px;flex-shrink:0;}
+.sl h3{font-size:15px;font-weight:700;}
+
+/* Knowledge box */
+.kb{background:var(--paper);border:1.5px solid var(--border);
+  border-radius:8px;padding:18px 20px;margin-bottom:14px;}
+.kl{list-style:none;}
+.ki{display:flex;align-items:flex-start;gap:10px;padding:8px 0;
+  border-bottom:1px dashed var(--border);font-size:13.5px;line-height:1.78;}
+.ki:last-child{border-bottom:none;padding-bottom:0;}
+.kd{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0;}
+.kn{display:block;font-size:12px;color:var(--muted);margin-top:2px;}
+
+.fb{background:#fff8ec;border:1.5px solid #d4a840;border-radius:6px;
+  padding:14px 16px;margin-top:12px;}
+.ft{font-size:11px;font-weight:700;letter-spacing:2px;color:#7a5000;margin-bottom:8px;}
+.fr{font-size:14px;font-weight:700;color:#4a2800;padding:4px 0;line-height:1.65;
+  font-family:'Courier New',monospace;}
+
+/* Exercise box */
+.eb{background:var(--paper);border:1.5px solid var(--border);
+  border-radius:8px;overflow:hidden;margin-bottom:14px;}
+.eh{display:flex;align-items:center;justify-content:space-between;
+  padding:11px 18px;border-bottom:1.5px solid var(--border);background:#faf6ee;}
+.et{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);}
+.ebody{padding:16px 18px;}
+.en{font-size:12px;color:var(--muted);margin-bottom:12px;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin-bottom:8px;}
+.gi{background:var(--bg);border:1.5px solid var(--border);border-radius:6px;
+  padding:12px 14px;cursor:pointer;transition:all .18s;}
+.gi:hover{border-color:#c09060;background:#ede8e0;}
+.gq{font-size:14px;font-weight:700;margin-bottom:4px;line-height:1.55;}
+.gbl{display:inline-block;min-width:36px;height:21px;border-bottom:2px solid var(--ink);
+  vertical-align:bottom;text-align:center;font-weight:700;color:var(--c0);font-size:14px;}
+.ga{display:none;font-size:12px;color:#7a2800;margin-top:5px;font-weight:700;line-height:1.5;}
+.gi.on{background:#f5e8d8;border-color:#c09060;}
+.gi.on .ga{display:block;}
+
+/* Vertical drills */
+.vd{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;}
+.vi{background:var(--bg);border:1.5px solid var(--border);border-radius:6px;
+  padding:14px 18px;min-width:130px;cursor:pointer;transition:all .18s;
+  font-family:'Courier New',monospace;font-size:15px;line-height:1.9;}
+.vi:hover{border-color:#c09060;}
+.vl{white-space:pre;}
+.vs{border-top:2px solid var(--ink);margin:4px 0;}
+.va{color:#7a2800;font-weight:700;display:none;font-size:14px;}
+.vi.on{background:#f5e8d8;border-color:#c09060;}
+.vi.on .va{display:block;}
+
+/* Word problems */
+.wp{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;
+  padding:15px 16px;margin-bottom:10px;cursor:pointer;transition:all .18s;}
+.wp:hover{border-color:#c09060;}
+.wr{display:flex;align-items:flex-start;gap:10px;}
+.wn{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--ink);color:#fff;font-size:11px;font-weight:700;
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;margin-top:1px;}
+.wq{font-size:13.5px;line-height:1.85;}
+.wh{font-size:12px;color:var(--muted);margin-top:5px;font-style:italic;}
+.wa{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);
+  font-size:13px;color:#5a2000;line-height:1.85;}
+.wa strong{font-size:14px;color:#3a1000;}
+.wp.on{background:#f5e8d8;border-color:#c09060;}
+.wp.on .wa{display:block;}
+
+/* Alert boxes */
+.tip{background:#fffbec;border-left:4px solid #d4a800;border-radius:0 6px 6px 0;
+  padding:12px 16px;margin:10px 0;font-size:13px;line-height:1.82;color:#4a3600;}
+.tip b{color:#9a7000;}
+.warn{background:#fff0f0;border-left:4px solid #c03030;border-radius:0 6px 6px 0;
+  padding:12px 16px;margin:10px 0;font-size:13px;line-height:1.82;color:#500010;}
+.warn b{color:#a02020;}
+.info{background:#f0f4ff;border-left:4px solid #4060c8;border-radius:0 6px 6px 0;
+  padding:12px 16px;margin:10px 0;font-size:13px;line-height:1.82;color:#102050;}
+
+/* Table */
+.dt{width:100%;border-collapse:collapse;font-size:13px;}
+.dt th{background:var(--ink);color:#fff;padding:9px 12px;text-align:left;font-size:12px;}
+.dt td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.65;}
+.dt tr:nth-child(even) td{background:#f8f4ee;}
+.dt .ok{color:#7a2800;font-weight:700;}
+
+.divider{height:1px;background:var(--border);margin:18px 0;}
+
+/* Factor table */
+.factor-grid{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0;}
+.fc{background:var(--bg);border:1.5px solid var(--border);border-radius:4px;
+  padding:6px 10px;font-size:13px;font-weight:700;cursor:pointer;transition:all .18s;}
+.fc:hover{border-color:#c09060;}
+.fc.prime{background:#fff0e0;border-color:#d4a840;color:#7a3000;}
+.fc.composite{background:#e8f0ff;border-color:#8090d0;color:#1a2080;}
+
+/* Fraction visual */
+.frac-demo{display:inline-flex;flex-direction:column;align-items:center;
+  font-size:15px;font-weight:700;margin:0 4px;vertical-align:middle;}
+.frac-num{border-bottom:2px solid var(--ink);padding:0 4px;line-height:1.4;}
+.frac-den{padding:0 4px;line-height:1.4;}
+
+/* Area formula cards */
+.area-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:14px;}
+.ac{background:var(--paper);border:1.5px solid var(--border);border-radius:8px;padding:16px 14px;}
+.ac-title{font-size:14px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.ac-icon{font-size:20px;}
+.ac-formula{font-family:'Courier New',monospace;font-size:13px;color:#7a2800;
+  background:#fff8ec;border:1px solid #d4a840;border-radius:4px;padding:6px 10px;margin-bottom:6px;}
+.ac-note{font-size:12px;color:var(--muted);line-height:1.65;}
+
+.scrolltop{position:fixed;bottom:24px;right:20px;width:40px;height:40px;border-radius:50%;
+  background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.2);opacity:0;transition:opacity .3s;z-index:200;}
+.scrolltop.vis{opacity:1;}
+
+@media(max-width:520px){.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="hi">
+    <div class="badge">📙 人教版 · 五年级上册 · 数学补习</div>
+    <h1>五年级上册<span>完整补习计划</span></h1>
+    <p>8个单元 · 知识点精讲 + 分层练习题 · 点击题目查看答案<br>小数乘除法、因数倍数、多边形面积——五年级核心全覆盖</p>
+    <div class="stats">
+      <div class="st"><div class="st-n">8</div><div class="st-l">个单元</div></div>
+      <div class="st"><div class="st-n">5~6</div><div class="st-l">建议周数</div></div>
+      <div class="st"><div class="st-n">260+</div><div class="st-l">道练习题</div></div>
+      <div class="st"><div class="st-n">点击</div><div class="st-l">查看答案</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav-wrap">
+  <div class="nav-tabs">
+    <button class="nt on"  data-u="0" onclick="go(0)"><span class="tn">1</span>小数乘法</button>
+    <button class="nt"     data-u="1" onclick="go(1)"><span class="tn">2</span>位置</button>
+    <button class="nt"     data-u="2" onclick="go(2)"><span class="tn">3</span>小数除法</button>
+    <button class="nt"     data-u="3" onclick="go(3)"><span class="tn">4</span>可能性</button>
+    <button class="nt"     data-u="4" onclick="go(4)"><span class="tn">5</span>简易方程</button>
+    <button class="nt"     data-u="5" onclick="go(5)"><span class="tn">6</span>多边形面积</button>
+    <button class="nt"     data-u="6" onclick="go(6)"><span class="tn">7</span>数学广角</button>
+    <button class="nt"     data-u="7" onclick="go(7)"><span class="tn">8</span>因数与倍数</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ================================================================ -->
+<!-- UNIT 0: 小数乘法 -->
+<!-- ================================================================ -->
+<div class="up on" id="unit-0">
+  <div class="uh uh0" data-icon="✖">
+    <div class="uw">第1单元 · 建议学习：6天（核心！）</div>
+    <div class="ut">小数乘法</div>
+    <div class="ud">掌握小数乘整数、小数乘小数的竖式计算，理解小数点位置规律，学会估算</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f5e8d8;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c0)"></span>
+        <div><strong>小数乘整数</strong>
+          <span class="kn">按整数乘法算，最后看因数中共有几位小数，积就有几位小数。<br>如：1.2×3——先算12×3=36，1.2有1位小数，所以结果=3.6</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c0)"></span>
+        <div><strong>小数乘小数</strong>
+          <span class="kn">两个因数小数位数相加=积的小数位数。如：1.2×0.3——先算12×3=36，共2位小数，结果=0.36</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c0)"></span>
+        <div><strong>积的小数位数不够时补0</strong>
+          <span class="kn">如0.4×0.2=0.08（12×2=4，需2位小数，4只有1位，前面补0变0.04？不对）<br>正确：4×2=8，需要2位小数，8→0.08（不够2位在前面补0）</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c0)"></span>
+        <div><strong>小数乘法的估算</strong>
+          <span class="kn">把小数四舍五入到整数再相乘估算。如3.8×5.2≈4×5=20</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c0)"></span>
+        <div><strong>积与因数的大小关系（重要！）</strong>
+          <span class="kn">一个数×大于1的数，积&gt;原数；一个数×小于1的数，积&lt;原数；一个数×1，积=原数</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 关键规律</div>
+      <div class="fr">积的小数位数 = 两因数小数位数之和</div>
+      <div class="fr">位数不够时：在积的前面补0（如8→0.08）</div>
+      <div class="fr">末尾多余的0要去掉（如1.20→1.2）</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>最容易错的两点：</b>①数小数位数时数错（如1.5×1.2，各1位，共2位，12×15=180→1.80→1.8）②积前面补0忘记（0.3×0.2=0.06，不是0.6）</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#f5e8d8;">✏️</div><h3>练习一：小数×整数</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">竖式计算 · 小数×整数</span></div>
+    <div class="ebody">
+      <div class="en">👆 点击查看答案</div>
+      <div class="vd">
+        <div class="vi" onclick="t(this)"><div class="vl">  1.4</div><div class="vl">×   6</div><div class="vs"></div><div class="va">  8.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  2.35</div><div class="vl">×    4</div><div class="vs"></div><div class="va">  9.40→9.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  0.76</div><div class="vl">×    5</div><div class="vs"></div><div class="va">  3.80→3.8</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  3.08</div><div class="vl">×    7</div><div class="vs"></div><div class="va"> 21.56</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 12.6</div><div class="vl">×   9</div><div class="vs"></div><div class="va">113.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  0.45</div><div class="vl">×   8</div><div class="vs"></div><div class="va">  3.60→3.6</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">竖式计算 · 小数×小数（重点）⭐⭐</span></div>
+    <div class="ebody">
+      <div class="vd">
+        <div class="vi" onclick="t(this)"><div class="vl">  1.2</div><div class="vl">× 0.3</div><div class="vs"></div><div class="va">  0.36</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  2.4</div><div class="vl">× 1.5</div><div class="vs"></div><div class="va">  3.60→3.6</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  0.8</div><div class="vl">× 0.4</div><div class="vs"></div><div class="va">  0.32</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  3.6</div><div class="vl">× 2.5</div><div class="vs"></div><div class="va">  9.00→9</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  1.25</div><div class="vl">× 0.8</div><div class="vs"></div><div class="va">  1.000→1</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  4.5</div><div class="vl">× 0.06</div><div class="vs"></div><div class="va">  0.270→0.27</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  0.12</div><div class="vl">× 0.5</div><div class="vs"></div><div class="va">  0.060→0.06</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  2.08</div><div class="vl">× 3.6</div><div class="vs"></div><div class="va">  7.488</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">判断大小 · 积与因数的关系</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">3.6×1.2，积比3.6（大/小）</div><div class="ga">✓ 大（×大于1的数）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5×0.8，积比5（大/小）</div><div class="ga">✓ 小（×小于1的数）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">2.5×1，积=<span class="gbl"></span></div><div class="ga">✓ 2.5（×1不变）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">0.7×0.9，积比0.7（大/小）</div><div class="ga">✓ 小（0.9&lt;1）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f5e8d8;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">小红每天跑步1.5千米，一周（7天）共跑多少千米？</div>
+        <div class="wa">解：1.5×7=<strong>10.5千米</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">一块长方形菜地，长6.4米，宽3.5米，面积是多少平方米？</div>
+        <div class="wa">解：6.4×3.5=<strong>22.4平方米</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">超市苹果每千克4.8元，橘子每千克3.6元，小明买了2.5千克苹果和1.5千克橘子，共花多少钱？</div>
+        <div class="wa">苹果：4.8×2.5=12元<br>橘子：3.6×1.5=5.4元<br>合计：12+5.4=<strong>17.4元</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">4</span>
+      <div><div class="wq">一辆汽车每小时行驶65.8千米，行驶3.5小时能走多少千米？（估算+精确）</div>
+        <div class="wa">估算：66×3.5≈66×4=264（约264千米）<br>精确：65.8×3.5=<strong>230.3千米</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 1: 位置 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-1">
+  <div class="uh uh1" data-icon="📍">
+    <div class="uw">第2单元 · 建议学习：2天</div>
+    <div class="ut">位置（用数对确定位置）</div>
+    <div class="ud">用数对（列，行）表示位置，在方格图上确定点的位置</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e4eef8;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c1)"></span>
+        <div><strong>数对的表示方法</strong>
+          <span class="kn">用（列，行）表示位置。列从左往右数，行从下往上数（或从上往下，看题目约定）。<br>如（3，2）表示第3列第2行。注意：先写列，再写行！</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c1)"></span>
+        <div><strong>在方格图中找点</strong>
+          <span class="kn">从原点出发，先沿横轴（列方向）走，再沿纵轴（行方向）走，到达的位置就是该数对对应的点。</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c1)"></span>
+        <div><strong>规律：列相同的点在同一竖线；行相同的点在同一横线</strong></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 关键记忆</div>
+      <div class="fr">数对（列，行）：先列（横向）后行（纵向）</div>
+      <div class="fr">类比：(x, y) 坐标——先x后y</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>口诀：</b>"先横后纵"——先数列（横向数第几个），再数行（纵向数第几个）。就像查地图先看东西方向再看南北方向。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e4eef8;">✏️</div><h3>练习：数对</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">填空 · 位置与数对</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">数对（4，2）表示第<span class="gbl"></span>列第<span class="gbl"></span>行</div><div class="ga">✓ 第4列，第2行</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">第5列第3行用数对表示是</div><div class="ga">✓（5，3）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">（2，5）和（5，2）表示同一个位置吗？</div><div class="ga">✗ 不同！前者第2列第5行，后者第5列第2行</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">（3，1）（3，3）（3，5）这三点有什么规律？</div><div class="ga">✓ 列数都是3，在同一竖列上</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">在方格图中，从（1，1）移动到（4，1）是向哪个方向移动了几格？</div><div class="ga">✓ 向右移动3格（列+3，行不变）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">从（2，3）移动到（2，6）是向哪个方向移动？</div><div class="ga">✓ 向上移动3格（行+3，列不变）</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 2: 小数除法 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-2">
+  <div class="uh uh2" data-icon="➗">
+    <div class="uw">第3单元 · 建议学习：7天（最难！重点！）</div>
+    <div class="ut">小数除法</div>
+    <div class="ud">小数除以整数、整数除以整数得小数、小数除以小数，含循环小数</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e8f4e0;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c2)"></span>
+        <div><strong>小数÷整数</strong>
+          <span class="kn">按整数除法算，商的小数点与被除数小数点对齐。如：8.4÷4=2.1（小数点直接对齐写上）</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c2)"></span>
+        <div><strong>整数÷整数，商是小数</strong>
+          <span class="kn">除不尽时，在余数后面补0继续除，商的整数部分后面写小数点。如：7÷4=1.75</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c2)"></span>
+        <div><strong>小数÷小数（最重要！）</strong>
+          <span class="kn">把除数转化为整数：除数的小数点向右移几位，被除数的小数点也向右移几位（位数不够补0），然后按小数÷整数计算。<br>如：3.6÷1.2 → 36÷12=3</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c2)"></span>
+        <div><strong>循环小数</strong>
+          <span class="kn">除不尽时，某些数字会不断重复出现，叫循环小数。如1÷3=0.333…记作0.3̄（3上面画横线）；1÷7=0.142857142857…记作0.1̄4̄2̄8̄5̄7̄</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c2)"></span>
+        <div><strong>用"四舍五入"保留小数位数</strong>
+          <span class="kn">题目要求保留几位小数，就算到下一位，再四舍五入。如保留两位：0.4666…≈0.47</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 小数÷小数的变换步骤</div>
+      <div class="fr">① 看除数有几位小数（设为n位）</div>
+      <div class="fr">② 除数和被除数小数点同时右移n位</div>
+      <div class="fr">③ 转化为"小数÷整数"或"整数÷整数"</div>
+      <div class="fr">④ 按正常除法计算，商的小数点对齐被除数</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>最大难点：</b>小数÷小数移动小数点时，被除数和除数必须同时移动相同位数。很多孩子只移动除数忘了被除数，或者移动位数不一样。每次都先确认好：除数有几位小数，两个都移动几位。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e8f4e0;">✏️</div><h3>练习一：小数÷整数</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">竖式 · 小数÷整数</span></div>
+    <div class="ebody">
+      <div class="vd">
+        <div class="vi" onclick="t(this)"><div class="vl">  9.6 ÷ 4</div><div class="vs"></div><div class="va">= 2.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 14.4 ÷ 6</div><div class="vs"></div><div class="va">= 2.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 19.5 ÷ 5</div><div class="vs"></div><div class="va">= 3.9</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  4.56÷ 8</div><div class="vs"></div><div class="va">= 0.57</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 30.6 ÷ 9</div><div class="vs"></div><div class="va">= 3.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  0.84÷ 7</div><div class="vs"></div><div class="va">= 0.12</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">竖式 · 整数÷整数得小数 ⭐⭐</span></div>
+    <div class="ebody">
+      <div class="vd">
+        <div class="vi" onclick="t(this)"><div class="vl">   7 ÷ 4</div><div class="vs"></div><div class="va">= 1.75</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">   5 ÷ 8</div><div class="vs"></div><div class="va">= 0.625</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  11 ÷ 4</div><div class="vs"></div><div class="va">= 2.75</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">   9 ÷ 6</div><div class="vs"></div><div class="va">= 1.5</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  17 ÷ 4</div><div class="vs"></div><div class="va">= 4.25</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">   3 ÷ 4</div><div class="vs"></div><div class="va">= 0.75</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">竖式 · 小数÷小数（最重点）⭐⭐⭐</span></div>
+    <div class="ebody">
+      <div class="vd">
+        <div class="vi" onclick="t(this)"><div class="vl">  3.6 ÷ 1.2</div><div class="vs"></div><div class="va">→ 36÷12=3</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  7.5 ÷ 2.5</div><div class="vs"></div><div class="va">→ 75÷25=3</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 5.04 ÷ 0.6</div><div class="vs"></div><div class="va">→ 50.4÷6=8.4</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl">  4.5 ÷ 0.15</div><div class="vs"></div><div class="va">→ 450÷15=30</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 8.64÷ 1.2</div><div class="vs"></div><div class="va">→ 86.4÷12=7.2</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 0.48÷ 0.8</div><div class="vs"></div><div class="va">→ 4.8÷8=0.6</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 13.5÷ 2.7</div><div class="vs"></div><div class="va">→ 135÷27=5</div></div>
+        <div class="vi" onclick="t(this)"><div class="vl"> 2.52÷ 0.36</div><div class="vs"></div><div class="va">→ 252÷36=7</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">保留小数位数（四舍五入）⭐⭐</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">10÷3保留两位小数</div><div class="ga">✓ 10÷3=3.333…≈<strong>3.33</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1÷6保留两位小数</div><div class="ga">✓ 1÷6=0.1666…≈<strong>0.17</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">7÷9保留一位小数</div><div class="ga">✓ 7÷9=0.777…≈<strong>0.8</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5÷7保留三位小数</div><div class="ga">✓ 5÷7=0.7142…≈<strong>0.714</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e8f4e0;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">买5支铅笔花了3.5元，每支铅笔多少元？</div>
+        <div class="wa">解：3.5÷5=<strong>0.7元</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">一瓶汽油4.8升，每次用0.6升，能用多少次？</div>
+        <div class="wa">解：4.8÷0.6=<strong>8次</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">小明跑了1.2千米，用了8分钟，他平均每分钟跑多少千米？（保留两位小数）</div>
+        <div class="wa">解：1.2÷8=0.15千米<br>答：平均每分钟跑<strong>0.15千米</strong>（即150米）</div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">4</span>
+      <div><div class="wq">一根绳子长9.6米，剪成每段1.2米，可以剪多少段？还剩多少米？</div>
+        <div class="wa">解：9.6÷1.2=8段（整除无余数）<br>答：可以剪<strong>8段</strong>，<strong>没有剩余</strong>。</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 3: 可能性 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-3">
+  <div class="uh uh3" data-icon="🎲">
+    <div class="uw">第4单元 · 建议学习：2天</div>
+    <div class="ut">可能性（概率初步）</div>
+    <div class="ud">用分数表示事件发生的可能性大小，理解等可能性</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f4e0f8;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c3)"></span>
+        <div><strong>可能性的大小用分数表示</strong>
+          <span class="kn">可能性 = 该事件的情况数 ÷ 所有可能的情况总数。如：袋中3红1白，摸到红的可能性=3/4</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c3)"></span>
+        <div><strong>必然事件、不可能事件、不确定事件</strong>
+          <span class="kn">必然发生（可能性=1）、不可能发生（可能性=0）、不确定（0&lt;可能性&lt;1）</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c3)"></span>
+        <div><strong>等可能性</strong>
+          <span class="kn">每种结果出现的可能性相同，叫等可能性。如：均匀骰子每面出现的可能性都是1/6。</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 可能性公式</div>
+      <div class="fr">可能性 = 该事件情况数 / 所有情况总数</div>
+      <div class="fr">所有可能事件的概率之和 = 1</div>
+    </div>
+  </div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#f4e0f8;">✏️</div><h3>练习</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">填空 · 可能性</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">袋中4红2白，摸1个，摸到红球的可能性</div><div class="ga">✓ 4/6 = 2/3</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">袋中4红2白，摸到白球的可能性</div><div class="ga">✓ 2/6 = 1/3</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">一个骰子掷出4的可能性</div><div class="ga">✓ 1/6</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">抛硬币正面朝上的可能性</div><div class="ga">✓ 1/2</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">明天太阳从东方升起的可能性</div><div class="ga">✓ 1（必然事件）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">从1～10中随机取数，取到11的可能性</div><div class="ga">✓ 0（不可能事件）</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 4: 简易方程 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-4">
+  <div class="uh uh4" data-icon="x=?">
+    <div class="uw">第5单元 · 建议学习：5天（重点！）</div>
+    <div class="ut">简易方程</div>
+    <div class="ud">理解方程的意义，学会解方程，用方程解决实际问题</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e0f4f4;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c4)"></span>
+        <div><strong>方程的意义</strong>
+          <span class="kn">含有未知数的等式叫做方程。如：x+5=12（是方程）；x+5（不是方程，没有等号）；3+5=8（不是方程，没有未知数）</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c4)"></span>
+        <div><strong>等式的性质（解方程的依据）</strong>
+          <span class="kn">性质1：等式两边同时加/减同一个数，等式仍成立。<br>性质2：等式两边同时乘/除以同一个不为0的数，等式仍成立。</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c4)"></span>
+        <div><strong>解方程的步骤</strong>
+          <span class="kn">设未知数为x → 根据题意列出方程 → 用等式性质解方程 → 验算（把结果代入原方程检验）</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c4)"></span>
+        <div><strong>常见方程类型</strong>
+          <span class="kn">x+a=b → x=b-a<br>x-a=b → x=b+a<br>ax=b → x=b÷a<br>x÷a=b → x=b×a</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 解方程口诀</div>
+      <div class="fr">加数=和-另一个加数</div>
+      <div class="fr">减数=被减数-差  被减数=减数+差</div>
+      <div class="fr">因数=积÷另一个因数</div>
+      <div class="fr">除数=被除数÷商  被除数=商×除数</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>用天平理解方程：</b>方程就像天平，两边必须保持平衡。在一边加东西，另一边也要加同样多。解方程就是让天平一边只剩x。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e0f4f4;">✏️</div><h3>练习一：解方程</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">解方程 · 基础类型</span></div>
+    <div class="ebody">
+      <div class="en">👆 点击查看解题过程</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">x + 35 = 78</div><div class="ga">✓ x = 78-35<br>x = <strong>43</strong><br>验：43+35=78✓</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">x - 26 = 54</div><div class="ga">✓ x = 54+26<br>x = <strong>80</strong><br>验：80-26=54✓</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">6x = 72</div><div class="ga">✓ x = 72÷6<br>x = <strong>12</strong><br>验：6×12=72✓</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">x ÷ 4 = 15</div><div class="ga">✓ x = 15×4<br>x = <strong>60</strong><br>验：60÷4=15✓</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">3x + 5 = 20</div><div class="ga">✓ 3x = 20-5=15<br>x = 15÷3<br>x = <strong>5</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">2x - 8 = 14</div><div class="ga">✓ 2x = 14+8=22<br>x = 22÷2<br>x = <strong>11</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">x÷5 + 3 = 11</div><div class="ga">✓ x÷5 = 11-3=8<br>x = 8×5<br>x = <strong>40</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">4(x + 2) = 24</div><div class="ga">✓ x+2 = 24÷4=6<br>x = 6-2<br>x = <strong>4</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e0f4f4;">🧩</div><h3>练习二：列方程解应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">一个数加上36等于100，这个数是多少？</div>
+        <div class="wa">设这个数为x<br>x + 36 = 100<br>x = 100-36<br>x = <strong>64</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">小明买了5本练习册，共花费17.5元，每本练习册多少元？</div>
+        <div class="wa">设每本x元<br>5x = 17.5<br>x = 17.5÷5<br>x = <strong>3.5元</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">果园里有苹果树和梨树共240棵，苹果树是梨树的3倍，梨树和苹果树各有多少棵？</div>
+        <div class="wh">💡 设梨树x棵，苹果树3x棵</div>
+        <div class="wa">设梨树x棵，苹果树3x棵<br>x + 3x = 240<br>4x = 240<br>x = 60<br>梨树：<strong>60棵</strong>，苹果树：<strong>180棵</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">4</span>
+      <div><div class="wq">一个长方形的周长是36厘米，宽是6厘米，长是多少厘米？</div>
+        <div class="wa">设长为x厘米<br>2×(x+6)=36<br>x+6=18<br>x=<strong>12厘米</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 5: 多边形面积 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-5">
+  <div class="uh uh5" data-icon="📐">
+    <div class="uw">第6单元 · 建议学习：5天（重点！）</div>
+    <div class="ut">多边形的面积</div>
+    <div class="ud">掌握平行四边形、三角形、梯形的面积公式，学会组合图形面积计算</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#fdf4e0;">📖</div><h3>核心知识点——面积公式汇总</h3></div>
+  <div class="area-cards">
+    <div class="ac">
+      <div class="ac-title"><span class="ac-icon">▱</span>平行四边形</div>
+      <div class="ac-formula">S = 底 × 高</div>
+      <div class="ac-note">底和高必须垂直对应（同一组底和对应高）</div>
+    </div>
+    <div class="ac">
+      <div class="ac-title"><span class="ac-icon">△</span>三角形</div>
+      <div class="ac-formula">S = 底 × 高 ÷ 2</div>
+      <div class="ac-note">等底等高的三角形面积相等；与等底等高平行四边形面积之半</div>
+    </div>
+    <div class="ac">
+      <div class="ac-title"><span class="ac-icon">⌶</span>梯形</div>
+      <div class="ac-formula">S = (上底+下底) × 高 ÷ 2</div>
+      <div class="ac-note">上底和下底平行；高是上下底之间的垂直距离</div>
+    </div>
+    <div class="ac">
+      <div class="ac-title"><span class="ac-icon">□</span>长方形/正方形</div>
+      <div class="ac-formula">S = 长×宽 / S = 边×边</div>
+      <div class="ac-note">长方形和正方形是特殊平行四边形</div>
+    </div>
+  </div>
+
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c5)"></span>
+        <div><strong>公式推导思路（要会解释）</strong>
+          <span class="kn">平行四边形：剪拼成长方形，底=长，高=宽，所以S=底×高<br>三角形：两个完全一样的三角形拼成平行四边形，所以S=底×高÷2<br>梯形：两个完全一样的梯形拼成平行四边形，底=上底+下底，所以S=(上底+下底)×高÷2</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c5)"></span>
+        <div><strong>组合图形面积</strong>
+          <span class="kn">把复杂图形分割成简单图形（或用大图形减去小图形），分别计算再加减。</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 三大面积公式（必须背！）</div>
+      <div class="fr">平行四边形：S = 底 × 高</div>
+      <div class="fr">三角形：S = 底 × 高 ÷ 2</div>
+      <div class="fr">梯形：S = (上底 + 下底) × 高 ÷ 2</div>
+    </div>
+  </div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#fdf4e0;">✏️</div><h3>练习一：直接套公式</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">计算题 · 套公式</span></div>
+    <div class="ebody">
+      <div class="en">👆 点击查看答案和过程</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">平行四边形<br>底=8cm，高=5cm<br>S=</div><div class="ga">✓ 8×5=<strong>40平方厘米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">三角形<br>底=12cm，高=6cm<br>S=</div><div class="ga">✓ 12×6÷2=<strong>36平方厘米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">梯形<br>上底=4cm，下底=8cm<br>高=5cm，S=</div><div class="ga">✓ (4+8)×5÷2=<strong>30平方厘米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">梯形<br>上底=6m，下底=10m<br>高=4m，S=</div><div class="ga">✓ (6+10)×4÷2=<strong>32平方米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">三角形<br>底=15cm，高=8cm<br>S=</div><div class="ga">✓ 15×8÷2=<strong>60平方厘米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">已知平行四边形S=48cm²，底=8cm，高=？</div><div class="ga">✓ 高=48÷8=<strong>6厘米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">已知三角形S=30cm²，底=10cm，高=？</div><div class="ga">✓ 高=30×2÷10=<strong>6厘米</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">已知梯形S=40cm²，高=5cm，下底=10cm，上底=？</div><div class="ga">✓ 上底+下底=40×2÷5=16<br>上底=16-10=<strong>6厘米</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#fdf4e0;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">一块平行四边形的土地，底边长20米，高15米，这块土地的面积是多少平方米？合多少公顷？</div>
+        <div class="wa">S=20×15=300平方米<br>300÷10000=<strong>0.03公顷</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">一块梯形水田，上底28米，下底52米，高20米，这块水田面积多少平方米？</div>
+        <div class="wa">S=(28+52)×20÷2=80×20÷2=<strong>800平方米</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">如图：一个组合图形，上面是一个三角形（底10cm高6cm），下面是一个长方形（长10cm宽8cm），求总面积。</div>
+        <div class="wa">三角形面积：10×6÷2=30cm²<br>长方形面积：10×8=80cm²<br>总面积：30+80=<strong>110平方厘米</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">4</span>
+      <div><div class="wq">两个完全相同的三角形，底是8cm，高是5cm，把它们拼成一个平行四边形，这个平行四边形的面积是多少？</div>
+        <div class="wa">三角形：8×5÷2=20cm²<br>两个三角形拼成平行四边形：20×2=<strong>40平方厘米</strong><br>（验证：平行四边形S=底×高=8×5=40 ✓）</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 6: 数学广角·植树问题 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-6">
+  <div class="uh uh6" data-icon="🌳">
+    <div class="uw">第7单元 · 建议学习：3天</div>
+    <div class="ut">数学广角——植树问题</div>
+    <div class="ud">理解间隔数与棵数的关系，解决三种植树问题</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e8eeff;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c6)"></span>
+        <div><strong>植树问题的三种情况</strong>
+          <span class="kn">①两端都种：棵数=间隔数+1<br>②两端都不种：棵数=间隔数-1<br>③只种一端：棵数=间隔数</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c6)"></span>
+        <div><strong>间隔数的计算</strong>
+          <span class="kn">间隔数 = 总长 ÷ 间距</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c6)"></span>
+        <div><strong>封闭路线（环形）植树</strong>
+          <span class="kn">棵数 = 间隔数（因为首尾相连，没有多余的端点）</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 三种情况公式</div>
+      <div class="fr">两端都种：棵数 = 间隔数 + 1</div>
+      <div class="fr">两端不种：棵数 = 间隔数 - 1</div>
+      <div class="fr">只种一端：棵数 = 间隔数</div>
+      <div class="fr">环形：棵数 = 间隔数</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>画图帮助理解：</b>用短线代表间距，用○代表树。比如：○—○—○—○，4棵树，3个间隔。先画图，再套公式，不容易出错。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e8eeff;">✏️</div><h3>练习</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">计算题 · 植树问题</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">路长100m，每5m种一棵，两端都种，共种多少棵？</div><div class="ga">✓ 间隔数=100÷5=20<br>棵数=20+1=<strong>21棵</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">路长100m，每5m种一棵，两端不种，共种多少棵？</div><div class="ga">✓ 间隔数=20<br>棵数=20-1=<strong>19棵</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">圆形广场周长120m，每4m种一棵，共种多少棵？</div><div class="ga">✓ 间隔数=120÷4=30<br>环形棵数=间隔数=<strong>30棵</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">一排种了16棵树，两端都种，间距5m，这排树有多长？</div><div class="ga">✓ 间隔数=16-1=15<br>总长=15×5=<strong>75米</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e8eeff;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">学校操场跑道一圈是400米，每隔8米插一面彩旗，需要插多少面彩旗？</div>
+        <div class="wa">解：间隔数=400÷8=50<br>环形：棵数=间隔数=<strong>50面</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">一条公路长1.8千米，从起点到终点每隔60米种一棵树（两端都种），共种多少棵树？</div>
+        <div class="wa">解：1.8千米=1800米<br>间隔数=1800÷60=30<br>棵数=30+1=<strong>31棵</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">一栋楼从1楼到5楼，相邻两层之间的楼梯踏步数是18步，从1楼走到5楼共走多少步？</div>
+        <div class="wh">💡 提示：楼层数-1=间隔数</div>
+        <div class="wa">解：间隔数=5-1=4<br>总步数=18×4=<strong>72步</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 7: 因数与倍数 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-7">
+  <div class="uh uh7" data-icon="🔢">
+    <div class="uw">第8单元 · 建议学习：5天（重要！）</div>
+    <div class="ut">因数与倍数</div>
+    <div class="ud">认识因数、倍数、质数、合数，掌握2、3、5的倍数特征，理解最大公因数和最小公倍数</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f4e0ff;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kl">
+      <li class="ki"><span class="kd" style="background:var(--c7)"></span>
+        <div><strong>因数与倍数</strong>
+          <span class="kn">如果a×b=c，那么a和b都是c的因数，c是a和b的倍数。<br>如：3×4=12，3和4都是12的因数，12是3和4的倍数。</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c7)"></span>
+        <div><strong>倍数的特征（必须背！）</strong>
+          <span class="kn">2的倍数：个位是0、2、4、6、8（偶数）<br>5的倍数：个位是0或5<br>3的倍数：各位数字之和是3的倍数（如123：1+2+3=6是3的倍数，所以123是3的倍数）</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c7)"></span>
+        <div><strong>质数与合数</strong>
+          <span class="kn">质数：只有1和它本身两个因数（如2、3、5、7、11、13…）<br>合数：有两个以上因数（如4、6、8、9、10…）<br>1既不是质数也不是合数！2是最小的质数，也是唯一的偶质数。</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c7)"></span>
+        <div><strong>最大公因数（GCD）</strong>
+          <span class="kn">几个数公有的因数中最大的那个。方法：列举法——分别写出各数的因数，找公有的最大值。<br>如12和8：12的因数：1,2,3,4,6,12；8的因数：1,2,4,8。公因数：1,2,4。最大公因数=4。</span></div></li>
+      <li class="ki"><span class="kd" style="background:var(--c7)"></span>
+        <div><strong>最小公倍数（LCM）</strong>
+          <span class="kn">几个数公有的倍数中最小的那个（0除外）。方法：列举法——分别写出各数的倍数，找最小的公有值。<br>如4和6：4的倍数：4,8,12,16…；6的倍数：6,12,18…。最小公倍数=12。</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 关键记忆</div>
+      <div class="fr">2的倍数：个位0,2,4,6,8</div>
+      <div class="fr">5的倍数：个位0,5</div>
+      <div class="fr">3的倍数：各位数字之和能被3整除</div>
+      <div class="fr">100以内质数：2,3,5,7,11,13,17,19,23,29,31,37,41,43,47…</div>
+    </div>
+  </div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#f4e0ff;">✏️</div><h3>练习一：倍数特征判断</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">判断题 · 2、3、5的倍数</span></div>
+    <div class="ebody">
+      <div class="en">👆 点击查看</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">246是2的倍数吗？是5的倍数吗？</div><div class="ga">✓ 是2的倍数（个位6）<br>✗ 不是5的倍数（个位不是0或5）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">135是3的倍数吗？是5的倍数吗？</div><div class="ga">✓ 是3的倍数（1+3+5=9，9÷3=3✓）<br>✓ 是5的倍数（个位5）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">312是2的倍数吗？是3的倍数吗？</div><div class="ga">✓ 是2的倍数（个位2）<br>✓ 是3的倍数（3+1+2=6，6÷3=2✓）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">108同时是哪些数的倍数？（2、3、5中）</div><div class="ga">✓ 是2的倍数（个位8）<br>✓ 是3的倍数（1+0+8=9）<br>✗ 不是5的倍数</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">质数与合数判断</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">17是质数还是合数？</div><div class="ga">✓ 质数（只有1和17两个因数）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">21是质数还是合数？</div><div class="ga">✓ 合数（21=3×7，有因数3和7）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1是质数还是合数？</div><div class="ga">✓ 两者都不是！1既不是质数也不是合数</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">写出20以内所有质数</div><div class="ga">✓ 2,3,5,7,11,13,17,19<br>（共8个）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">两个质数的和一定是合数吗？</div><div class="ga">✗ 不一定！<br>如2+3=5（质数）<br>但大多数情况是合数</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">最小的合数是几？</div><div class="ga">✓ 4（4=2×2）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">最大公因数与最小公倍数 ⭐⭐⭐</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">12和18的最大公因数</div><div class="ga">✓ 12因数：1,2,3,4,6,12<br>18因数：1,2,3,6,9,18<br>最大公因数=<strong>6</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">8和12的最小公倍数</div><div class="ga">✓ 8的倍数：8,16,24,32…<br>12的倍数：12,24,36…<br>最小公倍数=<strong>24</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">4和9的最大公因数</div><div class="ga">✓ 4因数：1,2,4<br>9因数：1,3,9<br>公因数只有1，最大公因数=<strong>1</strong>（互质）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">6和9的最小公倍数</div><div class="ga">✓ 6的倍数：6,12,18…<br>9的倍数：9,18,27…<br>最小公倍数=<strong>18</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f4e0ff;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">有18个苹果和12个梨，平均分成几份，每份苹果和梨的数量都是整数，最多能分成几份？</div>
+        <div class="wh">💡 求18和12的最大公因数</div>
+        <div class="wa">18和12的最大公因数=6<br>最多能分成<strong>6份</strong>（每份苹果3个，梨2个）</div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">一个数既是2的倍数，又是5的倍数，还是3的倍数，100以内最小的这样的数是多少？</div>
+        <div class="wa">既是2又是5的倍数→个位必须是0<br>还要是3的倍数→各位之和是3的倍数<br>10：1+0=1（不是3倍数）<br>30：3+0=3✓<br>最小的是<strong>30</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">公共汽车甲路线每6分钟一班，乙路线每8分钟一班，现在两路同时发车，下次同时发车是几分钟后？</div>
+        <div class="wh">💡 求6和8的最小公倍数</div>
+        <div class="wa">6的倍数：6,12,18,24…<br>8的倍数：8,16,24…<br>最小公倍数=24<br>答：<strong>24分钟</strong>后再次同时发车</div></div></div></div>
+
+  <div class="divider"></div>
+  <div class="kb" style="text-align:center;padding:30px 20px;">
+    <div style="font-size:38px;margin-bottom:12px;">🏆</div>
+    <div style="font-family:'ZCOOL XiaoWei',serif;font-size:22px;margin-bottom:12px;">五年级上册全部完成！</div>
+    <div style="font-size:13.5px;color:var(--muted);line-height:2.1;max-width:560px;margin:0 auto;">
+      恭喜完成五年级上册全部8个单元！<br>
+      <b style="color:#7a2800;">本册四大重点：</b><br>
+      ① 小数乘法——位数相加决定积的位数<br>
+      ② 小数除法——除数化整，同步移动小数点（最难！）<br>
+      ③ 简易方程——设未知数、列方程、解方程、验算<br>
+      ④ 多边形面积——三角形和梯形面积公式要配高<br><br>
+      做一套期末真题卷检验效果。<br>
+      达到70分以上，可以继续挑战<b style="color:#7a2800;">五年级下册</b>！
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<button class="scrolltop" id="sTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function go(n) {
+  document.querySelectorAll('.up').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.nt').forEach(b => b.classList.remove('on'));
+  document.getElementById('unit-' + n).classList.add('on');
+  document.querySelector('.nt[data-u="' + n + '"]').classList.add('on');
+  window.scrollTo({ top: document.querySelector('.nav-wrap').offsetTop - 10, behavior: 'smooth' });
+}
+function t(el)  { el.classList.toggle('on'); }
+function tw(el) { el.classList.toggle('on'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('sTop').classList.toggle('vis', window.scrollY > 300);
+});
+</script>
+</body>
+</html>

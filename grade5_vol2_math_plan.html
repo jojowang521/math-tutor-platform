@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>人教版五年级下册数学 · 详细补习计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg:#f0eef8;--paper:#fdfcff;--ink:#1a1030;
+  --c0:#6a1560;--c1:#005a30;--c2:#8a4000;--c3:#003a7a;
+  --c4:#5a0060;--c5:#006050;--c6:#7a3000;--c7:#1a3a6a;
+  --muted:#6a6080;--border:#c8c0e0;--shadow:rgba(0,0,0,0.07);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);font-family:'Noto Sans SC',sans-serif;color:var(--ink);}
+
+/* HEADER */
+.hdr{background:linear-gradient(135deg,#180a30 0%,#2a1060 55%,#180828 100%);
+  padding:38px 24px 30px;position:relative;overflow:hidden;}
+.hdr::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 70% 50%,rgba(160,100,255,0.12) 0%,transparent 55%);}
+.hdr::after{content:'分';font-family:'ZCOOL XiaoWei',serif;
+  position:absolute;right:-10px;bottom:-30px;font-size:250px;
+  color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
+.hi{position:relative;max-width:940px;margin:0 auto;}
+.bdg{display:inline-flex;align-items:center;gap:6px;
+  background:rgba(180,120,255,0.15);border:1px solid rgba(180,120,255,0.4);
+  color:#c8a0ff;font-size:11px;font-weight:700;letter-spacing:2px;
+  padding:4px 12px;border-radius:2px;margin-bottom:14px;}
+.hdr h1{font-family:'ZCOOL XiaoWei',serif;font-size:clamp(24px,5vw,40px);
+  color:#fff;line-height:1.35;margin-bottom:10px;}
+.hdr h1 span{color:#c8a0ff;}
+.hdr p{color:rgba(255,255,255,0.5);font-size:13px;line-height:1.9;}
+.sts{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px;}
+.st{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);
+  padding:8px 18px;border-radius:4px;text-align:center;}
+.sn{font-size:20px;font-weight:700;color:#c8a0ff;}
+.sl2{font-size:11px;color:rgba(255,255,255,0.45);margin-top:1px;}
+
+/* NAV */
+.nw{background:#fff;border-bottom:2px solid var(--border);
+  position:sticky;top:0;z-index:100;box-shadow:0 2px 12px var(--shadow);}
+.nt-wrap{display:flex;overflow-x:auto;max-width:940px;margin:0 auto;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.nt-wrap::-webkit-scrollbar{display:none;}
+.nt{flex-shrink:0;padding:13px 14px;border:none;background:none;
+  font-family:'Noto Sans SC',sans-serif;font-size:12px;cursor:pointer;
+  color:var(--muted);border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.nt:hover{color:var(--ink);}
+.nt.on{font-weight:700;}
+.tn{display:inline-flex;align-items:center;justify-content:center;
+  width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;
+  margin-right:5px;background:var(--border);color:var(--muted);flex-shrink:0;}
+.nt.on .tn{color:#fff;}
+.nt[data-u="0"].on{border-bottom-color:var(--c0);color:var(--c0);}.nt[data-u="0"].on .tn{background:var(--c0);}
+.nt[data-u="1"].on{border-bottom-color:var(--c1);color:var(--c1);}.nt[data-u="1"].on .tn{background:var(--c1);}
+.nt[data-u="2"].on{border-bottom-color:var(--c2);color:var(--c2);}.nt[data-u="2"].on .tn{background:var(--c2);}
+.nt[data-u="3"].on{border-bottom-color:var(--c3);color:var(--c3);}.nt[data-u="3"].on .tn{background:var(--c3);}
+.nt[data-u="4"].on{border-bottom-color:var(--c4);color:var(--c4);}.nt[data-u="4"].on .tn{background:var(--c4);}
+.nt[data-u="5"].on{border-bottom-color:var(--c5);color:var(--c5);}.nt[data-u="5"].on .tn{background:var(--c5);}
+.nt[data-u="6"].on{border-bottom-color:var(--c6);color:var(--c6);}.nt[data-u="6"].on .tn{background:var(--c6);}
+
+/* MAIN */
+.main{max-width:940px;margin:0 auto;padding:26px 16px 60px;}
+.up{display:none;animation:fi .22s ease;}
+.up.on{display:block;}
+@keyframes fi{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
+
+/* Unit header */
+.uh{border-radius:10px;padding:22px 24px;margin-bottom:20px;position:relative;overflow:hidden;}
+.uh::after{content:attr(data-icon);position:absolute;right:18px;top:50%;
+  transform:translateY(-50%);font-size:76px;opacity:.09;line-height:1;pointer-events:none;}
+.uw{font-size:11px;font-weight:700;letter-spacing:2px;opacity:.75;margin-bottom:6px;}
+.ut{font-family:'ZCOOL XiaoWei',serif;font-size:22px;color:#fff;margin-bottom:6px;}
+.ud{font-size:13px;color:rgba(255,255,255,.72);line-height:1.75;}
+.uh0{background:linear-gradient(135deg,#6a1560,#a830a0);}
+.uh1{background:linear-gradient(135deg,#005a30,#009050);}
+.uh2{background:linear-gradient(135deg,#8a4000,#c86000);}
+.uh3{background:linear-gradient(135deg,#003a7a,#0060c0);}
+.uh4{background:linear-gradient(135deg,#5a0060,#9000a0);}
+.uh5{background:linear-gradient(135deg,#006050,#009880);}
+.uh6{background:linear-gradient(135deg,#7a3000,#b85000);}
+
+/* Section label */
+.sl{display:flex;align-items:center;gap:10px;margin:18px 0 12px;}
+.si{width:28px;height:28px;border-radius:6px;display:flex;align-items:center;
+  justify-content:center;font-size:14px;flex-shrink:0;}
+.sl h3{font-size:15px;font-weight:700;}
+
+/* Knowledge box */
+.kb{background:var(--paper);border:1.5px solid var(--border);
+  border-radius:8px;padding:18px 20px;margin-bottom:14px;}
+.kpl{list-style:none;}
+.kpi{display:flex;align-items:flex-start;gap:10px;padding:8px 0;
+  border-bottom:1px dashed var(--border);font-size:13.5px;line-height:1.78;}
+.kpi:last-child{border-bottom:none;padding-bottom:0;}
+.kpd{width:8px;height:8px;border-radius:50%;margin-top:7px;flex-shrink:0;}
+.kpn{display:block;font-size:12px;color:var(--muted);margin-top:2px;}
+
+.fb{background:#f8f0ff;border:1.5px solid #c090e0;border-radius:6px;padding:14px 16px;margin-top:12px;}
+.ft{font-size:11px;font-weight:700;letter-spacing:2px;color:#500080;margin-bottom:8px;}
+.fr{font-size:14px;font-weight:700;color:#300060;padding:4px 0;line-height:1.65;font-family:'Courier New',monospace;}
+
+/* Exercise */
+.eb{background:var(--paper);border:1.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:14px;}
+.eh{display:flex;align-items:center;justify-content:space-between;
+  padding:11px 18px;border-bottom:1.5px solid var(--border);background:#f8f4ff;}
+.et{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--muted);}
+.ebody{padding:16px 18px;}
+.en2{font-size:12px;color:var(--muted);margin-bottom:12px;}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px;margin-bottom:8px;}
+.gi{background:var(--bg);border:1.5px solid var(--border);border-radius:6px;
+  padding:12px 14px;cursor:pointer;transition:all .18s;}
+.gi:hover{border-color:#a070d0;background:#ece8f8;}
+.gq{font-size:14px;font-weight:700;margin-bottom:4px;line-height:1.55;}
+.gbl{display:inline-block;min-width:36px;height:21px;border-bottom:2px solid var(--ink);
+  vertical-align:bottom;text-align:center;font-weight:700;color:var(--c0);font-size:14px;}
+.ga{display:none;font-size:12px;color:#5a0080;margin-top:5px;font-weight:700;line-height:1.5;}
+.gi.on{background:#ede8ff;border-color:#a070d0;}
+.gi.on .ga{display:block;}
+
+/* Vertical drills */
+.vd{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;}
+.vi{background:var(--bg);border:1.5px solid var(--border);border-radius:6px;
+  padding:14px 18px;min-width:130px;cursor:pointer;transition:all .18s;
+  font-family:'Courier New',monospace;font-size:15px;line-height:1.9;}
+.vi:hover{border-color:#a070d0;}
+.vl{white-space:pre;}
+.vs{border-top:2px solid var(--ink);margin:4px 0;}
+.va{color:#5a0080;font-weight:700;display:none;font-size:14px;}
+.vi.on{background:#ede8ff;border-color:#a070d0;}
+.vi.on .va{display:block;}
+
+/* Word problems */
+.wp{background:var(--bg);border:1.5px solid var(--border);border-radius:8px;
+  padding:15px 16px;margin-bottom:10px;cursor:pointer;transition:all .18s;}
+.wp:hover{border-color:#a070d0;}
+.wr{display:flex;align-items:flex-start;gap:10px;}
+.wn{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--ink);color:#fff;font-size:11px;font-weight:700;
+  width:22px;height:22px;border-radius:50%;flex-shrink:0;margin-top:1px;}
+.wq{font-size:13.5px;line-height:1.85;}
+.whi{font-size:12px;color:var(--muted);margin-top:5px;font-style:italic;}
+.wa{display:none;margin-top:10px;padding-top:10px;border-top:1px dashed var(--border);
+  font-size:13px;color:#400060;line-height:1.85;}
+.wa strong{font-size:14px;color:#280040;}
+.wp.on{background:#ede8ff;border-color:#a070d0;}
+.wp.on .wa{display:block;}
+
+/* Alerts */
+.tip{background:#fffbec;border-left:4px solid #c8a800;border-radius:0 6px 6px 0;
+  padding:12px 16px;margin:10px 0;font-size:13px;line-height:1.82;color:#4a3600;}
+.tip b{color:#9a7000;}
+.warn{background:#fff0f8;border-left:4px solid #c02080;border-radius:0 6px 6px 0;
+  padding:12px 16px;margin:10px 0;font-size:13px;line-height:1.82;color:#500020;}
+.warn b{color:#a01060;}
+.info{background:#f0f0ff;border-left:4px solid #5050c8;border-radius:0 6px 6px 0;
+  padding:12px 16px;margin:10px 0;font-size:13px;line-height:1.82;color:#101050;}
+
+/* Fraction display */
+.frac{display:inline-flex;flex-direction:column;align-items:center;
+  font-weight:700;margin:0 3px;vertical-align:middle;font-size:14px;}
+.fn{border-bottom:2px solid var(--ink);padding:0 5px;line-height:1.3;}
+.fd{padding:0 5px;line-height:1.3;}
+
+/* Comparison table */
+.ctbl{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:12px;}
+.ctbl th{background:var(--ink);color:#fff;padding:9px 12px;text-align:center;font-size:12px;}
+.ctbl td{padding:9px 12px;border:1px solid var(--border);text-align:center;vertical-align:middle;}
+.ctbl .hl{background:#ede8ff;font-weight:700;color:#5a0080;}
+.ctbl tr:nth-child(even) td{background:#f8f5ff;}
+
+/* Step box */
+.steps{counter-reset:s;list-style:none;}
+.step{display:flex;gap:12px;padding:10px 0;border-bottom:1px dashed var(--border);
+  font-size:13.5px;line-height:1.75;}
+.step:last-child{border-bottom:none;}
+.step-num{background:var(--c0);color:#fff;width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:12px;
+  font-weight:700;flex-shrink:0;margin-top:2px;}
+
+.divider{height:1px;background:var(--border);margin:18px 0;}
+
+.scrolltop{position:fixed;bottom:24px;right:20px;width:40px;height:40px;border-radius:50%;
+  background:var(--ink);color:#fff;border:none;cursor:pointer;font-size:18px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,0.2);opacity:0;transition:opacity .3s;z-index:200;}
+.scrolltop.vis{opacity:1;}
+
+@media(max-width:520px){.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hi">
+    <div class="bdg">📒 人教版 · 五年级下册 · 数学补习</div>
+    <h1>五年级下册<span>完整补习计划</span></h1>
+    <p>7个单元 · 知识点精讲 + 分层练习题 · 点击题目查看答案<br>分数加减、图形变换、长方体体积——五年级下册核心全覆盖</p>
+    <div class="sts">
+      <div class="st"><div class="sn">7</div><div class="sl2">个单元</div></div>
+      <div class="st"><div class="sn">4~5</div><div class="sl2">建议周数</div></div>
+      <div class="st"><div class="sn">260+</div><div class="sl2">道练习题</div></div>
+      <div class="st"><div class="sn">点击</div><div class="sl2">查看答案</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nw">
+  <div class="nt-wrap">
+    <button class="nt on" data-u="0" onclick="go(0)"><span class="tn">1</span>图形的变换</button>
+    <button class="nt"    data-u="1" onclick="go(1)"><span class="tn">2</span>因数倍数综合</button>
+    <button class="nt"    data-u="2" onclick="go(2)"><span class="tn">3</span>长方体与正方体</button>
+    <button class="nt"    data-u="3" onclick="go(3)"><span class="tn">4</span>分数的意义和性质</button>
+    <button class="nt"    data-u="4" onclick="go(4)"><span class="tn">5</span>分数的加法和减法</button>
+    <button class="nt"    data-u="5" onclick="go(5)"><span class="tn">6</span>统计与可能性</button>
+    <button class="nt"    data-u="6" onclick="go(6)"><span class="tn">7</span>数学广角·找次品</button>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- ================================================================ -->
+<!-- UNIT 0: 图形的变换 -->
+<!-- ================================================================ -->
+<div class="up on" id="unit-0">
+  <div class="uh uh0" data-icon="🔄">
+    <div class="uw">第1单元 · 建议学习：3天</div>
+    <div class="ut">图形的变换</div>
+    <div class="ud">综合运用旋转、轴对称、平移，理解图形变换的规律，在方格纸上画变换后的图形</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f0e0f8;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c0)"></span>
+        <div><strong>平移</strong>
+          <span class="kpn">图形沿某方向移动一定距离，形状、大小、方向不变，只有位置改变。关键：每个点移动方向和距离完全相同。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c0)"></span>
+        <div><strong>旋转</strong>
+          <span class="kpn">图形绕旋转中心转动一定角度。三要素：旋转中心、旋转方向（顺/逆时针）、旋转角度。旋转后形状大小不变。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c0)"></span>
+        <div><strong>轴对称</strong>
+          <span class="kpn">沿对称轴折叠后两侧完全重合。对应点到对称轴距离相等，连线与对称轴垂直。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c0)"></span>
+        <div><strong>综合变换</strong>
+          <span class="kpn">复杂图案可由简单图形通过平移、旋转、翻折组合而成。欣赏生活中的变换：瓷砖、剪纸、万花筒等。</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 三种变换对比</div>
+      <div class="fr">平移：位置变，方向大小不变</div>
+      <div class="fr">旋转：绕点转，形状大小不变</div>
+      <div class="fr">对称：翻折，两边镜像相等</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>方格纸上画变换的方法：</b>找关键顶点，分别平移/旋转到新位置，再连接各点。平移时数格子数；旋转时找旋转中心，用直角或量角器确定新位置。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#f0e0f8;">✏️</div><h3>练习：判断与填空</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">填空 · 图形变换</span></div>
+    <div class="ebody">
+      <div class="en2">👆 点击查看答案</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">把图形向右平移5格，各点横坐标（增/减）5，纵坐标（变/不变）</div><div class="ga">✓ 横坐标增加5，纵坐标不变</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">图形绕中心点旋转180°，效果相当于做了几次轴对称？</div><div class="ga">✓ 相当于做了2次轴对称（先水平再垂直）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">等边三角形绕中心旋转多少度后与原图重合？</div><div class="ga">✓ 120°（旋转3次回到原位，360°÷3=120°）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">正方形有几条对称轴？绕中心旋转多少度与原图重合？</div><div class="ga">✓ 4条对称轴；旋转90°重合（360÷4=90°）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">将点A(2,3)向上平移4格后的坐标是？</div><div class="ga">✓ (2, 7)（纵坐标+4，横坐标不变）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">将点B(5,2)向左平移3格后的坐标是？</div><div class="ga">✓ (2, 2)（横坐标-3，纵坐标不变）</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f0e0f8;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">一个图形向右平移6格再向上平移4格，与原来相比，图形的（  ）改变了，（  ）没有改变。</div>
+        <div class="wa">改变了：<strong>位置</strong><br>没有改变：<strong>形状、大小、方向</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">用一个直角三角形（两直角边分别是2格和3格）通过旋转，可以拼成哪些图形？</div>
+        <div class="wa">旋转180°后与原三角形可以拼成：<strong>平行四边形</strong>（两个三角形底对底）<br>旋转90°+镜像可拼成：<strong>长方形</strong>（4个小直角三角形）</div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 1: 因数与倍数（综合深化）-->
+<!-- ================================================================ -->
+<div class="up" id="unit-1">
+  <div class="uh uh1" data-icon="🔢">
+    <div class="uw">第2单元 · 建议学习：4天（重点！）</div>
+    <div class="ut">因数与倍数（综合深化）</div>
+    <div class="ud">深化最大公因数、最小公倍数，掌握短除法，为分数通分约分做准备</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e0f4e8;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c1)"></span>
+        <div><strong>短除法求最大公因数</strong>
+          <span class="kpn">两数同时除以公因数，直到互质为止。所有除数的乘积就是最大公因数。<br>如求12和18的GCD：都除以2得6和9，再除以3得2和3（互质），GCD=2×3=6</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c1)"></span>
+        <div><strong>短除法求最小公倍数</strong>
+          <span class="kpn">LCM = 最大公因数 × (a÷GCD) × (b÷GCD)<br>或：短除法所有除数×最后剩余的两个互质数之积</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c1)"></span>
+        <div><strong>互质</strong>
+          <span class="kpn">两数最大公因数为1，叫互质数。如8和9互质（GCD=1）。互质的两数LCM=两数之积。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c1)"></span>
+        <div><strong>分解质因数</strong>
+          <span class="kpn">把一个合数写成质数连乘的形式。如12=2×2×3=2²×3；18=2×3×3=2×3²</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c1)"></span>
+        <div><strong>GCD与LCM的关系</strong>
+          <span class="kpn">两数 a 和 b：a × b = GCD(a,b) × LCM(a,b)</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 关键公式</div>
+      <div class="fr">a × b = GCD × LCM</div>
+      <div class="fr">互质：GCD=1，LCM=a×b</div>
+      <div class="fr">倍数关系：GCD=小数，LCM=大数</div>
+    </div>
+  </div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e0f4e8;">✏️</div><h3>练习：GCD与LCM</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">计算题 · 最大公因数与最小公倍数</span></div>
+    <div class="ebody">
+      <div class="en2">👆 点击查看</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">GCD(24, 36)</div><div class="ga">✓ 24=2³×3；36=2²×3²<br>GCD=2²×3=<strong>12</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">LCM(8, 12)</div><div class="ga">✓ GCD(8,12)=4<br>LCM=8×12÷4=<strong>24</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">GCD(15, 25)</div><div class="ga">✓ 15=3×5；25=5²<br>GCD=<strong>5</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">LCM(6, 9)</div><div class="ga">✓ GCD(6,9)=3<br>LCM=6×9÷3=<strong>18</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">GCD(7, 11)</div><div class="ga">✓ 7和11都是质数且不相等<br>GCD=<strong>1</strong>（互质）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">LCM(4, 7)</div><div class="ga">✓ 4和7互质（GCD=1）<br>LCM=4×7=<strong>28</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">GCD(18, 27)</div><div class="ga">✓ 18=2×3²；27=3³<br>GCD=3²=<strong>9</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">LCM(12, 16)</div><div class="ga">✓ GCD(12,16)=4<br>LCM=12×16÷4=<strong>48</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e0f4e8;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">有48个苹果和36个梨，平均分成若干份，每份水果种类数量都整数，最多分成多少份？每份各多少个？</div>
+        <div class="wa">GCD(48,36)=12<br>最多分<strong>12份</strong>，每份苹果48÷12=<strong>4个</strong>，梨36÷12=<strong>3个</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">两辆公交车，甲路每12分钟一班，乙路每8分钟一班，同时出发后最少多少分钟再次同时到站？</div>
+        <div class="wa">LCM(12,8)=24<br>答：最少<strong>24分钟</strong>后再次同时到站。</div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">两数之积是180，最大公因数是6，求最小公倍数。</div>
+        <div class="whi">💡 利用 a×b = GCD×LCM</div>
+        <div class="wa">LCM = 两数之积 ÷ GCD = 180÷6 = <strong>30</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 2: 长方体与正方体 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-2">
+  <div class="uh uh2" data-icon="📦">
+    <div class="uw">第3单元 · 建议学习：5天（核心！）</div>
+    <div class="ut">长方体和正方体（表面积与体积）</div>
+    <div class="ud">认识长方体和正方体，掌握表面积和体积的计算，理解体积单位换算</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#fdf0e0;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c2)"></span>
+        <div><strong>长方体的特征</strong>
+          <span class="kpn">6个面（3对相对的面），12条棱（4组），8个顶点。相对的面形状相同、面积相等。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c2)"></span>
+        <div><strong>表面积</strong>
+          <span class="kpn">长方体表面积 = 2×(长×宽 + 长×高 + 宽×高)<br>正方体表面积 = 6×棱长²<br>表面积的单位是平方单位（cm²、m²等）</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c2)"></span>
+        <div><strong>体积的意义</strong>
+          <span class="kpn">物体所占空间的大小叫体积。体积单位：立方毫米、立方厘米、立方分米、立方米。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c2)"></span>
+        <div><strong>体积公式</strong>
+          <span class="kpn">长方体体积 = 长 × 宽 × 高（V=lwh）<br>正方体体积 = 棱长³（V=a³）</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c2)"></span>
+        <div><strong>体积单位换算（重要！）</strong>
+          <span class="kpn">1立方米=1000立方分米；1立方分米=1000立方厘米；1立方厘米=1000立方毫米<br>1升(L)=1立方分米；1毫升(mL)=1立方厘米</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 公式汇总（必背！）</div>
+      <div class="fr">长方体表面积 = 2(lw + lh + wh)</div>
+      <div class="fr">正方体表面积 = 6a²</div>
+      <div class="fr">长方体体积 = l × w × h</div>
+      <div class="fr">正方体体积 = a³（a×a×a）</div>
+      <div class="fr">1m³=1000dm³  1dm³=1000cm³  1L=1dm³</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>易混概念：</b>表面积（平方单位，面的总面积）vs 体积（立方单位，所占空间大小）。做题先看是求表面积还是体积，单位也完全不同！</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#fdf0e0;">✏️</div><h3>练习一：表面积</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">计算题 · 表面积</span></div>
+    <div class="ebody">
+      <div class="en2">👆 点击查看</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)">
+          <div class="gq">长方体：长5cm，宽4cm，高3cm<br>表面积=？</div>
+          <div class="ga">✓ 2×(5×4+5×3+4×3)<br>=2×(20+15+12)<br>=2×47=<strong>94cm²</strong></div>
+        </div>
+        <div class="gi" onclick="t(this)">
+          <div class="gq">正方体：棱长6cm<br>表面积=？</div>
+          <div class="ga">✓ 6×6²=6×36=<strong>216cm²</strong></div>
+        </div>
+        <div class="gi" onclick="t(this)">
+          <div class="gq">长方体：长10cm，宽8cm，高5cm<br>表面积=？</div>
+          <div class="ga">✓ 2×(10×8+10×5+8×5)<br>=2×(80+50+40)<br>=2×170=<strong>340cm²</strong></div>
+        </div>
+        <div class="gi" onclick="t(this)">
+          <div class="gq">正方体：棱长4dm<br>表面积=？</div>
+          <div class="ga">✓ 6×4²=6×16=<strong>96dm²</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">计算题 · 体积 ⭐⭐</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)">
+          <div class="gq">长方体：长8cm，宽5cm，高4cm<br>体积=？</div>
+          <div class="ga">✓ 8×5×4=<strong>160cm³</strong></div>
+        </div>
+        <div class="gi" onclick="t(this)">
+          <div class="gq">正方体：棱长5cm<br>体积=？</div>
+          <div class="ga">✓ 5³=5×5×5=<strong>125cm³</strong></div>
+        </div>
+        <div class="gi" onclick="t(this)">
+          <div class="gq">长方体：长1.5m，宽0.8m，高0.6m<br>体积=？</div>
+          <div class="ga">✓ 1.5×0.8×0.6=<strong>0.72m³</strong></div>
+        </div>
+        <div class="gi" onclick="t(this)">
+          <div class="gq">已知长方体V=120cm³，长=6cm，宽=5cm，高=？</div>
+          <div class="ga">✓ 高=120÷(6×5)=120÷30=<strong>4cm</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">单位换算 · 体积</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">3m³=<span class="gbl"></span>dm³</div><div class="ga">✓ 3000dm³</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5000cm³=<span class="gbl"></span>dm³</div><div class="ga">✓ 5dm³（即5升）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">2.5dm³=<span class="gbl"></span>cm³</div><div class="ga">✓ 2500cm³（即2500mL）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">一个水桶容积3L=<span class="gbl"></span>dm³=<span class="gbl"></span>cm³</div><div class="ga">✓ 3dm³=3000cm³</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">4800mL=<span class="gbl"></span>L=<span class="gbl"></span>dm³</div><div class="ga">✓ 4.8L=4.8dm³</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">0.36m³=<span class="gbl"></span>dm³</div><div class="ga">✓ 360dm³</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#fdf0e0;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">做一个无盖的长方体铁皮水箱，长50cm，宽40cm，高30cm，需要多少平方厘米铁皮？（无盖=去掉顶面）</div>
+        <div class="wa">无盖的5个面：<br>底面：50×40=2000<br>前后两面：50×30×2=3000<br>左右两面：40×30×2=2400<br>合计：2000+3000+2400=<strong>7400cm²</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">一个长方体水池，长4m，宽3m，深1.5m，水池能装多少立方米的水？合多少升？</div>
+        <div class="wa">体积=4×3×1.5=<strong>18m³</strong><br>18m³=18000dm³=<strong>18000升</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">一块正方体橡皮泥，棱长4cm。把它捏成长8cm、宽4cm的长方体，高是多少厘米？</div>
+        <div class="whi">💡 提示：体积不变！</div>
+        <div class="wa">正方体体积：4³=64cm³<br>长方体：64=8×4×高<br>高=64÷32=<strong>2cm</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">4</span>
+      <div><div class="wq">用棱长1cm的小正方体堆成棱长3cm的大正方体，需要多少个小正方体？</div>
+        <div class="wa">大正方体体积：3³=27cm³<br>小正方体体积：1³=1cm³<br>需要：27÷1=<strong>27个</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 3: 分数的意义和性质 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-3">
+  <div class="uh uh3" data-icon="½">
+    <div class="uw">第4单元 · 建议学习：6天（最重要！）</div>
+    <div class="ut">分数的意义和性质</div>
+    <div class="ud">深入理解分数的意义，掌握约分、通分、分数与小数互化</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e4eeff;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c3)"></span>
+        <div><strong>分数的意义（深化）</strong>
+          <span class="kpn">把单位"1"平均分成若干份，其中一份或几份的数。分母表示分成几份，分子表示取了几份。分数也可以表示两个量的比，或除法的结果：a÷b = a/b（b≠0）</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c3)"></span>
+        <div><strong>分数的基本性质</strong>
+          <span class="kpn">分子和分母同时乘以或除以相同的非零数，分数大小不变。<br>如：2/3 = 4/6 = 6/9 = 8/12…（同乘）；12/18 = 6/9 = 2/3（同除）</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c3)"></span>
+        <div><strong>约分</strong>
+          <span class="kpn">把分子和分母同时除以它们的最大公因数，化成最简分数。<br>最简分数：分子和分母互质（GCD=1）。如18/24→分子分母除以GCD(18,24)=6→3/4</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c3)"></span>
+        <div><strong>通分</strong>
+          <span class="kpn">把几个分母不同的分数，化成分母相同的分数（分数大小不变）。公分母一般取各分母的最小公倍数。<br>如1/3和1/4→公分母12→4/12和3/12</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c3)"></span>
+        <div><strong>分数与小数互化</strong>
+          <span class="kpn">分数→小数：分子÷分母（如3/4=3÷4=0.75）<br>小数→分数：按位写分数再约分（如0.6=6/10=3/5）</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c3)"></span>
+        <div><strong>分数大小比较</strong>
+          <span class="kpn">同分母：分子大的大；同分子：分母小的大；异分母：先通分再比较。</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 关键方法</div>
+      <div class="fr">约分：分子分母 ÷ GCD（最大公因数）</div>
+      <div class="fr">通分：分子分母 × (LCM÷原分母)</div>
+      <div class="fr">分数化小数：分子 ÷ 分母</div>
+      <div class="fr">小数化分数：写成分母10/100/1000的分数再约分</div>
+    </div>
+  </div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e4eeff;">✏️</div><h3>练习一：约分</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">约分 · 化成最简分数</span></div>
+    <div class="ebody">
+      <div class="en2">👆 点击查看约分过程</div>
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">6/8 = </div><div class="ga">✓ GCD(6,8)=2<br>6÷2=3，8÷2=4<br>= <strong>3/4</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">12/18 = </div><div class="ga">✓ GCD(12,18)=6<br>12÷6=2，18÷6=3<br>= <strong>2/3</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">15/25 = </div><div class="ga">✓ GCD(15,25)=5<br>15÷5=3，25÷5=5<br>= <strong>3/5</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">24/36 = </div><div class="ga">✓ GCD(24,36)=12<br>24÷12=2，36÷12=3<br>= <strong>2/3</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">9/27 = </div><div class="ga">✓ GCD(9,27)=9<br>= <strong>1/3</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">30/42 = </div><div class="ga">✓ GCD(30,42)=6<br>30÷6=5，42÷6=7<br>= <strong>5/7</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">16/40 = </div><div class="ga">✓ GCD(16,40)=8<br>= <strong>2/5</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">48/64 = </div><div class="ga">✓ GCD(48,64)=16<br>= <strong>3/4</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">通分 · 化成同分母 ⭐⭐</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">1/3 和 1/4 通分</div><div class="ga">✓ LCM(3,4)=12<br>1/3=4/12，1/4=3/12</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">2/5 和 3/4 通分</div><div class="ga">✓ LCM(5,4)=20<br>2/5=8/20，3/4=15/20</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5/6 和 3/8 通分</div><div class="ga">✓ LCM(6,8)=24<br>5/6=20/24，3/8=9/24</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">比较大小：3/4 ○ 5/7</div><div class="ga">✓ 通分：21/28 ○ 20/28<br>3/4 <strong>&gt;</strong> 5/7</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">分数与小数互化</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">3/4 化小数</div><div class="ga">✓ 3÷4=<strong>0.75</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5/8 化小数</div><div class="ga">✓ 5÷8=<strong>0.625</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">7/20 化小数</div><div class="ga">✓ 7÷20=<strong>0.35</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">0.6 化分数</div><div class="ga">✓ 6/10=<strong>3/5</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">0.125 化分数</div><div class="ga">✓ 125/1000=<strong>1/8</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">0.75 化分数</div><div class="ga">✓ 75/100=<strong>3/4</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1/3 化小数（循环）</div><div class="ga">✓ 1÷3=<strong>0.333…=0.3̄</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">将1/4, 0.3, 2/5, 0.28 从小到大排列</div><div class="ga">✓ 全化小数：<br>0.25, 0.3, 0.4, 0.28<br>顺序：<strong>1/4&lt;0.28&lt;0.3&lt;2/5</strong></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 4: 分数的加法和减法 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-4">
+  <div class="uh uh4" data-icon="＋">
+    <div class="uw">第5单元 · 建议学习：6天（核心计算！）</div>
+    <div class="ut">分数的加法和减法</div>
+    <div class="ud">掌握同分母、异分母分数加减法，学会分数与整数的混合运算</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f4e8ff;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c4)"></span>
+        <div><strong>同分母分数加减法</strong>
+          <span class="kpn">分母不变，分子相加减，结果能约分的要约分。<br>如：3/8 + 2/8 = 5/8；7/9 - 4/9 = 3/9 = 1/3（约分）</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c4)"></span>
+        <div><strong>异分母分数加减法（先通分！）</strong>
+          <span class="kpn">先通分（化成同分母），再按同分母加减法计算。<br>如：1/3 + 1/4 → 4/12 + 3/12 = 7/12</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c4)"></span>
+        <div><strong>分数加减的简便方法</strong>
+          <span class="kpn">加法交换律、结合律同样适用于分数。如：1/3+1/6+2/3 = (1/3+2/3)+1/6 = 1+1/6 = 7/6</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c4)"></span>
+        <div><strong>带分数的加减法</strong>
+          <span class="kpn">整数部分和整数部分相加减，分数部分和分数部分相加减。不够减时从整数部分借1（化成分数）。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c4)"></span>
+        <div><strong>分数与整数的加减</strong>
+          <span class="kpn">整数化成同分母分数再计算。如：1 - 1/4 = 4/4 - 1/4 = 3/4</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 计算步骤</div>
+      <div class="fr">同分母：直接加减分子，分母不变</div>
+      <div class="fr">异分母：① 通分（取LCM）→ ② 同分母加减 → ③ 约分</div>
+      <div class="fr">结果若是假分数要化成带分数或整数</div>
+    </div>
+  </div>
+
+  <div class="warn"><b>最常见的错误：</b>异分母直接加减分子！如1/3+1/4不等于2/7，必须先通分：4/12+3/12=7/12。每次看到不同分母，第一步一定是通分。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#f4e8ff;">✏️</div><h3>练习一：同分母加减</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">计算 · 同分母</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">3/7 + 2/7 = </div><div class="ga">✓ 5/7</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">8/9 - 5/9 = </div><div class="ga">✓ 3/9 = <strong>1/3</strong>（约分）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5/6 + 4/6 = </div><div class="ga">✓ 9/6 = 3/2 = <strong>1又1/2</strong>（化带分数）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1 - 3/8 = </div><div class="ga">✓ 8/8 - 3/8 = <strong>5/8</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">计算 · 异分母加减（先通分！）⭐⭐⭐</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">1/2 + 1/3</div><div class="ga">✓ LCM=6<br>3/6 + 2/6 = <strong>5/6</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">3/4 - 2/3</div><div class="ga">✓ LCM=12<br>9/12 - 8/12 = <strong>1/12</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1/2 + 2/5</div><div class="ga">✓ LCM=10<br>5/10 + 4/10 = <strong>9/10</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5/6 - 3/4</div><div class="ga">✓ LCM=12<br>10/12 - 9/12 = <strong>1/12</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">2/3 + 3/8</div><div class="ga">✓ LCM=24<br>16/24 + 9/24 = <strong>25/24 = 1又1/24</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">7/8 - 1/6</div><div class="ga">✓ LCM=24<br>21/24 - 4/24 = <strong>17/24</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1/4 + 1/6 + 1/12</div><div class="ga">✓ LCM=12<br>3/12+2/12+1/12=6/12=<strong>1/2</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1 - 1/3 - 1/4</div><div class="ga">✓ LCM=12<br>12/12-4/12-3/12=<strong>5/12</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="eb">
+    <div class="eh"><span class="et">简便计算 · 分数版 ⭐⭐</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">1/4 + 3/5 + 3/4</div><div class="ga">✓ (1/4+3/4)+3/5<br>=1+3/5=<strong>8/5=1又3/5</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">7/8 - (7/8 - 1/2)</div><div class="ga">✓ = 7/8 - 7/8 + 1/2<br>= 0 + 1/2 = <strong>1/2</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">5/6 + 7/12 - 5/6</div><div class="ga">✓ (5/6-5/6)+7/12<br>=0+7/12=<strong>7/12</strong></div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1/3 + 1/6 + 1/2</div><div class="ga">✓ LCM=6<br>2/6+1/6+3/6=6/6=<strong>1</strong></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#f4e8ff;">🧩</div><h3>练习二：应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">一根铁丝，第一次用去全长的1/3，第二次用去全长的1/4，两次共用去全长的几分之几？还剩全长的几分之几？</div>
+        <div class="wa">共用：1/3+1/4=4/12+3/12=<strong>7/12</strong><br>还剩：1-7/12=<strong>5/12</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">小明看一本书，第一天看了全书的2/9，第二天看了全书的1/3，两天共看了多少？还剩多少没看？</div>
+        <div class="wa">两天：2/9+1/3=2/9+3/9=<strong>5/9</strong><br>还剩：1-5/9=<strong>4/9</strong></div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">3</span>
+      <div><div class="wq">一个装满果汁的杯子，喝了1/4后再加满，再喝了1/3，再加满，现在杯子里果汁是原来的几分之几？</div>
+        <div class="whi">💡 "加满"意味着又回到1，然后再喝</div>
+        <div class="wa">第一次喝后：1-1/4=3/4，加满后=1<br>第二次喝后：1-1/3=<strong>2/3</strong><br>再加满后=1<br>现在杯中是原来满杯的<strong>1（满的）</strong><br>（若问最后状态：加满后=满杯=<strong>1</strong>）</div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">4</span>
+      <div><div class="wq">甲、乙两管向水池注水，甲管单独注满需要4小时，乙管单独注满需要6小时，两管同时开，1小时注满水池的几分之几？几小时注满？</div>
+        <div class="whi">💡 1小时甲注1/4，乙注1/6</div>
+        <div class="wa">1小时：1/4+1/6=3/12+2/12=5/12<br>注满需：1÷(5/12)=12/5=<strong>2又2/5小时</strong></div></div></div></div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 5: 统计与可能性 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-5">
+  <div class="uh uh5" data-icon="📊">
+    <div class="uw">第6单元 · 建议学习：2天</div>
+    <div class="ut">统计（折线统计图）与可能性</div>
+    <div class="ud">学会读折线统计图，了解折线图与条形图的区别，继续理解可能性</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#e0f8f4;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c5)"></span>
+        <div><strong>折线统计图的特点</strong>
+          <span class="kpn">用折线的升降反映数据的变化趋势。适合表示数据随时间的变化过程。折线向上=数据增加，向下=数据减少，越陡=变化越快。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c5)"></span>
+        <div><strong>折线图 vs 条形图</strong>
+          <span class="kpn">条形图：便于比较各类数据大小；折线图：便于看数据变化趋势。表示"每年销售额变化"用折线图更合适。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c5)"></span>
+        <div><strong>可能性（深化）</strong>
+          <span class="kpn">继续用分数表示可能性，理解公平游戏：游戏中每个参与者获胜的可能性相等才是公平的。</span></div></li>
+    </ul>
+  </div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#e0f8f4;">✏️</div><h3>练习：折线图与可能性</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">填空 · 折线图与统计</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">折线图中，折线向上说明数据在（增加/减少）</div><div class="ga">✓ 增加</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">要反映某城市近10年人口变化趋势，应选（折线图/条形图）</div><div class="ga">✓ 折线图（体现趋势变化）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">要比较五个班各科平均分，应选（折线图/条形图）</div><div class="ga">✓ 条形图（便于比较大小）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">袋中5白3黑2红，摸到黑球的可能性=</div><div class="ga">✓ 3/10</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">掷骰子，出现奇数的可能性=</div><div class="ga">✓ 3/6 = 1/2（1,3,5三个奇数）</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">1～8的数字卡片各一张，随机取一张，取到偶数的可能性=</div><div class="ga">✓ 4/8 = 1/2（2,4,6,8）</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================================================================ -->
+<!-- UNIT 6: 数学广角·找次品 -->
+<!-- ================================================================ -->
+<div class="up" id="unit-6">
+  <div class="uh uh6" data-icon="🔍">
+    <div class="uw">第7单元 · 建议学习：2天</div>
+    <div class="ut">数学广角——找次品</div>
+    <div class="ud">用天平找次品（次品比正品轻），探索最优策略，理解最少称量次数</div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#fdf4e8;">📖</div><h3>核心知识点</h3></div>
+  <div class="kb">
+    <ul class="kpl">
+      <li class="kpi"><span class="kpd" style="background:var(--c6)"></span>
+        <div><strong>找次品的方法</strong>
+          <span class="kpn">用天平（无砝码，只比较两边轻重）找出1个次品（假设次品比正品轻）。策略：每次把物品尽量平均分成3组，称量次数最少。</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c6)"></span>
+        <div><strong>最优分组策略</strong>
+          <span class="kpn">n个物品，每次分成3份（尽量等分）：<br>称1次能确定：最多3个中找1个<br>称2次能确定：最多9个中找1个<br>称3次能确定：最多27个中找1个<br>规律：称k次最多处理3^k个物品</span></div></li>
+      <li class="kpi"><span class="kpd" style="background:var(--c6)"></span>
+        <div><strong>具体操作（以9个为例）</strong>
+          <span class="kpn">分成3组各3个→两组上天平→轻的那组有次品→再分3个各1个→再称→轻的那个是次品。共称2次。</span></div></li>
+    </ul>
+    <div class="fb">
+      <div class="ft">⚡ 关键规律</div>
+      <div class="fr">称1次：最多确定 3^1 = 3 个中的次品</div>
+      <div class="fr">称2次：最多确定 3^2 = 9 个中的次品</div>
+      <div class="fr">称3次：最多确定 3^3 = 27 个中的次品</div>
+      <div class="fr">策略：每次平均分3份，天平两边各放1份</div>
+    </div>
+  </div>
+
+  <div class="tip"><b>理解思路：</b>每次称量有3种结果——左轻、右轻、平衡。所以每次最多把范围缩小为原来的1/3。分成3份是最高效的，不是2份（2份只有两种结果，效率低）。</div>
+
+  <div class="sl" style="margin-top:16px;"><div class="si" style="background:#fdf4e8;">✏️</div><h3>练习</h3></div>
+  <div class="eb">
+    <div class="eh"><span class="et">填空 · 找次品（天平）</span></div>
+    <div class="ebody">
+      <div class="grid">
+        <div class="gi" onclick="t(this)"><div class="gq">3个产品中有1个次品（轻），至少称（）次可以找到</div><div class="ga">✓ <strong>1次</strong><br>天平两端各放1个：平衡→剩余的是次品；不平衡→轻的那个是次品</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">9个产品中有1个次品，至少称（）次可以找到</div><div class="ga">✓ <strong>2次</strong><br>分3组各3个，称第1次确定哪组；再对该组分3个各1个称第2次</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">27个产品中有1个次品，至少称（）次可以找到</div><div class="ga">✓ <strong>3次</strong><br>3³=27，称3次可确定</div></div>
+        <div class="gi" onclick="t(this)"><div class="gq">6个产品，1个次品，至少称几次？</div><div class="ga">✓ <strong>2次</strong><br>分成3+3：称1次确定哪半；再对该半分2+2+2称第2次确定哪个</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sl"><div class="si" style="background:#fdf4e8;">🧩</div><h3>应用题</h3></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">1</span>
+      <div><div class="wq">有8个零件，其中1个是次品（比正品轻），用天平至少称几次一定能找到次品？请写出称量方案。</div>
+        <div class="wa"><strong>至少称2次</strong><br>方案：<br>第1次：3个vs3个（余2个不称）<br>→若天平倾斜：轻的3个中有次品→对这3个按1vs1vs1（1次）→找到。共2次。<br>→若天平平衡：余下2个中有次品→再称：1vs1→轻者是次品。共2次。</div></div></div></div>
+  <div class="wp" onclick="tw(this)">
+    <div class="wr"><span class="wn">2</span>
+      <div><div class="wq">有81个零件中混有1个次品，至少称几次能保证找出次品？</div>
+        <div class="whi">💡 81 = 3⁴</div>
+        <div class="wa">81=3⁴，所以至少称<strong>4次</strong>可以找出次品。<br>每次分3份，4次后范围缩小到3⁴=81个中的1个。</div></div></div></div>
+
+  <div class="divider"></div>
+
+  <!-- 完成卡片 -->
+  <div class="kb" style="text-align:center;padding:32px 20px;">
+    <div style="font-size:40px;margin-bottom:14px;">🎊</div>
+    <div style="font-family:'ZCOOL XiaoWei',serif;font-size:24px;margin-bottom:14px;">五年级下册全部完成！</div>
+    <div style="font-size:13.5px;color:var(--muted);line-height:2.1;max-width:580px;margin:0 auto;">
+      恭喜完成五年级上下册全部内容！<br>
+      <b style="color:var(--c4);">本册四大核心：</b><br>
+      ① 长方体表面积与体积——公式要背、单位要换<br>
+      ② 分数的意义与性质——约分、通分是基础<br>
+      ③ 分数加减法——异分母必须先通分<br>
+      ④ 最大公因数与最小公倍数——为分数运算服务<br><br>
+      建议做一套五年级下册期末真题卷检验。<br>
+      <b style="color:var(--c4);">三年级→五年级全部完成！</b><br>
+      这套补习计划共10册，可帮孩子系统追上班级进度。<br>
+      接下来只需要跟着老师学习五年级在学的内容，配合这套复习使用即可！
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<button class="scrolltop" id="sTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function go(n) {
+  document.querySelectorAll('.up').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.nt').forEach(b => b.classList.remove('on'));
+  document.getElementById('unit-' + n).classList.add('on');
+  document.querySelector('.nt[data-u="' + n + '"]').classList.add('on');
+  window.scrollTo({ top: document.querySelector('.nw').offsetTop - 10, behavior: 'smooth' });
+}
+function t(el)  { el.classList.toggle('on'); }
+function tw(el) { el.classList.toggle('on'); }
+window.addEventListener('scroll', () => {
+  document.getElementById('sTop').classList.toggle('vis', window.scrollY > 300);
+});
+</script>
+</body>
+</html>
