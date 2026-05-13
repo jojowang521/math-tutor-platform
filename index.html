@@ -443,10 +443,14 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
 
 .library-frame {
   width: 100%;
-  height: 72vh;
+  height: calc(100vh - 82px);
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #fff;
+}
+
+#library.page {
+  padding-top: 16px;
 }
 
 .library-actions {
@@ -641,12 +645,6 @@ textarea { min-height: 132px; resize: vertical; line-height: 1.7; }
 
     <section class="page" id="library">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <h2 id="libraryTitle">三年级上册完整计划</h2>
-            <p id="libraryDesc">左侧按册次切换，直接查看对应年级上下册的完整补习计划。</p>
-          </div>
-        </div>
         <iframe class="library-frame" id="libraryFrame" src="grade3_math_plan.html" title="年级补习计划原文"></iframe>
       </div>
     </section>
@@ -798,8 +796,6 @@ function showPage(id, src = "") {
     : document.querySelector(`.nav button[data-page="${id}"]:not([data-src])`);
   if (id === "library" && src) {
     document.getElementById("libraryFrame").src = src;
-    document.getElementById("libraryTitle").textContent = activeBtn?.dataset.title || activeBtn?.textContent.trim() || "完整计划";
-    document.getElementById("libraryDesc").textContent = "当前展示的是完整原始计划，包含知识点、练习题和讲解建议。";
   }
   document.querySelectorAll(".nav button").forEach(btn => {
     const samePage = btn.dataset.page === id;
