@@ -1,0 +1,14 @@
+.points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+  margin-top: 20rpx;
+}
+
+.point {
+  padding: 8rpx 14rpx;
+  border-radius: 999rpx;
+  background: #f0f9ff;
+  color: #1e40af;
+  font-size: 24rpx;
+}

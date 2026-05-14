@@ -1,0 +1,17 @@
+<view class="page">
+  <text class="section-title">全册计划</text>
+  <text class="muted">按三到五年级上下册组织，先从三年级上册开始通关。</text>
+
+  <view class="card" wx:for="{{books}}" wx:key="title">
+    <view class="row">
+      <view class="book-copy">
+        <text class="tag">{{item.stage}}</text>
+        <text class="card-title">{{item.title}}</text>
+        <text class="muted">{{item.desc}}</text>
+      </view>
+    </view>
+    <button class="{{item.enabled ? 'primary-btn' : 'secondary-btn'}}" data-index="{{index}}" bindtap="openBook">
+      {{item.enabled ? '进入学习' : '待整理'}}
+    </button>
+  </view>
+</view>

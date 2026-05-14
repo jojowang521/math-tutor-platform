@@ -1,0 +1,24 @@
+<view class="page">
+  <view class="hero">
+    <text class="eyebrow">4到6个月系统补习</text>
+    <text class="h1">小学数学基础知识学习平台</text>
+    <text class="muted">按先补地基、再追进度的方式组织，每天固定节奏，先通关三年级核心知识，再进入四年级和五年级。</text>
+  </view>
+
+  <text class="section-title">今日学习闭环</text>
+  <view class="card" wx:for="{{tasks}}" wx:key="title">
+    <view class="row">
+      <view>
+        <text class="card-title">{{item.title}}</text>
+        <text class="muted">{{item.desc}}</text>
+      </view>
+      <text class="tag">{{item.time}}</text>
+    </view>
+  </view>
+
+  <text class="section-title">辅导原则</text>
+  <view class="card" wx:for="{{principles}}" wx:key="title">
+    <text class="card-title">{{item.title}}</text>
+    <text class="muted">{{item.desc}}</text>
+  </view>
+</view>

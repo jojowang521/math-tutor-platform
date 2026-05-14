@@ -1,0 +1,31 @@
+<view class="page">
+  <text class="section-title">三年级上册检测</text>
+  <text class="muted">包含通关检测和8个单元检测，适合课后小测和阶段验收。</text>
+
+  <view class="card" wx:for="{{tests}}" wx:key="title">
+    <view class="row">
+      <view>
+        <text class="tag">{{item.type}}</text>
+        <text class="card-title">{{item.title}}</text>
+        <text class="muted">{{item.focus}}</text>
+      </view>
+    </view>
+    <view class="meta">
+      <text class="tag">{{item.time}}</text>
+      <text class="tag">{{item.score}}</text>
+    </view>
+    <button class="secondary-btn" data-index="{{index}}" bindtap="toggleTest">
+      {{item.open ? '收起题目' : '展开题目'}}
+    </button>
+    <view class="test-detail" wx:if="{{item.open}}">
+      <text class="card-title">题目</text>
+      <view wx:for="{{item.questions}}" wx:key="*this" class="question">
+        <text>{{index + 1}}. {{item}}</text>
+      </view>
+      <text class="card-title">参考答案</text>
+      <view class="answer">
+        <text>{{item.answer}}</text>
+      </view>
+    </view>
+  </view>
+</view>

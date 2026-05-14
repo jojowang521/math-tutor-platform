@@ -1,0 +1,21 @@
+<view class="page">
+  <view class="hero">
+    <text class="eyebrow">第一阶段</text>
+    <text class="h1">三年级上册</text>
+    <text class="muted">先补计算、单位、周长和分数初步，达到70分以上再进入三年级下册。</text>
+  </view>
+
+  <text class="section-title">8个核心单元</text>
+  <view class="card" wx:for="{{units}}" wx:key="title">
+    <view class="row">
+      <view>
+        <text class="tag">{{item.week}}</text>
+        <text class="card-title">{{index + 1}}. {{item.title}}</text>
+        <text class="muted">{{item.goal}}</text>
+      </view>
+    </view>
+    <view class="points">
+      <text wx:for="{{item.points}}" wx:key="*this" class="point">{{item}}</text>
+    </view>
+  </view>
+</view>

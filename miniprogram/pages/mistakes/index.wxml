@@ -1,0 +1,16 @@
+<view class="page">
+  <text class="section-title">错题本</text>
+  <text class="muted">先记录错因，后续可以接入云开发，按学生账号保存错题。</text>
+
+  <view class="card">
+    <text class="card-title">新增错题</text>
+    <input class="input" placeholder="所属单元，如：时、分、秒" value="{{unit}}" bindinput="onUnitInput" />
+    <textarea class="textarea" placeholder="记录错题、错因和下次提醒" value="{{content}}" bindinput="onContentInput"></textarea>
+    <button class="primary-btn" bindtap="saveMistake">保存记录</button>
+  </view>
+
+  <view class="card" wx:for="{{mistakes}}" wx:key="id">
+    <text class="tag">{{item.unit}}</text>
+    <text class="mistake-text">{{item.content}}</text>
+  </view>
+</view>

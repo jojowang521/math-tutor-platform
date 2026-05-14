@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/plans/index",
+    "pages/practice/index",
+    "pages/mistakes/index",
+    "pages/grade3-vol1/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "数学学习平台",
+    "navigationBarBackgroundColor": "#172033",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f7f2ea"
+  },
+  "tabBar": {
+    "color": "#6b7280",
+    "selectedColor": "#2563eb",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/plans/index",
+        "text": "全册计划"
+      },
+      {
+        "pagePath": "pages/practice/index",
+        "text": "练习检测"
+      },
+      {
+        "pagePath": "pages/mistakes/index",
+        "text": "错题本"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
